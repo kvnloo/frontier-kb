@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = {"id", "title", "type", "status", "created", "updated"}
-DIRS = ["literature", "permanent", "harnesses", "domains", "atlas", "inbox", "templates"]
+DIRS = ["literature", "permanent", "harnesses", "domains", "atlas", "inbox", "templates", "notes"]
 
 def parse_frontmatter(text: str) -> dict:
     if not text.startswith("---"):
