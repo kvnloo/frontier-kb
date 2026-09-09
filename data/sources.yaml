@@ -1,0 +1,46 @@
+# Canonical poll targets for frontier autoresearch (America/Chicago weekdays)
+version: 1
+harnesses:
+  omp:
+    github: https://github.com/can1357/oh-my-pi
+    docs: https://omp.sh/
+  hermes:
+    github: https://github.com/NousResearch/hermes-agent
+  crush:
+    github: https://github.com/charmbracelet/crush
+  opencode:
+    github: https://github.com/anomalyco/opencode
+    docs: https://opencode.ai/docs/agents
+  aider:
+    github: https://github.com/Aider-AI/aider
+  continue:
+    github: https://github.com/continuedev/continue
+  firstmate:
+    github: https://github.com/kunchenguid/firstmate
+  o8:
+    github: https://github.com/hurttlocker/o8
+  pi_autoresearch:
+    github: https://github.com/davebcn87/pi-autoresearch
+  claude_code:
+    docs: https://code.claude.com/docs/en/workflows
+    cookbook_workflows: https://platform.claude.com/cookbook/claude-agent-sdk-08-dynamic-workflows
+    compaction: https://platform.claude.com/docs/en/build-with-claude/compaction
+    memory: https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool
+    dreams: https://platform.claude.com/docs/en/managed-agents/dreams
+    computer_use: https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool
+  openai_agents:
+    sandbox: https://openai.github.io/openai-agents-python/sandbox/guide/
+    evolution: https://openai.com/index/the-next-evolution-of-the-agents-sdk/
+  mcp:
+    blog_2026_07_28: https://blog.modelcontextprotocol.io/posts/2026-07-28/
+protocols:
+  agentskills: https://agentskills.io/
+labs:
+  arxiv_cs_ai: https://arxiv.org/list/cs.AI/recent
+  arxiv_cs_lg: https://arxiv.org/list/cs.LG/recent
+  arxiv_cs_cl: https://arxiv.org/list/cs.CL/recent
+missing_urls_needed:
+  - prime_intelligence
+  - grok_coding_harness_surface
+  - preferred_codex_tracking
+  - which_pi_product
