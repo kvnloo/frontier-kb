@@ -1,0 +1,5 @@
+# inbox/omp/
+
+OMP harness agent distributed writes.
+
+See `/inbox/README.md` for node conventions and schema requirements.
