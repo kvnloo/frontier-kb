@@ -28,6 +28,9 @@ def main() -> int:
         if not folder.exists():
             continue
         for path in folder.rglob("*.md"):
+            # Skip README.md, .gitkeep files, and template placeholders
+            if path.name in ("README.md", ".gitkeep"):
+                continue
             meta = parse_frontmatter(path.read_text(encoding="utf-8"))
             missing = REQUIRED - set(meta)
             if missing:

@@ -19,7 +19,8 @@ Covers:
 
 | Path | Role |
 |------|------|
-| `inbox/` | Raw captures (fleeting); process or delete |
+| `inbox/` | Raw captures (fleeting); process or delete. See `inbox/README.md` for distributed-writer conventions |
+| `inbox/<node>/` | Per-node distributed writes (e.g. `frontier/`, `omp/`) — mesh writers ONLY write to their node dir |
 | `literature/` | Source notes (papers, blogs, releases) — cite primaries |
 | `permanent/` | Atomic claims in our words + [[wikilinks]] |
 | `harnesses/` | One note per harness product (capabilities, DX, gaps) |
@@ -72,13 +73,20 @@ NVIDIA PAIR routes inference only. hermes-mesh-keel SQLite is signed envelopes. 
 
 Neon/Supabase remain a fallback if 0 is down. Skip Cognee Cloud / Mem0 / Letta / Zep as the note ledger.
 
-## Autoresearch
+## Autoresearch & Distributed Writers
 
 Inspired by [karpathy/autoresearch](https://github.com/karpathy/autoresearch) and Kevin's `pi-autoresearch` / `autoresearcherUI` loops:
 
 1. Frontier weekday polls write literature + permanent notes on branches
-2. `scripts/validate-schema.py` gates CI
-3. CoS promotes actionable gaps → Linear HITL (Backlog) for factory
+2. Mesh writers (frontier, OMP, etc.) write **only** to `inbox/<node>/` — never cross-write to other dirs
+3. PR flow: node writes → open PR → `scripts/validate-schema.py` CI gate → merge to main
+4. CoS promotes actionable gaps → Linear HITL (Backlog) for factory
+
+**Rules for distributed writers:**
+- Write to `inbox/<node>/` only (your assigned node subdirectory)
+- All notes under `inbox/` require frontmatter: `id`, `title`, `type`, `status`, `created`, `updated`
+- Run SQLite funnel on nodes; promote short, schema-valid notes only
+- **NEVER copy personal or private data into this public vault** — all content is public OSS
 
 `github_writes` to **upstream OSS** stay 0 until Todo. This repo is ours — frontier may PR here when CoS authorizes.
 

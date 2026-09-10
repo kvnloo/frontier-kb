@@ -1,0 +1,5 @@
+# inbox/frontier/
+
+Frontier agent (Grok Bot `7443a4ff`) distributed writes.
+
+See `/inbox/README.md` for node conventions and schema requirements.
