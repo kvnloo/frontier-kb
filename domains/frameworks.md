@@ -18,3 +18,11 @@ Secretless + ssh-agent + XDG portal + Cedar/Biscuit + OpenBao/BWS custody + trus
 
 - [[literature/lit-20260910-trustworthy-secret-brokers]]
 - [[permanent/perm-20260910-build-action-portal-not-password-manager]]
+
+## Coding scaffolds (replace the loop, do not wrap it)
+
+mini-swe-agent, OpenHands SDK, OpenDev slots, Live-SWE-agent. No universal sidecar for OMP/Hermes.
+
+- [[literature/lit-20260910-oss-coding-plugins]]
+- [[permanent/perm-20260910-no-universal-harness-plugin]]
+- [[permanent/perm-20260910-scaffold-tool-shape-dominates]]

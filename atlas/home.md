@@ -11,10 +11,15 @@ tags: [moc, atlas]
 # Frontier intelligence
 
 ## Harness radar
-- [[harnesses/omp]] · [[harnesses/hermes]] · [[harnesses/claude-code]] · [[harnesses/codex]] · [[harnesses/cursor]] · [[harnesses/crush]] · [[harnesses/opencode]] · [[harnesses/firstmate]]
+- [[harnesses/omp]] · [[harnesses/hermes]] · [[harnesses/devin]] · [[harnesses/claude-code]] · [[harnesses/codex]] · [[harnesses/cursor]] · [[harnesses/crush]] · [[harnesses/opencode]] · [[harnesses/firstmate]]
 
 ## Discipline audit
 - [[domains/physics]] · [[domains/cs]] · [[domains/information-theory]] · [[domains/neuroscience]] · [[domains/mathematics]] · [[domains/statistics]] · [[domains/data-science]] · [[domains/ai-ml]] · [[domains/tokenomics]] · [[domains/tool-use]] · [[domains/skills]] · [[domains/frameworks]]
+
+## SWE-2 / OSS plugins (2026-09-10)
+- [[literature/lit-20260910-swe-2-pareto-rl]] · [[literature/lit-20260910-swe-1-7]] · [[literature/lit-20260910-swe-grep]] · [[literature/lit-20260910-oss-coding-plugins]]
+- [[permanent/perm-20260910-swe-2-is-a-posttrained-model]] · [[permanent/perm-20260910-no-universal-harness-plugin]] · [[permanent/perm-20260910-specialist-subagent-handoff]] · [[permanent/perm-20260910-small-models-are-workers-or-specialists]] · [[permanent/perm-20260910-scaffold-tool-shape-dominates]]
+- wave: `inbox/swe-2-wave-2026-09-10.md`
 
 ## Secret action portal (2026-09-10)
 - [[literature/lit-20260910-trustworthy-secret-brokers]]

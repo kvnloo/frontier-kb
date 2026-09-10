@@ -33,12 +33,39 @@ harnesses:
     evolution: https://openai.com/index/the-next-evolution-of-the-agents-sdk/
   mcp:
     blog_2026_07_28: https://blog.modelcontextprotocol.io/posts/2026-07-28/
+  devin:
+    product: https://devin.ai/
+    swe_2: https://cognition.com/blog/swe-2
+    swe_1_7: https://cognition.com/blog/swe-1-7
+    swe_grep: https://cognition.com/blog/swe-grep
+    fast_context: https://docs.devin.ai/desktop/context-awareness/fast-context
+  mini_swe_agent:
+    github: https://github.com/SWE-agent/mini-swe-agent
+  live_swe_agent:
+    github: https://github.com/OpenAutoCoder/live-swe-agent
+    paper: https://arxiv.org/abs/2511.13646
+  openhands:
+    docs: https://docs.openhands.dev/
+    sdk_paper: https://arxiv.org/abs/2511.03690
+  opendev:
+    github: https://github.com/opendev-to/opendev
+    paper: https://arxiv.org/abs/2603.05344
+  specforge:
+    github: https://github.com/sgl-project/SpecForge
+    paper: https://arxiv.org/abs/2603.18567
 protocols:
   agentskills: https://agentskills.io/
 labs:
   arxiv_cs_ai: https://arxiv.org/list/cs.AI/recent
   arxiv_cs_lg: https://arxiv.org/list/cs.LG/recent
   arxiv_cs_cl: https://arxiv.org/list/cs.CL/recent
+  cognition_blog: https://cognition.com/blog
+  kimi_k3: https://arxiv.org/abs/2607.24653
+  qwen38: https://github.com/QwenLM/Qwen3.8
+  qwen38_27b: https://huggingface.co/Qwen/Qwen3.8-27B
+  nemotron3_super_scaffolds: https://github.com/NVIDIA-NeMo/Nemotron/tree/main/usage-cookbook/Nemotron-3-Super/OpenScaffoldingResources
+  deepswe: https://deepswe.datacurve.ai/
+  terminal_bench: https://tbench.ai
 missing_urls_needed:
   - prime_intelligence
   - grok_coding_harness_surface

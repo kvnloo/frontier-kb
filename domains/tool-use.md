@@ -19,3 +19,11 @@ Agent-facing tools must not return secrets or own CDP. Typed action RPC: `authen
 - [[permanent/perm-20260910-build-action-portal-not-password-manager]]
 - [[permanent/perm-20260910-hermes-secrets-are-env-injection]]
 - [[permanent/perm-20260910-obfuscation-is-not-noninterference]]
+
+## Specialist retrieval and editor ABI
+
+SWE-grep pattern: typed file+line hand-off. `str_replace` vs bash can move 27B SWE-bench by ~20 points.
+
+- [[literature/lit-20260910-swe-grep]]
+- [[permanent/perm-20260910-specialist-subagent-handoff]]
+- [[permanent/perm-20260910-scaffold-tool-shape-dominates]]

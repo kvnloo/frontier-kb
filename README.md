@@ -11,7 +11,7 @@ An **Obsidian-compatible** git vault (Zettelkasten + atlas MOCs) with a machine-
 
 Covers:
 
-- Coding harnesses: OMP, Hermes, Pi, Codex, Claude Code, Cursor, Grok, Crush, OpenCode, Firstmate, o8, Prime Intelligence, peers
+- Coding harnesses: OMP, Hermes, Pi, Codex, Claude Code, Cursor, Grok, Crush, OpenCode, Firstmate, o8, Prime Intelligence, Devin, peers
 - LLM / agent research: tool use, skills, frameworks, memory, evals, voice, tokenomics
 - Multi-discipline audit lenses: physics, CS, information theory, neuroscience, mathematics, statistics, data science, AI/ML
 
