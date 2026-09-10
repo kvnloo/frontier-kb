@@ -1,14 +1,11 @@
 [Unit]
 Description=frontier-kb Postgres (pgvector) on host 0
-After=docker.service network-online.target
+After=network-online.target
 Wants=network-online.target
-Requires=docker.service
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-User=kvn
-Group=kvn
 WorkingDirectory=/home/kvn/workspace/frontier-kb
 EnvironmentFile=-/home/kvn/.config/frontier-kb/env
 Environment=KB_BIND=127.0.0.1
@@ -17,4 +14,4 @@ ExecStop=/usr/bin/docker compose -f docker-compose.yml -f docker-compose.host-0.
 TimeoutStartSec=120
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
