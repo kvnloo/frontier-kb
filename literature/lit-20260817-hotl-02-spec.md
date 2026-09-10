@@ -20,8 +20,7 @@ HOTL should be a **specification/IR + validator**, not a second scheduler: keep 
 
 ## Evidence
 
-- Package (groot, 2026-08-17 14:23 local): `hotl-0.2-report.md`, `hotl-0.2.schema.json`, `hotl-0.2.ebnf`, `architecture.mermaid`. README mentions `examples/` and `tests/validate.py` that were **not** written into the attachment dir.
-- Wire id: `hotl-0.2`. `HOTL` kept for continuity; **AODL** is a possible future public name (collides with “agent-oriented”).
+- Package (groot, 2026-08-17 14:23 local): `hotl-0.2-report.md`, `hotl-0.2.schema.json`, `hotl-0.2.ebnf`, `architecture.mermaid`. README mentioned `examples/` and `tests/validate.py` that were **not** in the attachment dir; published 2026-09-10 as [kvnloo/aodl](https://github.com/kvnloo/aodl).
 - Formal object: \(O_t=(V_t,E_t,S_t,\Pi_t,\Gamma_t)\) is the **observed** graph at logical time t. Document = `intentGraph` + `policies` + `constraints` + `provenance`. Compiler emits immutable `plan`. Runtime emits append-only `eventLog` + `observedGraph`.
 - Transition \(C \xrightarrow{a} C'\) only if schema/type, policy, capability ceiling, budget reservation, and event nonce pass. Unbounded recursion is invalid.
 - Market is **policy**, not topology: announce → bid → award → execute → verify → settle. Autonomous payment unsupported.
@@ -31,7 +30,7 @@ HOTL should be a **specification/IR + validator**, not a second scheduler: keep 
 
 ## Fact vs interpretation
 
-- Fact: 0.2 is docs-only; no runtime, no second ledger, no git repo.
+- Fact: 0.2 remains spec/validator only (no runtime, no second ledger). Public git: [kvnloo/aodl](https://github.com/kvnloo/aodl).
 - Interpretation: \(\theta = \theta_{\text{base}}+A_{\text{identity}}+A_{\text{factory}}\) is an architecture hypothesis, not a learned-model equation. Token-efficiency of graph slices vs full dump is a benchmark, not a theorem.
 
 ## Links

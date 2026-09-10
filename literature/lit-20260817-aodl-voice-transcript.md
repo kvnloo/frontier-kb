@@ -36,7 +36,7 @@ The missing abstraction is a **typed, dynamic orchestration graph**, not another
 ## Fact vs interpretation
 
 - Fact: the 9.3k Hermes paste and HOTL packages exist on groot; issue #88589 is open (P3, needs-decision).
-- Fact: no `kvnloo/aodl` (or process-algebra) repository exists.
+- Fact: public IR is [kvnloo/aodl](https://github.com/kvnloo/aodl) (HOTL 0.2 schema + validator). The ChatGPT thread is still unpublished.
 - Interpretation: `WEB:ad8ba5d2` is the ChatGPT thread to reopen/export if the original still exists.
 - Interpretation: later IR/architecture-search prose is consistent with HOTL 0.2 but is **not** proven to be a verbatim ChatGPT turn.
 

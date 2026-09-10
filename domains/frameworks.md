@@ -14,7 +14,7 @@ Map of content for [[atlas/home]].
 
 ## Orchestration IR
 
-Agent orchestration is a typed dynamic graph \(O_t\), not a static DAG or a named badge.
+Agent orchestration is a typed dynamic graph \(O_t\), not a static DAG or a named badge. Public IR: [kvnloo/aodl](https://github.com/kvnloo/aodl).
 
 - [[permanent/perm-20260817-orchestration-typed-dynamic-graph]]
 - [[permanent/perm-20260817-intent-plan-observed]]
