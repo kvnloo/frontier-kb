@@ -1,19 +1,42 @@
 ---
 id: harness-omp
-title: omp
+title: OMP (oh-my-pi)
 type: harness
 status: active
 created: 2026-09-09
 updated: 2026-09-10
-urls: ["https://github.com/can1357/oh-my-pi", "https://github.com/can1357/oh-my-pi/issues/11399", "https://github.com/can1357/oh-my-pi/issues/10027", "https://github.com/can1357/oh-my-pi/issues/10828"]
-capabilities: ["secret-obfuscation-placeholders", "auth-broker-gateway", "auth-gateway-provider-inject"]
-gaps_vs_peers: ["obfuscation-not-noninterference", "plaintext-auth-credentials", "restore-in-tool-args", "system-schema-unwalked"]
+urls:
+  - https://github.com/can1357/oh-my-pi
+  - https://omp.sh/
+  - https://github.com/can1357/oh-my-pi/issues/11399
+  - https://github.com/can1357/oh-my-pi/issues/10027
+  - https://github.com/can1357/oh-my-pi/issues/10828
+capabilities:
+  - secret-obfuscation-placeholders
+  - auth-broker-gateway
+  - auth-gateway-provider-inject
+  - Subagents, LSP, DAP, plan mode, hindsight memory, hashline edits, stream rules
+  - Multi-model (60+ providers), Rust core, persistent Python/Bun worker
+  - First-class task fan-out into isolated worktrees, reviewer model
+  - Native terminal TUI with MCP/http/stdio/sse extensibility
+gaps_vs_peers:
+  - obfuscation-not-noninterference
+  - plaintext-auth-credentials
+  - restore-in-tool-args
+  - system-schema-unwalked
+  - No built-in agent crew orchestration (firstmate/crush cover this)
+  - No cross-platform messaging gateway (hermes covers Telegram/Discord)
+  - Lacks secondmate persistent multi-client workspace (crush serve does multi-client)
 omp_actionable: true
 confidence: high
 tags: [harness]
 ---
+# OMP
 
-# omp
+Snapshot: Most capable agent surface shipped; fork of Pi. ~80k Rust core lines.
+Strengths: LSP/DAP wired in; real debugger; time-traveling stream rules; subagent fan-out.
+Gaps: No persistent multi-agent crew management; no messaging gateway (hermes does this); multi-client workspace is missing vs crush serve.
+Sources: https://github.com/can1357/oh-my-pi, https://omp.sh/
 
 Oh My Pi. Three secret paths, not one pile: prompt obfuscation, sqlite provider credentials, auth-gateway inject.
 
