@@ -11,7 +11,7 @@ tags: [moc, atlas]
 # Frontier intelligence
 
 ## Harness radar
-- [[harnesses/omp]] · [[harnesses/hermes]] · [[harnesses/claude-code]] · [[harnesses/codex]] · [[harnesses/cursor]] · [[harnesses/crush]] · [[harnesses/opencode]] · [[harnesses/firstmate]]
+- [[harnesses/omp]] · [[harnesses/hermes]] · [[harnesses/claude-code]] · [[harnesses/codex]] · [[harnesses/cursor]] · [[harnesses/crush]] · [[harnesses/opencode]] · [[harnesses/firstmate]] · [[harnesses/pi]] · [[harnesses/o8]] · [[harnesses/grok]] · [[harnesses/fx]]
 
 ## Discipline audit
 - [[domains/physics]] · [[domains/cs]] · [[domains/information-theory]] · [[domains/neuroscience]] · [[domains/mathematics]] · [[domains/statistics]] · [[domains/data-science]] · [[domains/ai-ml]] · [[domains/tokenomics]] · [[domains/tool-use]] · [[domains/skills]] · [[domains/frameworks]]
@@ -20,7 +20,7 @@ tags: [moc, atlas]
 - [[literature/lit-20260910-keel-level0-evidence-surface]]
 
 ## Orchestration / AODL / HOTL (2026-08-17)
-- Public IR: [kvnloo/aodl](https://github.com/kvnloo/aodl)
+- Public IR + harness catalog: [kvnloo/aodl](https://github.com/kvnloo/aodl) (`harnesses/catalog.json`, [network](https://github.com/kvnloo/aodl/blob/main/docs/network.md))
 - Literature: [[literature/lit-20260817-aodl-voice-transcript]] · [[literature/lit-20260817-hotl-01-issue-88589]] · [[literature/lit-20260817-hotl-02-spec]]
 - Permanent: [[permanent/perm-20260817-orchestration-typed-dynamic-graph]] · [[permanent/perm-20260817-intent-plan-observed]] · [[permanent/perm-20260817-aodl-ir-first]] · [[permanent/perm-20260817-market-is-allocation-policy]] · [[permanent/perm-20260817-no-aodl-repo]]
 
