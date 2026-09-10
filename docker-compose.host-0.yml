@@ -1,6 +1,7 @@
 # Overlay: also bind the Tailscale address so mbp/omp/hermes/firstmate can reach 0.
+# 55432 is taken on groot by dim0-postgres; production uses KB_PORT=55442.
 # docker compose -f docker-compose.yml -f docker-compose.host-0.yml up -d kb
 services:
   kb:
     ports:
-      - "100.113.138.100:55432:5432"
+      - "100.113.138.100:${KB_PORT:-55442}:5432"

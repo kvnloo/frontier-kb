@@ -56,12 +56,12 @@ Production is **host 0** (groot, Tailscale `100.113.138.100`, SSH `0`), always-o
 ssh 0 'cd ~/workspace/frontier-kb && bash scripts/install-host-0.sh'
 ```
 
-That starts `pgvector/pg16` on `127.0.0.1:55432` and `100.113.138.100:55432`, ingests the vault, enables a user systemd unit, and drops `FRONTIER_KB_DSN` into Hermes env plus a `skills/frontier-kb` symlink for Hermes / OMP / Firstmate.
+That starts `pgvector/pg16` on `127.0.0.1:55442` and `100.113.138.100:55442` (55432 on groot is dim0-postgres), ingests the vault, enables a user systemd unit, and drops `FRONTIER_KB_DSN` into Hermes env plus a `skills/frontier-kb` symlink for Hermes / OMP / Firstmate.
 
 Remote harnesses (mbp, PAIR-routed workers):
 
 ```
-export FRONTIER_KB_DSN=postgresql://frontier:<pw>@100.113.138.100:55432/frontier_kb
+export FRONTIER_KB_DSN=postgresql://frontier:<pw>@100.113.138.100:55442/frontier_kb
 export KB_WRITER=<harness>-<host>
 python scripts/kb_store.py search --q "SWE-2"
 ```

@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-frontier}
       POSTGRES_DB: ${POSTGRES_DB:-frontier_kb}
     ports:
-      - "${KB_BIND:-127.0.0.1}:55432:5432"
+      - "${KB_BIND:-127.0.0.1}:${KB_PORT:-55432}:5432"
     command: ["postgres", "-c", "max_connections=200"]
     restart: unless-stopped
     volumes:

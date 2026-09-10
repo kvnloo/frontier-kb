@@ -38,8 +38,9 @@ if [[ ! -f "$ENVF" ]]; then
 POSTGRES_USER=frontier
 POSTGRES_PASSWORD=$PASS
 POSTGRES_DB=frontier_kb
-FRONTIER_KB_DSN=postgresql://frontier:${PASS}@127.0.0.1:55432/frontier_kb
-FRONTIER_KB_DSN_TAILNET=postgresql://frontier:${PASS}@100.113.138.100:55432/frontier_kb
+KB_PORT=55442
+FRONTIER_KB_DSN=postgresql://frontier:${PASS}@127.0.0.1:55442/frontier_kb
+FRONTIER_KB_DSN_TAILNET=postgresql://frontier:${PASS}@100.113.138.100:55442/frontier_kb
 KB_WRITER=host-0
 EOF
   chmod 600 "$ENVF"
@@ -118,4 +119,4 @@ fi
 
 "$PY" "$ROOT/scripts/test_sqlite_busy.py" || true
 echo "host-0 store ready. local DSN in $ENVF"
-echo "tailnet DSN host=100.113.138.100 port=55432 db=frontier_kb user=frontier"
+echo "tailnet DSN host=100.113.138.100 port=${KB_PORT:-55442} db=frontier_kb user=frontier"

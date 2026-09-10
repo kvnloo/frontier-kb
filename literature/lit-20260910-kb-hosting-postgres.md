@@ -16,7 +16,7 @@ tags: [literature, postgres, neon, supabase, hosting, pgvector]
 
 ## Claim (one sentence)
 
-The unified store for 100 harnesses is one Postgres (pgvector + CAS), not a memory vendor; host it on **host 0** (always-on PC, Tailscale `100.113.138.100:55432`). Neon pooled Postgres is the fallback if 0 is down. Do not vendor Cognee/Mem0/Letta.
+The unified store for 100 harnesses is one Postgres (pgvector + CAS), not a memory vendor; host it on **host 0** (always-on PC, Tailscale `100.113.138.100:55442`). Neon pooled Postgres is the fallback if 0 is down. Do not vendor Cognee/Mem0/Letta.
 
 ## Evidence
 
@@ -30,7 +30,7 @@ Mnemoverse Q3 2026: Mem0 is a drop-in fact API, Letta is a runtime, Zep/Graphiti
 
 | Host | Cost | Storage | Connections | Always-on | Fit |
 | --- | --- | --- | --- | --- | --- |
-| **Host 0 compose** (groot, Tailscale) | $0 | disk | 200 | yes, 24/7 | **Production.** Loopback + `100.113.138.100:55432`. |
+| **Host 0 compose** (groot, Tailscale) | $0 | disk | 200 | yes, 24/7 | **Production.** Loopback + `100.113.138.100:55442`. |
 | **Local compose** | $0 | disk | 200 (`max_connections`) | yes, one machine | Dev on mbp. Prefer pointing mbp at 0. |
 | **Neon Free** | $0 | 0.5 GB/project | 0.25 CU ≈ 104 `max_connections` (7 reserved); PgBouncer `-pooler` up to 10k *client* conns, transaction mode | Scale-to-zero after 5 min, **cannot disable** | Fine for the current tiny corpus. Cold start is the 100-agent failure mode. 100 CU-hours/project/month; 5 GB egress. |
 | **Neon Launch** | pay-as-you-use (~$0.106/CU-hour; 0.25 CU always-on ≈ a few $/mo) | $0.35/GB-month | same pooling; autoscaling to 16 CU | Scale-to-zero can be **disabled** | Production DSN for a continuous factory. |

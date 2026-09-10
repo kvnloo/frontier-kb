@@ -11,8 +11,8 @@ Operational store is Postgres. Git/Obsidian is the review export.
 
 DSN: env `FRONTIER_KB_DSN` or `DATABASE_URL`.
 
-- On host 0 (groot): loopback `127.0.0.1:55432`
-- On mbp / PAIR-routed agents: Tailscale `100.113.138.100:55432`
+- On host 0 (groot): loopback `127.0.0.1:55442`
+- On mbp / PAIR-routed agents: Tailscale `100.113.138.100:55442`
 - Password lives in `~/.config/frontier-kb/env` (mode 0600). Never paste it into chat or git.
 
 Writer id: `KB_WRITER=<harness>-<host>` (example `omp-mbp`, `hermes-0`, `firstmate-mbp`).

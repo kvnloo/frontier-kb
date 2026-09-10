@@ -29,4 +29,4 @@ Processed:
 - [[permanent/perm-20260910-host-on-neon-pooled-postgres]]
 
 Store: `docker compose up -d kb`, `python scripts/kb_store.py init|ingest|export`, `python scripts/concurrent_smoke.py`.
-Host: **0** (`100.113.138.100:55432`). `scripts/install-host-0.sh`. Neon is fallback. Mesh: PAIR routes inference; keel carries envelopes; agents `put`/`get`/`search`.
+Host: **0** (`100.113.138.100:55442`). `scripts/install-host-0.sh`. Neon is fallback. Mesh: PAIR routes inference; keel carries envelopes; agents `put`/`get`/`search`.
