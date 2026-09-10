@@ -11,7 +11,7 @@ tags: [moc, atlas]
 # Frontier intelligence
 
 ## Harness radar
-- [[harnesses/omp]] · [[harnesses/hermes]] · [[harnesses/devin]] · [[harnesses/claude-code]] · [[harnesses/codex]] · [[harnesses/cursor]] · [[harnesses/crush]] · [[harnesses/opencode]] · [[harnesses/firstmate]]
+- [[harnesses/omp]] · [[harnesses/hermes]] · [[harnesses/devin]] · [[harnesses/claude-code]] · [[harnesses/codex]] · [[harnesses/cursor]] · [[harnesses/crush]] · [[harnesses/opencode]] · [[harnesses/firstmate]] · [[harnesses/pi]] · [[harnesses/o8]] · [[harnesses/grok]] · [[harnesses/fx]]
 
 ## Discipline audit
 - [[domains/physics]] · [[domains/cs]] · [[domains/information-theory]] · [[domains/neuroscience]] · [[domains/mathematics]] · [[domains/statistics]] · [[domains/data-science]] · [[domains/ai-ml]] · [[domains/tokenomics]] · [[domains/tool-use]] · [[domains/skills]] · [[domains/frameworks]]
@@ -33,6 +33,15 @@ tags: [moc, atlas]
 - [[permanent/perm-20260910-build-action-portal-not-password-manager]] · [[permanent/perm-20260910-custody-is-not-confinement]] · [[permanent/perm-20260910-hermes-secrets-are-env-injection]] · [[permanent/perm-20260910-obfuscation-is-not-noninterference]]
 - [[permanent/perm-20260910-hermes-vault-is-login-payment-address]] · [[permanent/perm-20260910-identity-fields-are-not-documents]] · [[permanent/perm-20260910-screenshots-bypass-vault-redaction]]
 - Origin: Hermes [#107698](https://github.com/NousResearch/hermes-agent/issues/107698) (docs), [#107700](https://github.com/NousResearch/hermes-agent/issues/107700) (handles/wrap), [#107704](https://github.com/NousResearch/hermes-agent/issues/107704) (identity), [#107705](https://github.com/NousResearch/hermes-agent/issues/107705) (documents). OMP: Discord-first (`inbox/omp-portal-discord-2026-09-10.md`). Linear [PER-1321](https://linear.app/0ism/issue/PER-1321) · wave: `inbox/secret-action-portal-wave-2026-09-10.md`
+
+## Keel (2026-09-10)
+- [[literature/lit-20260910-keel-level0-evidence-surface]]
+
+## Orchestration / AODL / HOTL (2026-08-17)
+- Public IR + harness catalog: [kvnloo/aodl](https://github.com/kvnloo/aodl) (`harnesses/catalog.json`, [network](https://github.com/kvnloo/aodl/blob/main/docs/network.md), [working note](https://github.com/kvnloo/aodl/blob/main/docs/working-note.md) — not a paper)
+- C(RAID) named hybrid: [[literature/lit-20260910-craid-blueprint]] · [[permanent/perm-20260910-craid-is-named-hybrid]]
+- Literature: [[literature/lit-20260817-aodl-voice-transcript]] · [[literature/lit-20260817-hotl-01-issue-88589]] · [[literature/lit-20260817-hotl-02-spec]]
+- Permanent: [[permanent/perm-20260817-orchestration-typed-dynamic-graph]] · [[permanent/perm-20260817-intent-plan-observed]] · [[permanent/perm-20260817-aodl-ir-first]] · [[permanent/perm-20260817-market-is-allocation-policy]] · [[permanent/perm-20260817-no-aodl-repo]]
 
 ## First OMP wave (from frontier 2026-09-09)
 See `inbox/omp-wave-2026-09-09.md`

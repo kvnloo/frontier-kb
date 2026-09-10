@@ -31,10 +31,17 @@ Git is the review log. Postgres CAS is the 100-writer ledger. Host on PC 0 over 
 - [[literature/lit-20260910-agent-kb-concurrency]]
 - [[literature/lit-20260910-agent-memory-postgres]]
 - [[literature/lit-20260910-kb-hosting-postgres]]
-- [[permanent/perm-20260910-git-vault-is-not-a-100-writer-store]]
 - [[permanent/perm-20260910-git-vault-fails-at-100-writers]]
 - [[permanent/perm-20260910-postgres-cas-plus-markdown-projection]]
 - [[permanent/perm-20260910-postgres-is-the-operational-kb]]
 - [[permanent/perm-20260910-vault-to-sota-is-dsn]]
 - [[permanent/perm-20260910-host-kb-on-pc0-tailnet]]
 - [[permanent/perm-20260910-host-on-neon-pooled-postgres]]
+
+## Process / graph models
+
+Orchestration as a typed dynamic graph and IR (not a pretty DSL). Audit Petri nets, BPMN, CWL, actors, FIPA Contract Net before inventing a calculus.
+
+- [[permanent/perm-20260817-orchestration-typed-dynamic-graph]]
+- [[permanent/perm-20260817-aodl-ir-first]]
+- [[literature/lit-20260817-hotl-02-spec]]

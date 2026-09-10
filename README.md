@@ -11,7 +11,7 @@ An **Obsidian-compatible** git vault (Zettelkasten + atlas MOCs) with a machine-
 
 Covers:
 
-- Coding harnesses: OMP, Hermes, Pi, Codex, Claude Code, Cursor, Grok, Crush, OpenCode, Firstmate, o8, Prime Intelligence, Devin, peers
+- Coding harnesses: OMP, Hermes, Pi, Codex, Claude Code, Cursor, Grok, Crush, OpenCode, Firstmate, o8, Prime Intelligence, Devin, fx, peers. Canonical ids in [kvnloo/aodl `harnesses/catalog.json`](https://github.com/kvnloo/aodl/blob/main/harnesses/catalog.json). Firstmate is a distro.
 - LLM / agent research: tool use, skills, frameworks, memory, evals, voice, tokenomics
 - Multi-discipline audit lenses: physics, CS, information theory, neuroscience, mathematics, statistics, data science, AI/ML
 
@@ -93,3 +93,9 @@ Inspired by [karpathy/autoresearch](https://github.com/karpathy/autoresearch) an
 ## Open in Obsidian
 
 Open this folder as a vault. Graph view + wikilinks work out of the box. Optional: Dataview for `type:` / `status:` queries.
+
+## Network
+
+- IR: [kvnloo/aodl](https://github.com/kvnloo/aodl)
+- Phone: [kvnloo/dash](https://github.com/kvnloo/dash)
+- Hermes governance: [kvnloo/hermes-keel](https://github.com/kvnloo/hermes-keel)

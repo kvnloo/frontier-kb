@@ -6,6 +6,20 @@ harnesses:
     docs: https://omp.sh/
   hermes:
     github: https://github.com/NousResearch/hermes-agent
+  grok:
+    github: https://github.com/xai-org/grok-build
+    docs: https://docs.x.ai/build/overview
+  codex:
+    github: https://github.com/openai/codex
+  claude:
+    github: https://github.com/anthropics/claude-code
+    docs: https://code.claude.com/docs/en/overview
+  pi:
+    github: https://github.com/earendil-works/pi
+    docs: https://pi.dev
+  fx:
+    github: https://github.com/vercel-labs/fx
+    docs: https://fx.sh
   crush:
     github: https://github.com/charmbracelet/crush
   opencode:
@@ -17,8 +31,11 @@ harnesses:
     github: https://github.com/continuedev/continue
   firstmate:
     github: https://github.com/kunchenguid/firstmate
+    fork: https://github.com/kvnloo/firstmate
   o8:
     github: https://github.com/hurttlocker/o8
+  aodl:
+    github: https://github.com/kvnloo/aodl
   pi_autoresearch:
     github: https://github.com/davebcn87/pi-autoresearch
   claude_code:
