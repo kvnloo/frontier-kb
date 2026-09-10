@@ -31,6 +31,14 @@ harnesses:
   openai_agents:
     sandbox: https://openai.github.io/openai-agents-python/sandbox/guide/
     evolution: https://openai.com/index/the-next-evolution-of-the-agents-sdk/
+  prime_intelligence:
+    docs: https://www.primeintellect.ai/blog/prime-agent
+  pi_product:
+    docs: https://pi.dev/
+  grok_build_cli:
+    docs: https://cobusgreyling.medium.com/grok-build-cli-b1c069393483
+  codex_harness_engineering:
+    docs: https://openai.com/index/harness-engineering/
   mcp:
     blog_2026_07_28: https://blog.modelcontextprotocol.io/posts/2026-07-28/
 protocols:
@@ -39,8 +47,10 @@ labs:
   arxiv_cs_ai: https://arxiv.org/list/cs.AI/recent
   arxiv_cs_lg: https://arxiv.org/list/cs.LG/recent
   arxiv_cs_cl: https://arxiv.org/list/cs.CL/recent
-missing_urls_needed:
-  - prime_intelligence
-  - grok_coding_harness_surface
-  - preferred_codex_tracking
-  - which_pi_product
+# Resolved 2026-09-10 (PER-1296 OMP research); keep keys for audit
+resolved_urls:
+  prime_intelligence: https://www.primeintellect.ai/blog/prime-agent
+  grok_coding_harness_surface: https://cobusgreyling.medium.com/grok-build-cli-b1c069393483
+  preferred_codex_tracking: https://openai.com/index/harness-engineering/
+  which_pi_product: https://pi.dev/
+missing_urls_needed: []
