@@ -16,15 +16,23 @@ tags: [moc, atlas]
 ## Discipline audit
 - [[domains/physics]] · [[domains/cs]] · [[domains/information-theory]] · [[domains/neuroscience]] · [[domains/mathematics]] · [[domains/statistics]] · [[domains/data-science]] · [[domains/ai-ml]] · [[domains/tokenomics]] · [[domains/tool-use]] · [[domains/skills]] · [[domains/frameworks]]
 
-## SWE-2 / OSS plugins (2026-09-10)
+## SWE-2 / coding post-training (2026-09-10)
 - [[literature/lit-20260910-swe-2-pareto-rl]] · [[literature/lit-20260910-swe-1-7]] · [[literature/lit-20260910-swe-grep]] · [[literature/lit-20260910-oss-coding-plugins]]
-- [[permanent/perm-20260910-swe-2-is-a-posttrained-model]] · [[permanent/perm-20260910-no-universal-harness-plugin]] · [[permanent/perm-20260910-specialist-subagent-handoff]] · [[permanent/perm-20260910-small-models-are-workers-or-specialists]] · [[permanent/perm-20260910-scaffold-tool-shape-dominates]]
+- [[literature/lit-20260910-evo-bench-harness-evolution]] · [[literature/lit-20260910-gsme-self-evolving-harness]] · [[literature/lit-20260910-rst-terminal-sft]]
+- [[permanent/perm-20260910-swe-2-is-a-posttrained-model]] · [[permanent/perm-20260910-no-universal-harness-plugin]] · [[permanent/perm-20260910-specialist-subagent-handoff]] · [[permanent/perm-20260910-small-models-are-workers-or-specialists]] · [[permanent/perm-20260910-scaffold-tool-shape-dominates]] · [[permanent/perm-20260910-evolver-lifts-frozen-policy]]
 - wave: `inbox/swe-2-wave-2026-09-10.md`
 
+## Concurrent store (2026-09-10)
+- [[literature/lit-20260910-agent-memory-postgres]] · [[literature/lit-20260910-agent-kb-concurrency]] · [[literature/lit-20260910-kb-hosting-postgres]] · [[literature/lit-20260910-kb-mesh-pair-keel]]
+- [[permanent/perm-20260910-git-vault-fails-at-100-writers]] · [[permanent/perm-20260910-postgres-is-the-operational-kb]] · [[permanent/perm-20260910-postgres-cas-plus-markdown-projection]]
+- [[permanent/perm-20260910-vault-to-sota-is-dsn]] · [[permanent/perm-20260910-host-kb-on-pc0-tailnet]] · [[permanent/perm-20260910-host-on-neon-pooled-postgres]]
+- wave: `inbox/kb-concurrency-2026-09-10.md`
+
 ## Secret action portal (2026-09-10)
-- [[literature/lit-20260910-trustworthy-secret-brokers]]
+- [[literature/lit-20260910-trustworthy-secret-brokers]] · [[literature/lit-20260910-agent-http-inject-brokers]] · [[literature/lit-20260910-pii-tokenization-vaults]]
 - [[permanent/perm-20260910-build-action-portal-not-password-manager]] · [[permanent/perm-20260910-custody-is-not-confinement]] · [[permanent/perm-20260910-hermes-secrets-are-env-injection]] · [[permanent/perm-20260910-obfuscation-is-not-noninterference]]
-- Linear: [PER-1321](https://linear.app/0ism/issue/PER-1321) · wave: `inbox/secret-action-portal-wave-2026-09-10.md`
+- [[permanent/perm-20260910-hermes-vault-is-login-payment-address]] · [[permanent/perm-20260910-identity-fields-are-not-documents]] · [[permanent/perm-20260910-screenshots-bypass-vault-redaction]]
+- Origin: Hermes [#107698](https://github.com/NousResearch/hermes-agent/issues/107698) (docs), [#107700](https://github.com/NousResearch/hermes-agent/issues/107700) (handles/wrap), [#107704](https://github.com/NousResearch/hermes-agent/issues/107704) (identity), [#107705](https://github.com/NousResearch/hermes-agent/issues/107705) (documents). OMP: Discord-first (`inbox/omp-portal-discord-2026-09-10.md`). Linear [PER-1321](https://linear.app/0ism/issue/PER-1321) · wave: `inbox/secret-action-portal-wave-2026-09-10.md`
 
 ## First OMP wave (from frontier 2026-09-09)
 See `inbox/omp-wave-2026-09-09.md`

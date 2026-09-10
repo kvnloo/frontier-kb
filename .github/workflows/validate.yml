@@ -11,3 +11,39 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/validate-schema.py
+  sqlite-busy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/test_sqlite_busy.py
+  store:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: frontier
+          POSTGRES_PASSWORD: frontier
+          POSTGRES_DB: frontier_kb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U frontier -d frontier_kb"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      FRONTIER_KB_DSN: postgresql://frontier:frontier@localhost:5432/frontier_kb
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-store.txt
+      - run: python scripts/kb_store.py init
+      - run: python scripts/kb_store.py ingest
+      - run: python scripts/test_export.py
+      - run: python scripts/test_concurrent_store.py

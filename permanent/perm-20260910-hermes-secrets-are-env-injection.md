@@ -28,7 +28,7 @@ That matches SOTA **custody**. It fails SOTA **mediation**: the agent, tools, cr
 
 ## Why it matters for our harnesses
 
-zer0 already selected this stack (BWS + `secret-tool`). Do not replace Bitwarden. Put an action portal **in front** of it. Origin issue draft lives on [PER-1323](https://linear.app/0ism/issue/PER-1323). github_writes=0 until Todo. Distinct from privilege/sudo broker [PER-110](https://linear.app/0ism/issue/PER-110).
+zer0 already selected this stack (BWS + `secret-tool`). Do not replace Bitwarden. Put an action portal **in front** of it. Origin posted: [#107698](https://github.com/NousResearch/hermes-agent/issues/107698) (docs), [#107700](https://github.com/NousResearch/hermes-agent/issues/107700) (handles/wrap). Linear [PER-1323](https://linear.app/0ism/issue/PER-1323). Distinct from privilege/sudo broker [PER-110](https://linear.app/0ism/issue/PER-110) and from the vault fill that already landed (#106480).
 
 ## Related
 

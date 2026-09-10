@@ -24,5 +24,8 @@ Cheap local path: bind Qwen3.8-27B as OMP/Hermes/Pi worker (tool-call parser `qw
 ## Related
 
 - [[literature/lit-20260910-oss-coding-plugins]]
+- [[literature/lit-20260910-evo-bench-harness-evolution]]
+- [[literature/lit-20260910-gsme-self-evolving-harness]]
+- [[permanent/perm-20260910-evolver-lifts-frozen-policy]]
 - [[permanent/perm-20260910-specialist-subagent-handoff]]
 - [[permanent/perm-20260910-scaffold-tool-shape-dominates]]

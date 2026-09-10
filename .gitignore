@@ -2,3 +2,10 @@
 .obsidian/cache
 .DS_Store
 *.tmp
+.venv/
+__pycache__/
+*.pyc
+.env
+*.env
+__omp_shell(".env.example")
+deploy/*.env

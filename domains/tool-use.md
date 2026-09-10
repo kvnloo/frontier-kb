@@ -19,6 +19,9 @@ Agent-facing tools must not return secrets or own CDP. Typed action RPC: `authen
 - [[permanent/perm-20260910-build-action-portal-not-password-manager]]
 - [[permanent/perm-20260910-hermes-secrets-are-env-injection]]
 - [[permanent/perm-20260910-obfuscation-is-not-noninterference]]
+- [[permanent/perm-20260910-hermes-vault-is-login-payment-address]]
+- [[permanent/perm-20260910-identity-fields-are-not-documents]]
+- [[permanent/perm-20260910-screenshots-bypass-vault-redaction]]
 
 ## Specialist retrieval and editor ABI
 

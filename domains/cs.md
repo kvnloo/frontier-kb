@@ -17,5 +17,24 @@ Map of content for [[atlas/home]].
 Protected-subsystem + complete mediation (Saltzer/Schroeder). XDG portal, ssh-agent, Capsicum, Secretless as reusable brokers.
 
 - [[literature/lit-20260910-trustworthy-secret-brokers]]
+- [[literature/lit-20260910-agent-http-inject-brokers]]
+- [[literature/lit-20260910-pii-tokenization-vaults]]
 - [[permanent/perm-20260910-build-action-portal-not-password-manager]]
 - [[permanent/perm-20260910-custody-is-not-confinement]]
+- [[permanent/perm-20260910-identity-fields-are-not-documents]]
+- [[permanent/perm-20260910-screenshots-bypass-vault-redaction]]
+
+## Concurrent knowledge store
+
+Git is the review log. Postgres CAS is the 100-writer ledger. Host on PC 0 over Tailscale; Neon is fallback.
+
+- [[literature/lit-20260910-agent-kb-concurrency]]
+- [[literature/lit-20260910-agent-memory-postgres]]
+- [[literature/lit-20260910-kb-hosting-postgres]]
+- [[permanent/perm-20260910-git-vault-is-not-a-100-writer-store]]
+- [[permanent/perm-20260910-git-vault-fails-at-100-writers]]
+- [[permanent/perm-20260910-postgres-cas-plus-markdown-projection]]
+- [[permanent/perm-20260910-postgres-is-the-operational-kb]]
+- [[permanent/perm-20260910-vault-to-sota-is-dsn]]
+- [[permanent/perm-20260910-host-kb-on-pc0-tailnet]]
+- [[permanent/perm-20260910-host-on-neon-pooled-postgres]]

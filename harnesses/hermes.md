@@ -5,9 +5,9 @@ type: harness
 status: active
 created: 2026-09-09
 updated: 2026-09-10
-urls: ["https://github.com/NousResearch/hermes-agent", "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/secrets/index.md"]
-capabilities: ["bitwarden-secrets-manager", "onepassword", "command-helper-secret-tool"]
-gaps_vs_peers: ["env-injection-not-action-portal"]
+urls: ["https://github.com/NousResearch/hermes-agent", "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/secrets/index.md", "https://github.com/NousResearch/hermes-agent/issues/107698", "https://github.com/NousResearch/hermes-agent/issues/107700", "https://github.com/NousResearch/hermes-agent/issues/107704", "https://github.com/NousResearch/hermes-agent/issues/107705"]
+capabilities: ["bitwarden-secrets-manager", "onepassword", "command-helper-secret-tool", "browser-vault-login-payment-address"]
+gaps_vs_peers: ["env-injection-not-action-portal", "no-identity-kind", "no-document-portal", "screenshot-not-redacted"]
 omp_actionable: false
 confidence: high
 tags: [harness]
@@ -15,34 +15,35 @@ tags: [harness]
 
 # hermes
 
-Nous Hermes Agent. Accepted secret stack is **custody + env injection**, not SOTA mediation.
+Nous Hermes Agent. Two secret systems, not one pile.
 
 ## Secrets (accepted vs SOTA)
 
-Accepted (in-tree, docs 2026-09-10):
+**Sources (custody):** Bitwarden SM (`bws` → `os.environ`), 1Password, command helper. Plugin `SecretSource`. Bundled set closed (#22791).
 
-- Bitwarden Secrets Manager (`bws` → `os.environ`, override-by-default)
-- 1Password (`op://`)
-- Command helper (`secret-tool`, KeePassXC, `pass` → `KEY=VALUE`)
-- Plugin `SecretSource` for Infisical/Vault/keystores. Bundled set is closed.
+**Vault (browser fill):** #106480 / #107585. Kinds: login / payment / address. Origin-bound, password-blind, supervisor CDP. No SSN/file kind.
 
-SOTA gap: no agent RPC should return plaintext. Need a privileged action portal in front of these backends.
+**Origin we filed:** [#107698](https://github.com/NousResearch/hermes-agent/issues/107698) docs `--apply` warning. [#107700](https://github.com/NousResearch/hermes-agent/issues/107700) handles for tool credentials + wrap (Infisical/HASP), not vendored. [#107704](https://github.com/NousResearch/hermes-agent/issues/107704) identity field kind + vision freeze. [#107705](https://github.com/NousResearch/hermes-agent/issues/107705) documents are not vault items.
 
-[[permanent/perm-20260910-hermes-secrets-are-env-injection]] · Linear [PER-1323](https://linear.app/0ism/issue/PER-1323)
+SOTA gap left: those four issues are still open. Vault kinds remain login/payment/address until #107704 lands. Someone already asked to be assigned on #107700.
+
+[[permanent/perm-20260910-hermes-secrets-are-env-injection]] · [[permanent/perm-20260910-hermes-vault-is-login-payment-address]] · Linear [PER-1323](https://linear.app/0ism/issue/PER-1323)
 
 ## Snapshot
 
-Kanban scheduler, gateway/peer A2A, Telegram router. Privilege/sudo broker is a separate lane (PR #63066 / PER-110).
+Kanban scheduler, gateway/peer A2A. Privilege/sudo broker is a separate lane (PR #63066 / PER-110).
 
 ## Strengths
 
-Vault backends exist, compose, and refuse to overwrite bootstrap tokens. Command helper matches zer0's `secret-tool` path.
+Vault fill is the OpenInstinct port. Sources compose and refuse to overwrite bootstrap tokens. Teknium issue shape: Overview → gap today → Current State (files) → phased plan + gates → what this is not.
 
 ## Gaps (leapfrog targets)
 
-Action portal. Trusted browser executor. Destination-bound inject. Differential canary tests. Do not replace Bitwarden.
+Stop applying tool secrets into untrusted children. Identity kind + vision freeze. Documents via Skyflow/VGS wrap, not `hermes vault add`. Plaid (#12324) for bank, not Playwright.
 
 ## Sources
 
 - https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/secrets/index.md
 - [[literature/lit-20260910-trustworthy-secret-brokers]]
+- [[literature/lit-20260910-agent-http-inject-brokers]]
+- [[literature/lit-20260910-pii-tokenization-vaults]]

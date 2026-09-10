@@ -10,6 +10,7 @@ tags: [moc, domain]
 
 # skills
 
+Map of content for [[atlas/home]].
 
 ## Specialist skills vs free-form orchestration
 
