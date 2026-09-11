@@ -1,0 +1,123 @@
+"""Humanity's Vault GraphQL contract.
+
+The frontend (kvnloo/humanity-vault) and this repo share this schema.
+Postgres is the operational brain; markdown is the review export.
+"""
+
+scalar DateTime
+
+enum NoteType {
+  literature
+  permanent
+  harness
+  moc
+  inbox
+  note
+}
+
+enum NoteStatus {
+  draft
+  active
+  pruned
+  archived
+}
+
+enum ActorKind {
+  human
+  agent
+}
+
+enum CyclePhase {
+  MOVE
+  ALERT
+  ENCODE
+  RETRIEVE
+  INTERLEAVE
+  REST
+  SLEEP
+  MEASURE
+  PRUNE
+}
+
+enum ClusterId {
+  LEARNING_ACCELERATION
+  LLM_FRONTIER
+  HARNESS_RADAR
+}
+
+type Note {
+  id: ID!
+  path: String
+  title: String!
+  type: NoteType!
+  status: NoteStatus!
+  body: String
+  distilled: String
+  tags: [String!]!
+  domains: [String!]!
+  created: DateTime
+  updated: DateTime
+  weight: Float!
+  lastFired: DateTime
+  retrievalDue: Boolean!
+  synapses(limit: Int = 12): [Synapse!]!
+}
+
+type Synapse {
+  src: ID!
+  dst: ID!
+  rel: String!
+  weight: Float!
+  fires: Int!
+  lastFired: DateTime
+}
+
+type ProtocolStep {
+  id: ID!
+  source: String!
+  title: String!
+  why: String!
+  durationMinutes: Int
+}
+
+type LearningCycle {
+  phase: CyclePhase!
+  ultradianMinutes: Int!
+  nextRestInMinutes: Int
+  protocol: [ProtocolStep!]!
+}
+
+type Cluster {
+  id: ClusterId!
+  title: String!
+  notes: [Note!]!
+}
+
+type BrainSnapshot {
+  neurons: Int!
+  synapses: Int!
+  meanWeight: Float!
+  pruneCandidates: Int!
+  lastLoopAt: DateTime
+  nodes: [Note!]!
+  edges: [Synapse!]!
+}
+
+type Query {
+  note(id: ID!): Note
+  search(q: String!, limit: Int = 20): [Note!]!
+  cluster(id: ClusterId!): Cluster
+  brain: BrainSnapshot!
+  dueRetrievals(limit: Int = 8): [Note!]!
+  pruneCandidates(limit: Int = 20): [Note!]!
+  cycle: LearningCycle!
+  llmFrontier: [Note!]!
+}
+
+type Mutation {
+  fire(noteId: ID!, actor: String!, kind: ActorKind = human): Note
+  retrieve(noteId: ID!, recalled: Boolean!, actor: String!): Note
+  prune(noteId: ID!, actor: String!): Note
+  strengthen(src: ID!, dst: ID!, actor: String!): Synapse
+  startCycle(phase: CyclePhase!, actor: String): LearningCycle!
+}

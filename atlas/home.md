@@ -4,7 +4,7 @@ title: Frontier KB home
 type: moc
 status: active
 created: 2026-09-09
-updated: 2026-09-10
+updated: 2026-09-11
 tags: [moc, atlas]
 ---
 
@@ -14,7 +14,16 @@ tags: [moc, atlas]
 - [[harnesses/omp]] · [[harnesses/hermes]] · [[harnesses/devin]] · [[harnesses/claude-code]] · [[harnesses/codex]] · [[harnesses/cursor]] · [[harnesses/crush]] · [[harnesses/opencode]] · [[harnesses/firstmate]] · [[harnesses/pi]] · [[harnesses/o8]] · [[harnesses/grok]] · [[harnesses/fx]]
 
 ## Discipline audit
-- [[domains/physics]] · [[domains/cs]] · [[domains/information-theory]] · [[domains/neuroscience]] · [[domains/mathematics]] · [[domains/statistics]] · [[domains/data-science]] · [[domains/ai-ml]] · [[domains/tokenomics]] · [[domains/tool-use]] · [[domains/skills]] · [[domains/frameworks]]
+- [[domains/physics]] · [[domains/cs]] · [[domains/information-theory]] · [[domains/neuroscience]] · [[domains/learning-acceleration]] · [[domains/mathematics]] · [[domains/statistics]] · [[domains/data-science]] · [[domains/ai-ml]] · [[domains/tokenomics]] · [[domains/tool-use]] · [[domains/skills]] · [[domains/frameworks]]
+
+## Human learning acceleration (2026-09-11)
+The vault is a brain: notes potentiate with use, idle synapses decay, noise is pruned. Frontend: [kvnloo/humanity-vault](https://github.com/kvnloo/humanity-vault) (GraphQL). Protocol stack: Sung (encode), Huberman (alert→rest), Johnson (measure), Patrick (MOVE/BDNF).
+- [[domains/learning-acceleration]] · [[domains/neuroscience]]
+- [[literature/lit-20260911-justin-sung-higher-order-encoding]] · [[literature/lit-20260911-huberman-plasticity-alert-rest]] · [[literature/lit-20260911-bryan-johnson-measure-dont-guess]] · [[literature/lit-20260911-rhonda-patrick-bdnf-exercise]]
+- [[literature/lit-20260911-synaptic-pruning-as-kb-policy]] · [[literature/lit-20260911-synaptic-homeostasis-sleep-shy]] · [[literature/lit-20260911-llm-frontier-teaching-surface]]
+- [[permanent/perm-20260911-encoding-beats-exposure]] · [[permanent/perm-20260911-plasticity-needs-alert-then-rest]] · [[permanent/perm-20260911-measure-the-learning-loop]] · [[permanent/perm-20260911-bdnf-is-a-learning-prerequisite]]
+- [[permanent/perm-20260911-kb-is-a-brain-prune-and-potentiate]] · [[permanent/perm-20260911-human-agent-synergy-is-the-loop]] · [[permanent/perm-20260911-distill-then-retrieve-llm-frontier]]
+- wave: `inbox/learning-acceleration-wave-2026-09-11.md`
 
 ## SWE-2 / coding post-training (2026-09-10)
 - [[literature/lit-20260910-swe-2-pareto-rl]] · [[literature/lit-20260910-swe-1-7]] · [[literature/lit-20260910-swe-grep]] · [[literature/lit-20260910-oss-coding-plugins]]

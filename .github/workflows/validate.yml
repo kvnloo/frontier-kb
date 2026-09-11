@@ -47,3 +47,16 @@ jobs:
       - run: python scripts/kb_store.py ingest
       - run: python scripts/test_export.py
       - run: python scripts/test_concurrent_store.py
+      - run: python scripts/test_synapse_loop.py
+      - run: python scripts/synapse_loop.py seed
+      - run: python scripts/synapse_loop.py loop
+      - run: python scripts/test_graphql.py
+      - run: python scripts/export_vault_snapshot.py /tmp/vault-snapshot.json
+  synapse-math:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/test_synapse_loop.py

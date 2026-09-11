@@ -23,7 +23,11 @@ CLI (from the frontier-kb checkout):
 python scripts/kb_store.py search --q "SWE-2"
 python scripts/kb_store.py get --id perm-20260910-swe-2-is-a-posttrained-model
 python scripts/kb_store.py put --id <unique-id> --path literature/<file>.md --title "..." --type literature --body "..."
+python scripts/synapse_loop.py fire --id <note-id> --actor $KB_WRITER --kind agent
+python scripts/synapse_loop.py loop
 ```
+
+Human learning cluster: [[domains/learning-acceleration]]. GraphQL contract: `graphql/schema.graphql`. Frontend: `kvnloo/humanity-vault`.
 
 ## Rules
 

@@ -44,3 +44,53 @@ CREATE INDEX IF NOT EXISTS notes_fts_idx ON notes USING gin (
     to_tsvector('english', coalesce(title, '') || ' ' || coalesce(body, ''))
 );
 CREATE INDEX IF NOT EXISTS events_note_idx ON events (note_id, at DESC);
+
+-- Brain: notes are neurons. Wikilinks seed synapses. Human/agent use
+-- potentiates (Hebbian) or prunes (synaptic homeostasis). Never delete a
+-- neuron on prune — set notes.status = 'pruned' and log the reason.
+CREATE TABLE IF NOT EXISTS synapses (
+    src TEXT NOT NULL,
+    dst TEXT NOT NULL,
+    rel TEXT NOT NULL DEFAULT 'wikilink',
+    weight REAL NOT NULL DEFAULT 1.0 CHECK (weight >= 0),
+    fires INT NOT NULL DEFAULT 0 CHECK (fires >= 0),
+    last_fired TIMESTAMPTZ,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    PRIMARY KEY (src, dst, rel)
+);
+
+CREATE TABLE IF NOT EXISTS usage_events (
+    seq BIGSERIAL PRIMARY KEY,
+    note_id TEXT,
+    actor TEXT NOT NULL,
+    kind TEXT NOT NULL DEFAULT 'human',
+    op TEXT NOT NULL,
+    detail TEXT,
+    at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS prune_log (
+    seq BIGSERIAL PRIMARY KEY,
+    note_id TEXT NOT NULL,
+    reason TEXT NOT NULL,
+    weight REAL,
+    idle_days REAL,
+    actor TEXT,
+    at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS cycles (
+    id BIGSERIAL PRIMARY KEY,
+    phase TEXT NOT NULL,
+    actor TEXT,
+    started_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    ended_at TIMESTAMPTZ
+);
+
+CREATE INDEX IF NOT EXISTS synapses_weight_idx ON synapses (weight DESC);
+CREATE INDEX IF NOT EXISTS synapses_src_idx ON synapses (src);
+CREATE INDEX IF NOT EXISTS synapses_dst_idx ON synapses (dst);
+CREATE INDEX IF NOT EXISTS synapses_fired_idx ON synapses (last_fired DESC);
+CREATE INDEX IF NOT EXISTS usage_note_idx ON usage_events (note_id, at DESC);
+CREATE INDEX IF NOT EXISTS notes_status_idx ON notes (status);
