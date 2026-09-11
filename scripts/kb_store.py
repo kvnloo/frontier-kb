@@ -231,7 +231,17 @@ def ingest(conn: psycopg.Connection, writer: str) -> dict:
         with conn.cursor() as cur:
             cur.execute("SELECT pg_advisory_unlock(%s)", (ADVISORY_LOCK,))
         conn.commit()
-    return {"ok": True, "inserted": inserted, "updated": updated, "conflicts": conflicts, "skipped": skipped}
+    from synapse_loop import seed_synapses
+
+    seeded = seed_synapses(conn, writer)
+    return {
+        "ok": True,
+        "inserted": inserted,
+        "updated": updated,
+        "conflicts": conflicts,
+        "skipped": skipped,
+        "synapses": seeded,
+    }
 
 
 def get_note(conn: psycopg.Connection, note_id: str) -> dict | None:

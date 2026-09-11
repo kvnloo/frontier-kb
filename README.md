@@ -13,7 +13,8 @@ Covers:
 
 - Coding harnesses: OMP, Hermes, Pi, Codex, Claude Code, Cursor, Grok, Crush, OpenCode, Firstmate, o8, Prime Intelligence, Devin, fx, peers. Canonical ids in [kvnloo/aodl `harnesses/catalog.json`](https://github.com/kvnloo/aodl/blob/main/harnesses/catalog.json). Firstmate is a distro.
 - LLM / agent research: tool use, skills, frameworks, memory, evals, voice, tokenomics
-- Multi-discipline audit lenses: physics, CS, information theory, neuroscience, mathematics, statistics, data science, AI/ML
+- Multi-discipline audit lenses: physics, CS, information theory, neuroscience, learning-acceleration, mathematics, statistics, data science, AI/ML
+- Human learning OS: encode → retrieve → rest → measure → prune (Sung / Huberman / Johnson / Patrick). Frontend: [kvnloo/humanity-vault](https://github.com/kvnloo/humanity-vault)
 
 ## Layout
 
@@ -24,11 +25,13 @@ Covers:
 | `literature/` | Source notes (papers, blogs, releases) — cite primaries |
 | `permanent/` | Atomic claims in our words + [[wikilinks]] |
 | `harnesses/` | One note per harness product (capabilities, DX, gaps) |
-| `domains/` | Discipline MOC stubs (physics…AI/ML) |
+| `domains/` | Discipline MOCs (physics…AI/ML, learning-acceleration) |
 | `atlas/` | Maps of content / indexes |
+| `graphql/` | Brain GraphQL schema (humanity-vault contract) |
 | `templates/` | Frontmatter schemas frontier must use |
 | `data/sources.yaml` | Canonical poll URLs for autoresearch |
-| `scripts/` | Schema check, ingest helpers, Postgres store |
+| `scripts/` | Schema check, ingest helpers, Postgres store, synapse loop, GraphQL |
+| `apps/humanity-vault/` | Mobile GraphQL learning OS (also published as kvnloo/humanity-vault) |
 
 ## Concurrent store (100 agents)
 
@@ -46,6 +49,23 @@ python scripts/concurrent_smoke.py
 ```
 
 DSN default: `postgresql://frontier:frontier@127.0.0.1:55432/frontier_kb` (`DATABASE_URL` or `FRONTIER_KB_DSN`). Agents CAS `notes.version` (`UPDATE … WHERE version = $n`) and append-only `events`. Markdown ingest is serialized with an advisory lock. Schema lives in `store/schema.sql` (fallback `scripts/schema.sql`). Embeddings are `vector(8)` placeholders until an embed model is chosen. Do not bind-mount the schema file into initdb — a missing file becomes a directory.
+
+## Humanity's vault (brain loop)
+
+The markdown vault is the review export. The **brain** is synapses + usage:
+
+```
+python scripts/kb_store.py init
+python scripts/kb_store.py ingest
+python scripts/synapse_loop.py seed
+python scripts/synapse_loop.py loop          # dry-run decay + prune proposals
+python scripts/synapse_loop.py fire --id perm-20260911-encoding-beats-exposure --actor human-kb
+python scripts/graphql_server.py              # GraphQL on :8787
+```
+
+Notes are neurons. Wikilinks seed synapses. Human retrieve/encode and agent search/get are spikes. Idle edges decay (sleep-homeostasis analog). Below threshold, `status` becomes `pruned` (never DELETE). Frontend: [kvnloo/humanity-vault](https://github.com/kvnloo/humanity-vault).
+
+See [[domains/learning-acceleration]], [[permanent/perm-20260911-kb-is-a-brain-prune-and-potentiate]].
 
 See [[literature/lit-20260910-agent-memory-postgres]], [[literature/lit-20260910-agent-kb-concurrency]], [[literature/lit-20260910-kb-hosting-postgres]], [[permanent/perm-20260910-postgres-is-the-operational-kb]], [[permanent/perm-20260910-postgres-cas-plus-markdown-projection]], [[permanent/perm-20260910-vault-to-sota-is-dsn]], and [[permanent/perm-20260910-host-kb-on-pc0-tailnet]], and [[permanent/perm-20260910-host-on-neon-pooled-postgres]].
 
@@ -99,3 +119,4 @@ Open this folder as a vault. Graph view + wikilinks work out of the box. Optiona
 - IR: [kvnloo/aodl](https://github.com/kvnloo/aodl)
 - Phone: [kvnloo/dash](https://github.com/kvnloo/dash)
 - Hermes governance: [kvnloo/hermes-keel](https://github.com/kvnloo/hermes-keel)
+- Human frontend: [kvnloo/humanity-vault](https://github.com/kvnloo/humanity-vault) (GraphQL learning OS)

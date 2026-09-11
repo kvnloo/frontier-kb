@@ -104,6 +104,17 @@ labs:
   neon_pooling: https://neon.com/docs/connect/connection-pooling
   neon_agent_plan: https://neon.com/docs/introduction/agent-plan
   supabase_pricing: https://supabase.com/pricing
+learning:
+  huberman_lab: https://www.hubermanlab.com/
+  huberman_focus: https://www.hubermanlab.com/topics/focus-and-study
+  found_my_fitness: https://www.foundmyfitness.com/
+  found_my_fitness_bdnf: https://www.foundmyfitness.com/topics/bdnf
+  bryan_johnson_protocol: https://protocol.bryanjohnson.com/
+  icanstudy: https://icanstudy.com/
+  justin_sung: https://www.youtube.com/@iamjustinsung
+  shy_pubmed: https://pubmed.ncbi.nlm.nih.gov/15121491/
+  synaptic_pruning: https://en.wikipedia.org/wiki/Synaptic_pruning
+  arxiv_qbio_nc: https://arxiv.org/list/q-bio.NC/recent
 # Resolved 2026-09-10 (PER-1296 OMP research); keep keys for audit
 resolved_urls:
   prime_intelligence: https://www.primeintellect.ai/blog/prime-agent
