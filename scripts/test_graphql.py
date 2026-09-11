@@ -52,8 +52,9 @@ def main() -> int:
     if int(brain.get("synapses") or 0) < 1:
         problems.append("no synapses")
     note = data.get("note") or {}
-    if "Encoding quality" not in (note.get("distilled") or ""):
-        problems.append("distill failed")
+    distilled = note.get("distilled") or ""
+    if "not learned" not in distilled.lower() and "exposure without encoding" not in distilled.lower():
+        problems.append(f"distill failed: {distilled[:120]}")
     if not (data.get("cycle") or {}).get("protocol"):
         problems.append("cycle protocol missing")
 
