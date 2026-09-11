@@ -23,7 +23,7 @@ Each node in the mesh writes **only** to its own `inbox/<node>/` subdirectory:
 2. **PR flow:** Node writes → open PR → `validate-schema.py` CI gate → CoS merge to main.
 3. **Schema requirement:** All notes under `inbox/` and `inbox/<node>/` must include frontmatter: `id`, `title`, `type`, `status`, `created`, `updated`.
 4. **SQLite funnel:** Nodes should run local SQLite filtering; only promote short, schema-valid notes to PRs.
-5. **NO PERSONAL DATA:** Never copy personal, private, or sensitive data into this public vault. All content is public OSS.
+5. **NO PERSONAL DATA:** Never copy personal, private, or sensitive data into this public vault. All content is public OSS. Personal agentic memory stays in Hermes (`~/.hermes/memories`). This inbox is research capture only.
 
 ## Templates
 
