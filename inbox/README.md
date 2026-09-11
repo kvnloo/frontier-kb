@@ -15,6 +15,7 @@ Each node in the mesh writes **only** to its own `inbox/<node>/` subdirectory:
 |------|-----------|-------|
 | `frontier` | `inbox/frontier/` | Frontier agent (Grok Bot `7443a4ff`) |
 | `omp` | `inbox/omp/` | OMP harness agent |
+| `cursor` | `inbox/cursor/` | Cursor cloud agents |
 | *(others)* | `inbox/<node>/` | Add as nodes join |
 
 ## Rules
