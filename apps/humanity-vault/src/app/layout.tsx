@@ -1,16 +1,16 @@
-import { Fraunces, IBM_Plex_Sans } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { Shell } from "@/components/Shell";
 import "./globals.css";
 
-const serif = Fraunces({
+const serif = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ["500", "600"],
   variable: "--font-serif",
   display: "swap",
-  axes: ["SOFT", "WONK"],
 });
 
-const sans = IBM_Plex_Sans({
+const sans = Manrope({
   subsets: ["latin"],
   weight: ["400", "600"],
   variable: "--font-sans",
@@ -21,12 +21,14 @@ export const metadata: Metadata = {
   title: "Humanity's Vault",
   description: "Open learning OS for frontier LLM knowledge. Encode, retrieve, rest, measure, prune.",
   manifest: "/manifest.webmanifest",
-  icons: { icon: "/icon.svg" },
-  appleWebApp: { capable: true, title: "Vault", statusBarStyle: "black-translucent" },
+  icons: {
+    icon: [{ url: "/art/icon-192.png", sizes: "192x192", type: "image/png" }],
+    apple: "/art/icon-192.png",
+  },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#07070a",
+  themeColor: "#050508",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,

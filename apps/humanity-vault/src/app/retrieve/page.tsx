@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { RetrievalActions } from "@/components/RetrievalActions";
+import { Scene } from "@/components/Scene";
 import { gql } from "@/lib/gql";
+import { ART } from "@/lib/art";
 import type { Note } from "@/lib/cycle";
 
 export default async function RetrievePage() {
@@ -9,22 +11,23 @@ export default async function RetrievePage() {
   );
   return (
     <main>
-      <p className="kicker">Retrieve · expanding interval</p>
-      <h2 className="claim">Regenerate the claim. Then look.</h2>
-      <p className="lede">
-        Cover the distilled sentence. Say it. Mark recalled or missed. Hits potentiate; misses downscale. Familiarity
-        is not knowledge.
-      </p>
-      <div className="stack">
-        {data.dueRetrievals.map((n) => (
-          <article key={n.id} className="card">
-            <Link href={`/note/${n.id}`}>
-              <h3>{n.title}</h3>
-            </Link>
-            <p>{n.distilled}</p>
-            <RetrievalActions id={n.id} />
-          </article>
-        ))}
+      <Scene src={ART.retrieve} kicker="Retrieve · expanding interval" title="Regenerate the claim. Then look.">
+        <p className="lede">
+          Cover the distilled sentence. Say it. Hits potentiate; misses downscale. Familiarity is not knowledge.
+        </p>
+      </Scene>
+      <div className="well">
+        <div className="stack">
+          {data.dueRetrievals.map((n) => (
+            <article key={n.id} className="card">
+              <Link href={`/note/${n.id}`}>
+                <h3>{n.title}</h3>
+              </Link>
+              <p>{n.distilled}</p>
+              <RetrievalActions id={n.id} />
+            </article>
+          ))}
+        </div>
       </div>
     </main>
   );

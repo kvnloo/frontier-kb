@@ -1,5 +1,7 @@
 import { BrainMap } from "@/components/BrainMap";
+import { Scene } from "@/components/Scene";
 import { gql } from "@/lib/gql";
+import { ART, asset } from "@/lib/art";
 import type { Note, Synapse } from "@/lib/cycle";
 
 export default async function BrainPage() {
@@ -15,24 +17,28 @@ export default async function BrainPage() {
   }>(`query { brain { neurons synapses meanWeight pruneCandidates nodes { id title type weight } edges { src dst rel weight fires } } }`);
   return (
     <main>
-      <p className="kicker">Living graph</p>
-      <h2 className="claim">What fires together, wires. What doesn&rsquo;t, decays.</h2>
-      <div className="metrics">
-        <div className="metric">
-          <b>{data.brain.neurons}</b>
-          <span>neurons</span>
-        </div>
-        <div className="metric">
-          <b>{data.brain.synapses}</b>
-          <span>synapses</span>
-        </div>
-        <div className="metric">
-          <b>{data.brain.pruneCandidates}</b>
-          <span>pruned</span>
+      <Scene src={ART.synapses} kicker="Living graph" title="What fires together, wires.">
+        <p className="lede">Gold is potentiation. Rose is dying. Nightly loop downscales idle weight.</p>
+      </Scene>
+      <div className="well">
+        <div className="instrument">
+          <div>
+            <b>{data.brain.neurons}</b>
+            neurons
+          </div>
+          <div>
+            <b>{data.brain.synapses}</b>
+            synapses
+          </div>
+          <div>
+            <b>{data.brain.pruneCandidates}</b>
+            pruned
+          </div>
         </div>
       </div>
-      <BrainMap nodes={data.brain.nodes} edges={data.brain.edges} />
-      <p className="lede">Gold edges are strong. Rose edges are dying. Nightly loop downscales idle weight.</p>
+      <div className="brain" style={{ ["--syn" as string]: `url(${asset(ART.synapses)})` }}>
+        <BrainMap nodes={data.brain.nodes} edges={data.brain.edges} />
+      </div>
     </main>
   );
 }
