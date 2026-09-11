@@ -4,7 +4,7 @@ title: Hermes Agent
 type: harness
 status: active
 created: 2026-09-09
-updated: 2026-09-10
+updated: 2026-09-11
 urls:
   - https://github.com/NousResearch/hermes-agent
   - https://hermes-agent.nousresearch.com/
@@ -13,6 +13,8 @@ urls:
   - https://github.com/NousResearch/hermes-agent/issues/107700
   - https://github.com/NousResearch/hermes-agent/issues/107704
   - https://github.com/NousResearch/hermes-agent/issues/107705
+  - https://github.com/NVlabs/SoL-Pi
+  - https://hermes-agent.nousresearch.com/docs/developer-guide/plugins
 capabilities:
   - bitwarden-secrets-manager
   - onepassword
@@ -30,6 +32,7 @@ gaps_vs_peers:
   - No native DAP debugger support (omp/crush lead here)
   - Rust-less (Python/uv) heavier resource profile than omp
   - Subagent worktree isolation less explicit than firstmate/crush
+  - No Pi ExtensionAPI; SoL-Pi TS package will not load
 omp_actionable: true
 confidence: high
 tags: [harness]
@@ -54,6 +57,19 @@ Nous Hermes Agent. Two secret systems, not one pile.
 SOTA gap left: those four issues are still open. Vault kinds remain login/payment/address until #107704 lands. Someone already asked to be assigned on #107700.
 
 [[permanent/perm-20260910-hermes-secrets-are-env-injection]] · [[permanent/perm-20260910-hermes-vault-is-login-payment-address]] · Linear [PER-1323](https://linear.app/0ism/issue/PER-1323)
+
+## SoL-Pi (port, do not import)
+
+SoL-Pi is a TypeScript Pi extension. Hermes integration is a **standalone Python plugin** (`~/.hermes/plugins/sol-pi/`, `register(ctx)`), not a PR into `hermes-agent` (`github_writes=0`) and not `pip install` of the npm package. A thin Hermes↔Pi plugin ABI is not thin — share policy across two host ports. Hermes Agent Plugins v1.0.0 is not Pi ExtensionAPI. See [[permanent/perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi]].
+
+| Mechanism | Hermes seam | Trap |
+| --- | --- | --- |
+| Action Fusion | `register_tool` wrapping file tools + optional `terminal` `then_run` | Tool names are not Pi `edit`/`write` |
+| ObservationPack | session archive + `obs_recall` + **request-time** rewrite | `transform_tool_result` mutates stored history; SoL-Pi does not. Prefer context-engine `select_context` **composed** with the default compressor |
+| EPR | `transform_tool_result` + auxiliary reducer model | Quote-verify against archive; skip likely-secret; fail open |
+| OCC | plan-boundary around built-in compressor | Only one `ContextEngine` may register; do not clobber `ContextCompressor` |
+
+[[literature/lit-20260911-sol-pi-harness-efficiency]] · [[permanent/perm-20260911-hermes-sol-pi-is-a-python-plugin-port]] · [[permanent/perm-20260911-observationpack-is-projection-not-history-rewrite]]
 
 ## Snapshot
 

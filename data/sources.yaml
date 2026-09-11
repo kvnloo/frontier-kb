@@ -17,6 +17,10 @@ harnesses:
   pi:
     github: https://github.com/earendil-works/pi
     docs: https://pi.dev
+  sol_pi:
+    github: https://github.com/NVlabs/SoL-Pi
+    blog: https://nvlabs.github.io/SoL-Pi/
+    fork: https://github.com/kvnloo/SoL-Pi
   fx:
     github: https://github.com/vercel-labs/fx
     docs: https://fx.sh
