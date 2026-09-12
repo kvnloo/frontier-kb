@@ -51,6 +51,28 @@ LLM_FRONTIER_IDS = (
     "perm-20260910-no-universal-harness-plugin",
     "lit-20260910-context-triad",
 )
+AODL_THESIS_IDS = (
+    "inbox-cursor-aodl-thesis-intent-20260912",
+    "inbox-cursor-aodl-evidence-chain-20260912",
+    "inbox-cursor-aodl-smm-xrisk-20260912",
+    "inbox-cursor-aodl-papers-20260911",
+    "inbox-cursor-aodl-formalism-20260911",
+    "inbox-cursor-aodl-lab-protocols-20260911",
+    "perm-20260817-intent-plan-observed",
+    "perm-20260817-aodl-ir-first",
+    "perm-20260910-craid-is-named-hybrid",
+)
+HARNESS_RADAR_IDS = (
+    "harness-pi",
+    "harness-omp",
+    "harness-hermes",
+    "lit-20260911-sol-pi-harness-efficiency",
+    "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+    "perm-20260911-omp-can-load-sol-pi-via-legacy-shim",
+    "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+    "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+    "perm-20260911-observationpack-is-projection-not-history-rewrite",
+)
 
 
 def utcnow() -> datetime:

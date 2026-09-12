@@ -151,11 +151,14 @@ export function searchNotes(q: string, limit = 20): Note[] {
 }
 
 export function clusterNotes(id: ClusterId): Note[] {
+  const ids = data.clusters[id] ?? [];
+  if (ids.length) {
+    return ids.map((nid) => getNote(nid)).filter((n): n is Note => Boolean(n));
+  }
   if (id === "HARNESS_RADAR") {
     return allNotes().filter((n) => n.type === "harness");
   }
-  const ids = data.clusters[id] ?? [];
-  return ids.map((nid) => getNote(nid)).filter((n): n is Note => Boolean(n));
+  return [];
 }
 
 export function synapsesFor(id: string, limit = 12): Synapse[] {

@@ -24,7 +24,9 @@ export const HOME_QUERY = /* GraphQL */ `
   query Home {
     cycle { phase ultradianMinutes nextRestInMinutes protocol { id source title why durationMinutes } }
     cluster(id: LEARNING_ACCELERATION) { title notes { id title distilled weight retrievalDue type } }
-    llmFrontier { id title distilled weight }
+    aodl: cluster(id: AODL_THESIS) { notes { id title distilled weight type } }
+    radar: cluster(id: HARNESS_RADAR) { notes { id title distilled weight type } }
+    llmFrontier { id title distilled weight type }
     dueRetrievals(limit: 6) { id title distilled weight }
     brain { neurons synapses meanWeight pruneCandidates }
   }

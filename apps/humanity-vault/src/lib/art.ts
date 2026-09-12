@@ -13,6 +13,8 @@ export const ART = {
   prune: "/art/prune.webp",
   synapses: "/art/synapses.webp",
   llms: "/art/llms.webp",
+  aodl: "/art/aodl.webp",
+  radar: "/art/radar.webp",
   grain: "/art/grain.webp",
   icon: "/art/icon-192.png",
   nav: {
@@ -27,7 +29,7 @@ export const ART = {
 export function noteArt(type: string): string {
   if (type === "literature") return ART.measure;
   if (type === "permanent") return ART.encode;
-  if (type === "harness") return ART.llms;
-  if (type === "inbox") return ART.prune;
+  if (type === "harness") return ART.radar;
+  if (type === "inbox") return ART.aodl;
   return ART.retrieve;
 }

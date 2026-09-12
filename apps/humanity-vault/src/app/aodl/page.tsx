@@ -4,16 +4,15 @@ import { gql } from "@/lib/gql";
 import { ART } from "@/lib/art";
 import type { Note } from "@/lib/cycle";
 
-export default async function EncodePage() {
+export default async function AodlPage() {
   const data = await gql<{ cluster: { notes: Note[] } }>(
-    `query { cluster(id: LEARNING_ACCELERATION) { notes { id title distilled type weight } } }`,
+    `query { cluster(id: AODL_THESIS) { notes { id title distilled type weight } } }`,
   );
   return (
     <main>
-      <Scene src={ART.encode} kicker="Sung · higher-order encoding" title="Do not reread. Build the schema.">
+      <Scene src={ART.aodl} kicker="AODL · contract on residual" title="Name d(I, O_t). Do not let the decoder fill holes.">
         <p className="lede">
-          Group these claims. Compare them. Name the relationship. Only then open the body. Exposure without encoding is
-          noise.
+          Fail-closed. Codec, compile, run. Kardashev changes budgets, not kinds. Inbox notes wait for CoS to promote.
         </p>
       </Scene>
       <div className="well">
@@ -22,4 +21,3 @@ export default async function EncodePage() {
     </main>
   );
 }
-

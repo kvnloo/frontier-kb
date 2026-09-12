@@ -4,16 +4,16 @@ import { gql } from "@/lib/gql";
 import { ART } from "@/lib/art";
 import type { Note } from "@/lib/cycle";
 
-export default async function EncodePage() {
+export default async function RadarPage() {
   const data = await gql<{ cluster: { notes: Note[] } }>(
-    `query { cluster(id: LEARNING_ACCELERATION) { notes { id title distilled type weight } } }`,
+    `query { cluster(id: HARNESS_RADAR) { notes { id title distilled type weight } } }`,
   );
   return (
     <main>
-      <Scene src={ART.encode} kicker="Sung · higher-order encoding" title="Do not reread. Build the schema.">
+      <Scene src={ART.radar} kicker="SoL-Pi · host ports, not origin cores" title="Load the extension. Do not patch the host.">
         <p className="lede">
-          Group these claims. Compare them. Name the relationship. Only then open the body. Exposure without encoding is
-          noise.
+          Pi is the first-party host. OMP loads via the legacy shim. Hermes is a Python plugin port. ObservationPack is a
+          projection.
         </p>
       </Scene>
       <div className="well">
@@ -22,4 +22,3 @@ export default async function EncodePage() {
     </main>
   );
 }
-

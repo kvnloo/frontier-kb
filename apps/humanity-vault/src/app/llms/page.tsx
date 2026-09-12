@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Scene } from "@/components/Scene";
+import { NoteStack } from "@/components/NoteStack";
 import { gql } from "@/lib/gql";
 import { ART } from "@/lib/art";
 import type { Note } from "@/lib/cycle";
@@ -16,18 +16,7 @@ export default async function LlmsPage() {
         </p>
       </Scene>
       <div className="well">
-        <div className="stack">
-          {data.llmFrontier.map((n) => (
-            <Link key={n.id} href={`/note/${n.id}`} className="card">
-              <h3>{n.title}</h3>
-              <p>{n.distilled}</p>
-              <div className="meta">
-                <span>{n.type}</span>
-                <span>encode → retrieve</span>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <NoteStack notes={data.llmFrontier} />
       </div>
     </main>
   );

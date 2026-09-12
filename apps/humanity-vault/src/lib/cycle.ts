@@ -11,7 +11,7 @@ export type CyclePhase =
   | "SLEEP"
   | "MEASURE"
   | "PRUNE";
-export type ClusterId = "LEARNING_ACCELERATION" | "LLM_FRONTIER" | "HARNESS_RADAR";
+export type ClusterId = "LEARNING_ACCELERATION" | "LLM_FRONTIER" | "HARNESS_RADAR" | "AODL_THESIS";
 
 export type Note = {
   id: string;

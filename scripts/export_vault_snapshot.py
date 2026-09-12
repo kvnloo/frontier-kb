@@ -40,6 +40,28 @@ LLM_FRONTIER_IDS = (
     "perm-20260910-no-universal-harness-plugin",
     "lit-20260910-context-triad",
 )
+AODL_THESIS_IDS = (
+    "inbox-cursor-aodl-thesis-intent-20260912",
+    "inbox-cursor-aodl-evidence-chain-20260912",
+    "inbox-cursor-aodl-smm-xrisk-20260912",
+    "inbox-cursor-aodl-papers-20260911",
+    "inbox-cursor-aodl-formalism-20260911",
+    "inbox-cursor-aodl-lab-protocols-20260911",
+    "perm-20260817-intent-plan-observed",
+    "perm-20260817-aodl-ir-first",
+    "perm-20260910-craid-is-named-hybrid",
+)
+HARNESS_RADAR_IDS = (
+    "harness-pi",
+    "harness-omp",
+    "harness-hermes",
+    "lit-20260911-sol-pi-harness-efficiency",
+    "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+    "perm-20260911-omp-can-load-sol-pi-via-legacy-shim",
+    "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+    "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+    "perm-20260911-observationpack-is-projection-not-history-rewrite",
+)
 
 
 def parse_frontmatter(text: str) -> tuple[dict, str]:
@@ -119,10 +141,12 @@ def collect() -> dict:
                     edges.append((nid, target, "wikilink"))
     return {
         "version": 1,
-        "generated": "2026-09-11",
+        "generated": "2026-09-12",
         "clusters": {
             "LEARNING_ACCELERATION": list(LEARNING_IDS),
             "LLM_FRONTIER": list(LLM_FRONTIER_IDS),
+            "AODL_THESIS": list(AODL_THESIS_IDS),
+            "HARNESS_RADAR": list(HARNESS_RADAR_IDS),
         },
         "notes": notes,
         "edges": [{"src": s, "dst": d, "rel": r, "weight": 1.0, "fires": 0, "lastFired": None} for s, d, r in edges],

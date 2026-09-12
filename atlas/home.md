@@ -4,7 +4,7 @@ title: Frontier KB home
 type: moc
 status: active
 created: 2026-09-09
-updated: 2026-09-11
+updated: 2026-09-12
 tags: [moc, atlas]
 ---
 
@@ -51,6 +51,13 @@ The vault is a brain: notes potentiate with use, idle synapses decay, noise is p
 - C(RAID) named hybrid: [[literature/lit-20260910-craid-blueprint]] · [[permanent/perm-20260910-craid-is-named-hybrid]]
 - Literature: [[literature/lit-20260817-aodl-voice-transcript]] · [[literature/lit-20260817-hotl-01-issue-88589]] · [[literature/lit-20260817-hotl-02-spec]]
 - Permanent: [[permanent/perm-20260817-orchestration-typed-dynamic-graph]] · [[permanent/perm-20260817-intent-plan-observed]] · [[permanent/perm-20260817-aodl-ir-first]] · [[permanent/perm-20260817-market-is-allocation-policy]] · [[permanent/perm-20260817-no-aodl-repo]]
+
+## AODL C(RAID) R-phase (2026-09-12)
+Cursor-node inbox only. CoS promotes to literature/permanent. Teaching surface: humanity-vault `/aodl`.
+- [[inbox/cursor/inbox-cursor-aodl-thesis-intent-20260912]] · [[inbox/cursor/inbox-cursor-aodl-evidence-chain-20260912]] · [[inbox/cursor/inbox-cursor-aodl-smm-xrisk-20260912]]
+- [[inbox/cursor/inbox-cursor-aodl-papers-20260911]] · [[inbox/cursor/inbox-cursor-aodl-formalism-20260911]] · [[inbox/cursor/inbox-cursor-aodl-lab-protocols-20260911]]
+- [[inbox/cursor/inbox-cursor-aodl-search-method-20260911]] · [[inbox/cursor/inbox-cursor-aodl-competitors-100-20260911]] · [[inbox/cursor/inbox-cursor-aodl-deep-wave2-20260912]]
+- Dash capture: [kvnloo/dash#38](https://github.com/kvnloo/dash/pull/38) · Linear [PER-1461](https://linear.app/0ism/issue/PER-1461)
 
 ## First OMP wave (from frontier 2026-09-09)
 See `inbox/omp-wave-2026-09-09.md`

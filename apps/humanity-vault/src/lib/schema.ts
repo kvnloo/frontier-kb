@@ -50,6 +50,7 @@ const ClusterEnum = new GraphQLEnumType({
     LEARNING_ACCELERATION: { value: "LEARNING_ACCELERATION" },
     LLM_FRONTIER: { value: "LLM_FRONTIER" },
     HARNESS_RADAR: { value: "HARNESS_RADAR" },
+    AODL_THESIS: { value: "AODL_THESIS" },
   },
 });
 
@@ -137,6 +138,7 @@ const titles: Record<ClusterId, string> = {
   LEARNING_ACCELERATION: "Human learning acceleration",
   LLM_FRONTIER: "LLM frontier teaching track",
   HARNESS_RADAR: "Harness radar",
+  AODL_THESIS: "AODL contract",
 };
 
 export const schema = new GraphQLSchema({

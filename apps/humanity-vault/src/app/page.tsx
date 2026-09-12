@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PhaseBar } from "@/components/PhaseBar";
 import { Ultradian } from "@/components/Ultradian";
+import { NoteStack } from "@/components/NoteStack";
 import { gql, HOME_QUERY } from "@/lib/gql";
 import { ART, asset } from "@/lib/art";
 import type { CyclePhase, Note, ProtocolStep } from "@/lib/cycle";
@@ -8,6 +9,8 @@ import type { CyclePhase, Note, ProtocolStep } from "@/lib/cycle";
 type HomeData = {
   cycle: { phase: CyclePhase; ultradianMinutes: number; nextRestInMinutes: number; protocol: ProtocolStep[] };
   cluster: { title: string; notes: Note[] };
+  aodl: { notes: Note[] };
+  radar: { notes: Note[] };
   llmFrontier: Note[];
   dueRetrievals: Note[];
   brain: { neurons: number; synapses: number; meanWeight: number; pruneCandidates: number };
@@ -20,6 +23,8 @@ const PLATES = [
   { href: "/measure", src: ART.measure, kicker: "Johnson", title: "Measure" },
   { href: "/prune", src: ART.prune, kicker: "Homeostasis", title: "Prune" },
   { href: "/llms", src: ART.llms, kicker: "Frontier", title: "LLMs" },
+  { href: "/aodl", src: ART.aodl, kicker: "Contract", title: "AODL" },
+  { href: "/radar", src: ART.radar, kicker: "SoL-Pi", title: "Radar" },
 ] as const;
 
 export default async function HomePage() {
@@ -89,30 +94,28 @@ export default async function HomePage() {
         </div>
 
         <p className="kicker">Encode next</p>
-        <div className="stack">
-          {encodeNotes.map((n) => (
-            <Link key={n.id} href={`/note/${n.id}`} className="card">
-              <h3>{n.title}</h3>
-              <p>{n.distilled}</p>
-              <div className="meta">
-                <span>weight {n.weight.toFixed(2)}</span>
-                <span>encode</span>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <NoteStack notes={encodeNotes} />
+
+        <p className="kicker" style={{ marginTop: "1.6rem" }}>
+          AODL contract
+        </p>
+        <NoteStack notes={data.aodl.notes.slice(0, 3)} />
+        <Link className="more" href="/aodl">
+          Full AODL track →
+        </Link>
+
+        <p className="kicker" style={{ marginTop: "1.6rem" }}>
+          Harness radar
+        </p>
+        <NoteStack notes={data.radar.notes.slice(0, 3)} />
+        <Link className="more" href="/radar">
+          SoL-Pi host ports →
+        </Link>
 
         <p className="kicker" style={{ marginTop: "1.6rem" }}>
           LLM invariants
         </p>
-        <div className="stack">
-          {data.llmFrontier.slice(0, 3).map((n) => (
-            <Link key={n.id} href={`/note/${n.id}`} className="card">
-              <h3>{n.title}</h3>
-              <p>{n.distilled}</p>
-            </Link>
-          ))}
-        </div>
+        <NoteStack notes={data.llmFrontier.slice(0, 3)} />
         <Link className="more" href="/llms">
           Full teaching track →
         </Link>

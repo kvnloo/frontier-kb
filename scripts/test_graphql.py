@@ -27,6 +27,8 @@ def main() -> int:
         query BrainHome {
           cycle { phase ultradianMinutes protocol { id source title } }
           cluster(id: LEARNING_ACCELERATION) { title notes { id title distilled weight retrievalDue } }
+          clusterAodl: cluster(id: AODL_THESIS) { title notes { id } }
+          clusterRadar: cluster(id: HARNESS_RADAR) { title notes { id } }
           llmFrontier { id title distilled }
           brain { neurons synapses meanWeight }
           note(id: "perm-20260911-encoding-beats-exposure") {
@@ -44,6 +46,10 @@ def main() -> int:
     cluster = (data.get("cluster") or {}).get("notes") or []
     if len(cluster) < 8:
         problems.append(f"learning cluster too small: {len(cluster)}")
+    if len((data.get("clusterAodl") or {}).get("notes") or []) < 6:
+        problems.append("AODL_THESIS cluster too small")
+    if len((data.get("clusterRadar") or {}).get("notes") or []) < 6:
+        problems.append("HARNESS_RADAR cluster too small")
     if not (data.get("llmFrontier") or []):
         problems.append("llmFrontier empty")
     brain = data.get("brain") or {}

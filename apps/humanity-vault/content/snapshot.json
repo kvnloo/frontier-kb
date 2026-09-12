@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-11",
+  "generated": "2026-09-12",
   "clusters": {
     "LEARNING_ACCELERATION": [
       "domain-learning-acceleration",
@@ -29,6 +29,28 @@
       "perm-20260910-postgres-is-the-operational-kb",
       "perm-20260910-no-universal-harness-plugin",
       "lit-20260910-context-triad"
+    ],
+    "AODL_THESIS": [
+      "inbox-cursor-aodl-thesis-intent-20260912",
+      "inbox-cursor-aodl-evidence-chain-20260912",
+      "inbox-cursor-aodl-smm-xrisk-20260912",
+      "inbox-cursor-aodl-papers-20260911",
+      "inbox-cursor-aodl-formalism-20260911",
+      "inbox-cursor-aodl-lab-protocols-20260911",
+      "perm-20260817-intent-plan-observed",
+      "perm-20260817-aodl-ir-first",
+      "perm-20260910-craid-is-named-hybrid"
+    ],
+    "HARNESS_RADAR": [
+      "harness-pi",
+      "harness-omp",
+      "harness-hermes",
+      "lit-20260911-sol-pi-harness-efficiency",
+      "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "perm-20260911-omp-can-load-sol-pi-via-legacy-shim",
+      "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "perm-20260911-observationpack-is-projection-not-history-rewrite"
     ]
   },
   "notes": [
@@ -573,6 +595,32 @@
       "retrievalDue": true
     },
     {
+      "id": "lit-20260911-agent-onboarding-tools",
+      "path": "literature/lit-20260911-agent-onboarding-tools.md",
+      "title": "Agentic onboarding is graph-or-search then edit; do not vendor GitNexus into Apache-2.0 kits",
+      "type": "literature",
+      "status": "active",
+      "body": "# Agentic onboarding is graph-or-search then edit\n\n## Claim (one sentence)\n\nWorkers should query an existing code graph (GitNexus MCP) or an LSP (Serena) or `rg` before the first edit; onboarding kits must not run `gitnexus analyze`, because that command indexes and also writes `AGENTS.md`/`CLAUDE.md`, hooks, and generated skills — a second instruction surface and a PolyForm Noncommercial license that cannot be vendored into Apache-2.0.\n\n## Evidence\n\nGitNexus (`abhigyanpatwari/GitNexus`, 2026): local knowledge graph + MCP. Read tools include `query`, `context`, `impact`, `trace`, `detect_changes`, `cypher`; mutating/specialized tools include `rename`, `api_impact`, `route_map`, `tool_map`. CLI mirrors the same names. `npx gitnexus analyze` indexes **and** may install skills/hooks and create `AGENTS.md` / `CLAUDE.md`. License is PolyForm Noncommercial 1.0.0; commercial/for-profit use needs their license. GitHub license metadata often shows `NOASSERTION`.\n\nMIT / Apache alternatives that cover pieces without a graph:\n\n- Serena — LSP symbol retrieve/edit MCP\n- Context7 — versioned *library* docs, not a repo graph\n- DeepWiki — hosted orientation wiki (not evidence)\n- repomix / gitingest — one-shot packed tree\n- ast-grep — structural search\n- agents.md — one portable agent file; Codex truncates large AGENTS.md (~32 KiB)\n\n## What to copy vs catalog\n\nVerified OSS Loop copies original `skills/orient` and `skills/anti-slop` (Apache-2.0). It catalogs GitNexus. It never copies GitNexus source, generated area skills, or hooks into the kit or into `frontier-kb`.\n\n## Related\n\n- [[permanent/perm-20260911-orient-before-edit]]\n- [[permanent/perm-20260911-anti-slop-is-smallest-complete]]\n- [[literature/lit-20260911-oss-quality-bot-stacks]]\n",
+      "distilled": "Workers should query an existing code graph (GitNexus MCP) or an LSP (Serena) or `rg` before the first edit; onboarding kits must not run `gitnexus analyze`, because that command indexes and also writes `AGENTS.md`/`CLAUDE.md`, hooks, and generated skills — a second instruction surface and a PolyForm Noncommercial license that cannot be vendored into Apache-2.0.",
+      "tags": [
+        "literature",
+        "gitnexus",
+        "serena",
+        "context7",
+        "onboarding"
+      ],
+      "domains": [
+        "frameworks",
+        "skills",
+        "tool-use"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
       "id": "lit-20260911-bryan-johnson-measure-dont-guess",
       "path": "literature/lit-20260911-bryan-johnson-measure-dont-guess.md",
       "title": "Bryan Johnson: measure the loop, don't romanticize effort",
@@ -671,6 +719,33 @@
       "retrievalDue": true
     },
     {
+      "id": "lit-20260911-oss-quality-bot-stacks",
+      "path": "literature/lit-20260911-oss-quality-bot-stacks.md",
+      "title": "S-tier OSS quality is a specialized bot mesh around a human merge gate",
+      "type": "literature",
+      "status": "active",
+      "body": "# S-tier OSS quality is a specialized bot mesh around a human merge gate\n\n## Claim (one sentence)\n\nThe best-maintained OSS repos do not use one mega-bot; they stack specialized checkers (receipt completeness, SAST, coverage, perf, AI review, stale/labels, Scorecard) and keep merge on an explicit authorized path (human, CODEOWNERS, or maintainer-configured Tide/queue).\n\n## Evidence\n\n### Live motivating PR\n\n[BerriAI/litellm#40744](https://github.com/BerriAI/litellm/pull/40744) (2026-09-11): Cerebras Qwen 3.8 27B price-map add. Independent bots on the same head:\n\n- **Greptile** — confidence 4/5; objected that the new test only compared duplicated static JSON and included a redundant comment. Did not merge.\n- **CodSpeed** — 31 benchmarks untouched.\n- **Codecov** — modified coverable lines covered.\n\nLiteLLM workflow tree (same era): Scorecard, CodeQL, Semgrep, OSV, zizmor, mutation-test, duplicate close, LLM issue triage, `guard-main-branch`, CodSpeed, coverage. PR template asks for Greptile ≥4/5 *before requesting maintainer review* — a review gate, not merge authority.\n\n### Classic S-tier meshes\n\n| Repo | Mesh | Merge |\n|---|---|---|\n| kubernetes | Prow, Tide, Blunderbuss, OWNERS `/lgtm` `/approve` | Tide merges when labels+checks match; this is **maintainer policy**, not a contributor worker |\n| rust-lang | triagebot, rustbot, rfcbot, changelog/nominate | authorized queue; not a random agent token |\n| CPython | bedevere (NEWS/issue completeness), knights-who-say-ni (CLA), miss-islington (backport) | humans + explicit backport bot |\n| home-assistant/core | hassfest, CODEOWNERS ping, Codecov, Dependabot **and** Renovate, Copilot instructions | humans merge; bots ping owners |\n\n### 2026 AI reviewers (pick one)\n\n- **Greptile** — full-repo index; confidence score; good on interconnected codebases. Tune severity; 2–3 weeks of feedback. [best practices](https://www.greptile.com/docs/code-review-bot/best-practices).\n- **CodeRabbit** — broad summary + inline; OSS free tier; higher noise if untuned.\n- **Cursor Bugbot** — fewer, bug-shaped findings; 8-pass review marketing; Cursor-coupled.\n- **Copilot code review** — lowest friction; diff-scoped.\n- **PR-Agent / Qodo** — self-hosted comments if SaaS is refused.\n\nStacking four commenters is how review dies. One primary + optional bug-focused second.\n\n### Security / supply chain (not correctness)\n\nOpenSSF Scorecard branch-protection tiers; CodeQL; Semgrep; OSV; zizmor (Actions). Dependabot github-actions is stack-neutral; language ecosystems belong only where a lockfile exists.\n\nGitHub merge queue needs `merge_group` on required CI. Queue merge is still the authorized path.\n\n## Fact vs interpretation\n\n- Fact: LiteLLM, k8s, rust-lang, CPython, and HA run dense bot meshes; Greptile/CodSpeed/Codecov posted on #40744.\n- Fact: Tide can merge; Scorecard cannot.\n- Interpretation: \"S-tier\" means specialized evidence + independent review, not autonomous worker merge.\n- HOLD: Greptile 4/5 as a *project* social rule is fine; encoding it as GitHub merge permission would violate Verified OSS Loop §6 for worker-driven PRs.\n\n## Links\n\n- [[permanent/perm-20260911-bots-advise-humans-merge]]\n- [[permanent/perm-20260911-factory-applies-verified-oss-loop]]\n- https://github.com/kvnloo/verified-oss-loop/blob/main/docs/quality-bots.md\n",
+      "distilled": "The best-maintained OSS repos do not use one mega-bot; they stack specialized checkers (receipt completeness, SAST, coverage, perf, AI review, stale/labels, Scorecard) and keep merge on an explicit authorized path (human, CODEOWNERS, or maintainer-configured Tide/queue).",
+      "tags": [
+        "literature",
+        "oss",
+        "bots",
+        "greptile",
+        "scorecard",
+        "prow"
+      ],
+      "domains": [
+        "frameworks",
+        "skills",
+        "tool-use"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
       "id": "lit-20260911-rhonda-patrick-bdnf-exercise",
       "path": "literature/lit-20260911-rhonda-patrick-bdnf-exercise.md",
       "title": "Rhonda Patrick: the brain is metabolic; BDNF is trainable",
@@ -687,6 +762,33 @@
       "domains": [
         "learning-acceleration",
         "neuroscience"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "lit-20260911-sol-pi-harness-efficiency",
+      "path": "literature/lit-20260911-sol-pi-harness-efficiency.md",
+      "title": "SoL-Pi: four opt-in Pi extension mechanisms from NVIDIA auto-research",
+      "type": "literature",
+      "status": "active",
+      "body": "# SoL-Pi: four opt-in Pi extension mechanisms from NVIDIA auto-research\n\n## Claim (one sentence)\n\nNVIDIA's SoL-Pi is a standalone MIT Pi extension (`pi.extensions`, tested on `@earendil-works/pi-coding-agent` 0.84.2, commit `22277b7e`) that packages four opt-in efficiency mechanisms — Action Fusion, ObservationPack, Evidence-Preserving Reducer, Online Context Compact — discovered by screening 152 auto-research ideas; it is not a fork of Pi and not a plugin for Hermes.\n\n## Evidence\n\nPinned checkout: [NVlabs/SoL-Pi](https://github.com/NVlabs/SoL-Pi) `22277b7e0c3c46ba1259a6687f31fe39ade421a5` (2026-09-11, merge of Action Fusion `file://` path fix). Blog: [nvlabs.github.io/SoL-Pi](https://nvlabs.github.io/SoL-Pi/). Install: `pi install git:github.com/NVlabs/SoL-Pi`. Config: one effective `sol-pi.json` (project `.pi/sol-pi.json` if trusted, else `~/.pi/agent/sol-pi.json`); missing file leaves every mechanism **off**.\n\n### Mechanisms (source, not marketing)\n\n| Mechanism | Harness seam | Behavior |\n| --- | --- | --- |\n| **Action Fusion** | Replaces built-in `edit`/`write` via `createEditToolDefinition` / `createWriteToolDefinition` | Optional `then_run.{command,timeout}` runs after a successful mutation in the same tool call. Per-file queue; hashes the file immediately before the command and skips if content changed. Does not nest Pi's mutation queue. |\n| **ObservationPack** | `pi.on(\"context\")` projection + `obs_recall` | Pure-text tool results >10 KiB are archived under `<sessionDir>/sol-pi/<sessionId>/observation-pack/`. First **2** provider requests still send the full body; later requests get a stable `obs_*` placeholder with head/tail excerpt. Session JSONL is not rewritten. Fail-open. |\n| **Evidence-Preserving Reducer** | `tool_result` middleware + nested model | Eligible diagnostic bash (pytest/cargo/make/npm test/go test/…). Archive first. Cheap reducer model (default provider `openai-codex`, model `gpt-5.6-luna`) returns a receipt; **every quoted line must match the archive byte-for-byte**. Secret-ish regex, size, schema, or model failure → original result unchanged. |\n| **Online Context Compact** | `update_plan` + `context` / `before_provider_request` + `ExtensionContext.compact()` | Plan-step completion is a compaction candidate. Economic check uses `cacheWriteReadRatio` (default 12.5, GPT-5.6 Sol Standard write/read as of 2026-08-21) and `getContextUsage()`. On select: abort run, compact from `agent_settled`, hidden `sendMessage({triggerTurn:true})` to rebuild the plan. **A Pi build that never emits `agent_settled` starts no boundary compaction.** |\n\nShared rules in README/SECURITY: no Pi patches; explicit opt-in; preserve evidence; Pi owns auth/provider/shell. EPR may send logs to the reducer model — do not enable for logs that must stay local.\n\n### Author-reported results (blog; not re-run here)\n\n- vs Pi: ~45–49% fewer tokens, ~1/3 lower cost, ~94% of Pi average score (EdgeBench, capability floor).\n- vs native Codex/Claude Code harnesses: 35–64% fewer tokens, 50–54% lower list-price API cost.\n- Terminal-Bench 4 (63 CPU-only tasks): Codex 18/63 $272.35; Pi 18/63 $286.45; SoL-Pi 15/63 $211.12. SoL-Pi solved fewer tasks; per-solved cost $14.07 vs Codex $15.13.\n- Swarm (one nonrandomized 2h trial): Sol + 20 SoL-Pi workers 1,127 cycles / $60.11 vs 20 stock Pi 1,366 / $82.12 vs single Sol 1,333 / $39.20. Authors say this does not isolate which mechanism caused the gain.\n\nAuto-research: 152 ideas → 4 survivors; ~1/40 conversion; EdgeBench held out from search; capability floor forbids saving by stopping early or hiding evidence.\n\n## Fact vs interpretation\n\n- Fact: SoL-Pi is a TypeScript Pi extension using public `ExtensionAPI` (`session_start` register, `registerTool`, `context`, `tool_result`, `compact`, session dir).\n- Fact: defaults are all-off; `agents-install.md` is the all-enabled agent protocol.\n- Fact: package name `sol-pi`, `\"pi\": { \"extensions\": [\"./src/sol-pi/index.ts\"] }`, `\"private\": true`, peerDeps on `@earendil-works/pi-*`.\n- Interpretation: OMP still honors `pi.extensions` and rewrites `@earendil-works/*` onto host shims, but the stock SoL-Pi factory statically imports OCC/`findCutPoint`, which OMP 18.1.17's shim lacks — so the default entry fails even with OCC off. Hermes cannot load the TS package; a Python plugin port is required. See permanents.\n- HOLD: EdgeBench/TB4/swarm numbers are author-reported; TB4 shows a solve-rate drop (18→15/63) that the 94% EdgeBench floor does not hide.\n\n## Links\n\n- Repo: https://github.com/NVlabs/SoL-Pi\n- Blog: https://nvlabs.github.io/SoL-Pi/\n- Compat: `docs/compatibility.md` in that repo\n- [[permanent/perm-20260911-sol-pi-is-pi-public-extension-not-core-patch]]\n- [[permanent/perm-20260911-omp-can-load-sol-pi-via-legacy-shim]]\n- [[permanent/perm-20260911-hermes-sol-pi-is-a-python-plugin-port]]\n- [[permanent/perm-20260911-observationpack-is-projection-not-history-rewrite]]\n- [[permanent/perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi]]\n- [[permanent/perm-20260910-no-universal-harness-plugin]]\n- [[harnesses/pi]] · [[harnesses/omp]] · [[harnesses/hermes]]\n",
+      "distilled": "NVIDIA's SoL-Pi is a standalone MIT Pi extension (`pi.extensions`, tested on `@earendil-works/pi-coding-agent` 0.84.2, commit `22277b7e`) that packages four opt-in efficiency mechanisms — Action Fusion, ObservationPack, Evidence-Preserving Reducer, Online Context Compact — discovered by screening 152 auto-research ideas; it is not a fork of Pi and not a plugin for Hermes.",
+      "tags": [
+        "literature",
+        "sol-pi",
+        "nvidia",
+        "context",
+        "compaction"
+      ],
+      "domains": [
+        "frameworks",
+        "tool-use",
+        "tokenomics",
+        "ai-ml"
       ],
       "created": "2026-09-11",
       "updated": "2026-09-11",
@@ -1463,6 +1565,30 @@
       "retrievalDue": true
     },
     {
+      "id": "perm-20260911-anti-slop-is-smallest-complete",
+      "path": "permanent/perm-20260911-anti-slop-is-smallest-complete.md",
+      "title": "Anti-slop is the smallest complete change that matches the existing tree",
+      "type": "permanent",
+      "status": "active",
+      "body": "# Anti-slop is smallest complete\n\n## Idea (atomic)\n\nQuality from coding agents is the smallest complete diff that matches local style: one concern, fail-then-pass that asserts behavior, names from the domain, comments that explain why, sibling surfaces checked, dead helpers deleted. Anti-patterns are narrating comments, speculative abstractions, drive-by format churn, tests that echo implementation, catch-all except, unasked README, extra deps, duplicate AGENTS.md/CLAUDE.md, indexer-injected second H1s, and TODOs instead of finishing the claim.\n\n## Why it matters for our harnesses\n\nGreptile on LiteLLM #40744 objected to a test that only compared duplicated static JSON — that is slop, not coverage. Factory workers should shrink until a reviewer can name the issue in the first screen. Do not add a second loop or a manifesto in AGENTS.md; point at `skills/anti-slop`.\n\n## Related\n\n- [[literature/lit-20260911-agent-onboarding-tools]]\n- [[permanent/perm-20260911-orient-before-edit]]\n- [[permanent/perm-20260911-bots-advise-humans-merge]]\n",
+      "distilled": "Quality from coding agents is the smallest complete diff that matches local style: one concern, fail-then-pass that asserts behavior, names from the domain, comments that explain why, sibling surfaces checked, dead helpers deleted. Anti-patterns are narrating comments, speculative abstractions, drive-by format churn, tests that echo implementation, catch-all except, unasked README, extra deps, duplicate AGENTS.md/CLAUDE.md, indexer-injected second H1s, and TODOs instead of finishing the claim.",
+      "tags": [
+        "permanent",
+        "anti-slop",
+        "coding-patterns",
+        "verified-oss-loop"
+      ],
+      "domains": [
+        "frameworks",
+        "skills"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
       "id": "perm-20260911-bdnf-is-a-learning-prerequisite",
       "path": "permanent/perm-20260911-bdnf-is-a-learning-prerequisite.md",
       "title": "BDNF and metabolic state are learning prerequisites",
@@ -1478,6 +1604,30 @@
       "domains": [
         "learning-acceleration",
         "neuroscience"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "perm-20260911-bots-advise-humans-merge",
+      "path": "permanent/perm-20260911-bots-advise-humans-merge.md",
+      "title": "Quality bots advise; authorized humans (or maintainer-configured merge automation) merge",
+      "type": "permanent",
+      "status": "active",
+      "body": "# Quality bots advise; authorized humans merge\n\n## Idea (atomic)\n\nAn AI review confidence score, Codecov patch %, CodSpeed \"no perf change\", Scorecard SARIF, and a complete evidence receipt are **SPEC review/evidence**. They are not merge. Kubernetes Tide is the exception that proves the rule: it merges only because maintainers configured `/lgtm`+`/approve` as *their* authorized path. A coding agent, cloud worker, or a bot the implementer controls must not hold that bit.\n\n## Why it matters for our harnesses\n\nFactory and Cursor/Hermes/OMP workers will see Greptile on LiteLLM and try to copy \"must be 4/5 to merge\". Keep it as \"must be 4/5 before *asking* a maintainer\". Verified OSS Loop §5 vs §6. Do not stack four AI commenters. Do not copy LiteLLM's whole Actions tree into a spec repo.\n\n## Related\n\n- [[literature/lit-20260911-oss-quality-bot-stacks]]\n- [[permanent/perm-20260911-factory-applies-verified-oss-loop]]\n- https://github.com/kvnloo/verified-oss-loop\n",
+      "distilled": "An AI review confidence score, Codecov patch %, CodSpeed \"no perf change\", Scorecard SARIF, and a complete evidence receipt are **SPEC review/evidence**. They are not merge. Kubernetes Tide is the exception that proves the rule: it merges only because maintainers configured `/lgtm`+`/approve` as *their* authorized path. A coding agent, cloud worker, or a bot the implementer controls must not hold that bit.",
+      "tags": [
+        "permanent",
+        "oss",
+        "merge-authority",
+        "greptile"
+      ],
+      "domains": [
+        "frameworks",
+        "skills"
       ],
       "created": "2026-09-11",
       "updated": "2026-09-11",
@@ -1524,6 +1674,77 @@
       "domains": [
         "learning-acceleration",
         "neuroscience"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "perm-20260911-factory-applies-verified-oss-loop",
+      "path": "permanent/perm-20260911-factory-applies-verified-oss-loop.md",
+      "title": "OSS factory HITL columns are the Verified OSS Loop, not a second scheduler",
+      "type": "permanent",
+      "status": "active",
+      "body": "# Factory HITL columns are the Verified OSS Loop\n\n## Idea (atomic)\n\n`kvnloo/oss-factory` Linear columns (Triage → Backlog → Todo → In Progress → Ready to Review → Maintainer Review → Done) are the same loop as `kvnloo/verified-oss-loop` SPEC (research → claimable → claim lease → isolated work → receipt → independent review → human merge). Traction formula is an *outcome view*. It must not set claim priority or authorize merge. `github_writes=0` until Todo is the factory's origin-write gate and is compatible with workers-never-merge.\n\n## Why it matters for our harnesses\n\nWhen optimizing **opted-in** `kvnloo/*` repos, run `oss-onboard --with-automation` and stop. When contributing to origin OSS, follow *their* bots and templates; do not paste loop labels onto kubernetes/litellm/HA. CoS should keep HITL.md pointing at the kit so new factory workers cannot invent a third process.\n\n## Related\n\n- [[literature/lit-20260911-oss-quality-bot-stacks]]\n- [[permanent/perm-20260911-bots-advise-humans-merge]]\n- https://github.com/kvnloo/verified-oss-loop/blob/main/docs/factory.md\n- https://github.com/kvnloo/oss-factory\n",
+      "distilled": "`kvnloo/oss-factory` Linear columns (Triage → Backlog → Todo → In Progress → Ready to Review → Maintainer Review → Done) are the same loop as `kvnloo/verified-oss-loop` SPEC (research → claimable → claim lease → isolated work → receipt → independent review → human merge). Traction formula is an *outcome view*. It must not set claim priority or authorize merge. `github_writes=0` until Todo is the factory's origin-write gate and is compatible with workers-never-merge.",
+      "tags": [
+        "permanent",
+        "oss-factory",
+        "hitl",
+        "verified-oss-loop"
+      ],
+      "domains": [
+        "frameworks",
+        "skills"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "path": "permanent/perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi.md",
+      "title": "Hermes↔Pi plugin compatibility is a host port, not a shared ABI",
+      "type": "permanent",
+      "status": "active",
+      "body": "# Hermes↔Pi plugin compatibility is a host port, not a shared ABI\n\n## Idea (atomic)\n\nA thin binary adapter that loads Pi `ExtensionAPI` packages inside Hermes (or Hermes `plugin.yaml` packages inside Pi) is not thin. Pi plugins are TypeScript factories on `registerTool` / `on(\"context\"|\"agent_settled\"|…)`. Hermes plugins are Python `register(ctx)` with `pre_llm_call`, `transform_tool_result`, and at most one `ContextEngine`. Those surfaces drift independently. Share **policy** (pack after 2 full sends, quote-verify, fusion queue) across two host ports. Do not invent a third plugin ABI.\n\n## Why it matters for our harnesses\n\nOMP is the exception: it already rewrites `@earendil-works/*` onto `legacy-pi-coding-agent-shim`, so `omp install github:NVlabs/SoL-Pi` is the adapter. Hermes Agent Plugins v1.0.0 is a compatibility layer for *Hermes-owned* portable components, not Pi extensions. Using `transform_tool_result` as ObservationPack would persist truncation; SoL-Pi does not. OCC needs `agent_settled`; Hermes has no such event. Leapfrog is `~/.hermes/plugins/sol-pi/` implementing the four mechanisms on Hermes hooks, not a TS import and not an origin PR.\n\n## Related\n\n- [[permanent/perm-20260911-sol-pi-is-pi-public-extension-not-core-patch]]\n- [[permanent/perm-20260911-hermes-sol-pi-is-a-python-plugin-port]]\n- [[permanent/perm-20260910-no-universal-harness-plugin]]\n- Hermes docs: plugins, hooks, context-engine plugin\n- [[harnesses/hermes]] · [[harnesses/pi]]\n",
+      "distilled": "A thin binary adapter that loads Pi `ExtensionAPI` packages inside Hermes (or Hermes `plugin.yaml` packages inside Pi) is not thin. Pi plugins are TypeScript factories on `registerTool` / `on(\"context\"|\"agent_settled\"|…)`. Hermes plugins are Python `register(ctx)` with `pre_llm_call`, `transform_tool_result`, and at most one `ContextEngine`. Those surfaces drift independently. Share **policy** (pack after 2 full sends, quote-verify, fusion queue) across two host ports. Do not invent a third plugin ABI.",
+      "tags": [
+        "permanent",
+        "sol-pi",
+        "plugins",
+        "adapter"
+      ],
+      "domains": [
+        "frameworks"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "path": "permanent/perm-20260911-hermes-sol-pi-is-a-python-plugin-port.md",
+      "title": "Hermes SoL-Pi is a standalone Python plugin, not a TS import",
+      "type": "permanent",
+      "status": "active",
+      "body": "# Hermes SoL-Pi is a standalone Python plugin, not a TS import\n\n## Idea (atomic)\n\nHermes cannot import SoL-Pi. The four mechanisms map onto existing plugin seams: Action Fusion → wrap file tools + `terminal` with `then_run`; ObservationPack → archive + **request-time projection** (context engine `select_context`, not a one-shot `transform_tool_result`); EPR → `transform_tool_result` + auxiliary/reducer model with quote-verify; OCC → plan-boundary trigger around the built-in compressor, because only **one** `ContextEngine` may be registered.\n\n## Why it matters for our harnesses\n\nShip `~/.hermes/plugins/sol-pi/` (or a pip extra) with `register(ctx)`. Do not PR the mechanisms into `NousResearch/hermes-agent` (vendor plugins stay out; `github_writes=0`). Do not replace the default context engine unless the port *composes* with `ContextCompressor` — replacing it drops Hermes' existing compression. `transform_tool_result` mutates what is appended to history; SoL-Pi ObservationPack deliberately does not. Using that hook for packing would skip the two full sends and break resume-after-compaction unless the archive + `obs_recall` tool are also registered.\n\n## Related\n\n- [[literature/lit-20260911-sol-pi-harness-efficiency]]\n- [[permanent/perm-20260911-observationpack-is-projection-not-history-rewrite]]\n- [[permanent/perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi]]\n- Hermes docs: plugins, hooks (`transform_tool_result`, `pre_llm_call`), context-engine plugin\n- [[harnesses/hermes]]\n",
+      "distilled": "Hermes cannot import SoL-Pi. The four mechanisms map onto existing plugin seams: Action Fusion → wrap file tools + `terminal` with `then_run`; ObservationPack → archive + **request-time projection** (context engine `select_context`, not a one-shot `transform_tool_result`); EPR → `transform_tool_result` + auxiliary/reducer model with quote-verify; OCC → plan-boundary trigger around the built-in compressor, because only **one** `ContextEngine` may be registered.",
+      "tags": [
+        "permanent",
+        "sol-pi",
+        "hermes",
+        "plugins"
+      ],
+      "domains": [
+        "frameworks",
+        "tokenomics"
       ],
       "created": "2026-09-11",
       "updated": "2026-09-11",
@@ -1602,6 +1823,77 @@
       "retrievalDue": true
     },
     {
+      "id": "perm-20260911-observationpack-is-projection-not-history-rewrite",
+      "path": "permanent/perm-20260911-observationpack-is-projection-not-history-rewrite.md",
+      "title": "ObservationPack rewrites provider context, not session history",
+      "type": "permanent",
+      "status": "active",
+      "body": "# ObservationPack rewrites provider context, not session history\n\n## Idea (atomic)\n\nSoL-Pi packs large tool results only in the `context` event (messages sent to the provider). The stored session keeps original bytes; `obs_recall` pages the archive. Threshold 10 KiB, `FULL_SENDS = 2`, placeholder `obs_[hex]`, fail-open. Evidence-Preserving Reducer receipts are excluded so verified quotes are not packed again.\n\n## Why it matters for our harnesses\n\nAny OMP/Hermes port that truncates the persisted tool result to save tokens is a different mechanism and will break resume, compaction tails, and \"show me the original log.\" OMP already has a `context` event — use it. Hermes needs `select_context` (or equivalent pre-request rewrite), plus a recall tool, plus an on-disk ledger under the session directory.\n\n## Related\n\n- [[literature/lit-20260911-sol-pi-harness-efficiency]]\n- [[permanent/perm-20260911-hermes-sol-pi-is-a-python-plugin-port]]\n- [[harnesses/pi]]\n",
+      "distilled": "SoL-Pi packs large tool results only in the `context` event (messages sent to the provider). The stored session keeps original bytes; `obs_recall` pages the archive. Threshold 10 KiB, `FULL_SENDS = 2`, placeholder `obs_[hex]`, fail-open. Evidence-Preserving Reducer receipts are excluded so verified quotes are not packed again.",
+      "tags": [
+        "permanent",
+        "sol-pi",
+        "context"
+      ],
+      "domains": [
+        "frameworks",
+        "tokenomics"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "perm-20260911-omp-can-load-sol-pi-via-legacy-shim",
+      "path": "permanent/perm-20260911-omp-can-load-sol-pi-via-legacy-shim.md",
+      "title": "OMP can load SoL-Pi as a git plugin; OCC likely no-ops without agent_settled",
+      "type": "permanent",
+      "status": "active",
+      "body": "# OMP can load SoL-Pi as a git plugin; OCC likely no-ops without agent_settled\n\n## Idea (atomic)\n\nOh My Pi still installs `pi.extensions` packages (`omp install github:NVlabs/SoL-Pi` / `omp plugin link`) and rewrites `@earendil-works/*` onto `legacy-pi-coding-agent-shim` (exports `createEditToolDefinition` / `createWriteToolDefinition`, `CONFIG_DIR_NAME` = `.omp`, `getAgentDir()`). Action Fusion + ObservationPack + EPR therefore have a real load path. Online Context Compact's compact-and-continue sequence listens for Pi `agent_settled`; OMP's catalog has `agent_end` (notify-only) and `session_stop` instead, and NVIDIA's own compat note says a host that never emits `agent_settled` starts **no** boundary compaction.\n\nThe stock SoL-Pi **entrypoint** still statically imports OCC, which names `findCutPoint` from `@earendil-works/pi-coding-agent`. OMP 18.1.17's shim does not export that symbol, so the default factory fails to load even when `onlineContextCompact` is false. Phase 0 on OMP is therefore a thin wrapper that imports only Action Fusion + ObservationPack (local smoke: `sol-pi-omp`). Do not Discord-architect this into omp core.\n\n## Why it matters for our harnesses\n\nPhase 0 is install + `sol-pi.json` with only `actionFusion` and `observationPack` true (no extra model calls, no abort/continue). Config lands at `.omp/sol-pi.json` / `~/.omp/agent/sol-pi.json` because SoL-Pi uses `CONFIG_DIR_NAME`, not a hardcoded `.pi`. If OCC is wanted later, an OMP-side adapter should map settle → `session_stop` / `waitForIdle` + `ctx.compact()` rather than asking NVIDIA to support OMP.\n\nLive smoke (this VM, 2026-09-11): `omp plugin install /tmp/SoL-Pi` listed `sol-pi` v0.1.0; `omp plugin doctor` reports the package ok. Stock entry still needs the wrapper to avoid `findCutPoint`. Shim coverage for `modelRegistry.complete()`, `isProjectTrusted()`, and TUI `ctx.ui.setStatus` still needs a session smoke. `github_writes=0` on `can1357/oh-my-pi`.\n\n## Related\n\n- [[literature/lit-20260911-sol-pi-harness-efficiency]]\n- OMP: `docs/extension-loading.md`, `packages/coding-agent/src/extensibility/legacy-pi-coding-agent-shim.ts`, test `legacy-pi-edit-write-tools.test.ts` (#7094)\n- OMP issue #2166 (Pi packages load after `omp install`; `-e git:…` is not implemented)\n- [[harnesses/omp]] · [[harnesses/pi]]\n",
+      "distilled": "Oh My Pi still installs `pi.extensions` packages (`omp install github:NVlabs/SoL-Pi` / `omp plugin link`) and rewrites `@earendil-works/*` onto `legacy-pi-coding-agent-shim` (exports `createEditToolDefinition` / `createWriteToolDefinition`, `CONFIG_DIR_NAME` = `.omp`, `getAgentDir()`). Action Fusion + ObservationPack + EPR therefore have a real load path. Online Context Compact's compact-and-continue sequence listens for Pi `agent_settled`; OMP's catalog has `agent_end` (notify-only) and `session_stop` instead, and NVIDIA's own compat note says a host that never emits `agent_settled` starts **no** boundary compaction. The stock SoL-Pi **entrypoint** still statically imports OCC, which names `findCutPoint` from `@earendil-works/pi-coding-agent`. OMP 18.1.17's shim does not export that symbol, so the default factory fails to load even when `onlineContextCompact` is false. Phase 0 on OMP is therefore a thin wrapper that imports only Action Fusion + ObservationPack (local smoke: `sol-pi-omp`). Do not Discord-architect this into omp core.",
+      "tags": [
+        "permanent",
+        "sol-pi",
+        "omp",
+        "shim"
+      ],
+      "domains": [
+        "frameworks",
+        "tokenomics"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "perm-20260911-orient-before-edit",
+      "path": "permanent/perm-20260911-orient-before-edit.md",
+      "title": "Orient on the existing graph or tree before the first edit",
+      "type": "permanent",
+      "status": "active",
+      "body": "# Orient before edit\n\n## Idea (atomic)\n\nA coding pass starts with blast radius: GitNexus `query` → `context` → `impact` if those MCP tools exist; else Serena symbol lookup; else `rg` + read. DeepWiki and packed trees are orientation only. `gitnexus analyze` is a maintainer install step, not an unattended claim, because it rewrites agent instruction files.\n\n## Why it matters for our harnesses\n\nCursor/Hermes/OMP workers that skip the graph invent a parallel architecture in a new file. Factory `oss-onboard` must not bootstrap GitNexus. SPEC §3 (execution isolation) now says orient on the existing tree before editing.\n\n## Related\n\n- [[literature/lit-20260911-agent-onboarding-tools]]\n- [[permanent/perm-20260911-anti-slop-is-smallest-complete]]\n- https://github.com/kvnloo/verified-oss-loop/blob/main/docs/agent-onboarding.md\n",
+      "distilled": "A coding pass starts with blast radius: GitNexus `query` → `context` → `impact` if those MCP tools exist; else Serena symbol lookup; else `rg` + read. DeepWiki and packed trees are orientation only. `gitnexus analyze` is a maintainer install step, not an unattended claim, because it rewrites agent instruction files.",
+      "tags": [
+        "permanent",
+        "gitnexus",
+        "orient",
+        "verified-oss-loop"
+      ],
+      "domains": [
+        "frameworks",
+        "skills"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
       "id": "perm-20260911-plasticity-needs-alert-then-rest",
       "path": "permanent/perm-20260911-plasticity-needs-alert-then-rest.md",
       "title": "Plasticity needs alertness, then rest",
@@ -1618,6 +1910,28 @@
       "domains": [
         "learning-acceleration",
         "neuroscience"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "path": "permanent/perm-20260911-sol-pi-is-pi-public-extension-not-core-patch.md",
+      "title": "SoL-Pi is a Pi ExtensionAPI package, not a Pi/OMP/Hermes core patch",
+      "type": "permanent",
+      "status": "active",
+      "body": "# SoL-Pi is a Pi ExtensionAPI package, not a Pi/OMP/Hermes core patch\n\n## Idea (atomic)\n\nSoL-Pi's load-bearing contract is Pi's public extension surface (`registerTool`, `on(\"session_start\"|\"context\"|\"tool_result\"|…)`, `getAgentDir`/`CONFIG_DIR_NAME`, `SessionManager.getSessionDir()`, `compact()`). NVIDIA forbids vendoring or patching Pi. Leapfrog is therefore: load or reimplement the four mechanisms *outside* harness cores.\n\n## Why it matters for our harnesses\n\nDo not open origin PRs that bake Action Fusion into OMP's edit tool or Hermes `write_file`. OMP already loads third-party `pi.extensions`. Hermes already has general plugins + one context engine. That is the integration shape. Contrasts [[permanent/perm-20260910-no-universal-harness-plugin]]: mini-SWE-agent *is* a harness; SoL-Pi *is* a plugin — but only for hosts that speak Pi's ExtensionAPI.\n\n## Related\n\n- [[literature/lit-20260911-sol-pi-harness-efficiency]]\n- [[permanent/perm-20260910-no-universal-harness-plugin]]\n- [[permanent/perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi]]\n- [[harnesses/pi]]\n",
+      "distilled": "SoL-Pi's load-bearing contract is Pi's public extension surface (`registerTool`, `on(\"session_start\"|\"context\"|\"tool_result\"|…)`, `getAgentDir`/`CONFIG_DIR_NAME`, `SessionManager.getSessionDir()`, `compact()`). NVIDIA forbids vendoring or patching Pi. Leapfrog is therefore: load or reimplement the four mechanisms *outside* harness cores.",
+      "tags": [
+        "permanent",
+        "sol-pi",
+        "plugins"
+      ],
+      "domains": [
+        "frameworks"
       ],
       "created": "2026-09-11",
       "updated": "2026-09-11",
@@ -1776,14 +2090,14 @@
       "title": "Hermes Agent",
       "type": "harness",
       "status": "active",
-      "body": "# Hermes Agent\n\nSnapshot: Self-improving agent with closed learning loop; built by Nous Research.\nStrengths: Messaging gateway across platforms; run anywhere compute backends; scheduled automations; skill creation from experience.\nGaps: Python/uv stack heavier than omp Rust core; no real DAP integration; crew worktree isolation less explicit than crush/firstmate.\nSources: https://github.com/NousResearch/hermes-agent, https://hermes-agent.nousresearch.com/\n\nNous Hermes Agent. Two secret systems, not one pile.\n\n## Secrets (accepted vs SOTA)\n\n**Sources (custody):** Bitwarden SM (`bws` → `os.environ`), 1Password, command helper. Plugin `SecretSource`. Bundled set closed (#22791).\n\n**Vault (browser fill):** #106480 / #107585. Kinds: login / payment / address. Origin-bound, password-blind, supervisor CDP. No SSN/file kind.\n\n**Origin we filed:** [#107698](https://github.com/NousResearch/hermes-agent/issues/107698) docs `--apply` warning. [#107700](https://github.com/NousResearch/hermes-agent/issues/107700) handles for tool credentials + wrap (Infisical/HASP), not vendored. [#107704](https://github.com/NousResearch/hermes-agent/issues/107704) identity field kind + vision freeze. [#107705](https://github.com/NousResearch/hermes-agent/issues/107705) documents are not vault items.\n\nSOTA gap left: those four issues are still open. Vault kinds remain login/payment/address until #107704 lands. Someone already asked to be assigned on #107700.\n\n[[permanent/perm-20260910-hermes-secrets-are-env-injection]] · [[permanent/perm-20260910-hermes-vault-is-login-payment-address]] · Linear [PER-1323](https://linear.app/0ism/issue/PER-1323)\n\n## Snapshot\n\nKanban scheduler, gateway/peer A2A. Privilege/sudo broker is a separate lane (PR #63066 / PER-110).\n\n## Strengths\n\nVault fill is the OpenInstinct port. Sources compose and refuse to overwrite bootstrap tokens. Teknium issue shape: Overview → gap today → Current State (files) → phased plan + gates → what this is not.\n\n## Gaps (leapfrog targets)\n\nStop applying tool secrets into untrusted children. Identity kind + vision freeze. Documents via Skyflow/VGS wrap, not `hermes vault add`. Plaid (#12324) for bank, not Playwright.\n\n## Sources\n\n- https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/secrets/index.md\n- [[literature/lit-20260910-trustworthy-secret-brokers]]\n- [[literature/lit-20260910-agent-http-inject-brokers]]\n- [[literature/lit-20260910-pii-tokenization-vaults]]\n\n## Orchestration IR (proposal only)\n\nHermes has execution primitives (Kanban, runs, leases, review, goal/judge) but no machine-readable topology vocabulary. HOTL 0.1/0.2 is the proposed IR at [kvnloo/aodl](https://github.com/kvnloo/aodl); **not merged**, no second scheduler.\n\n- Catalog id `hermes`: [harnesses/catalog.json](https://github.com/kvnloo/aodl/blob/main/harnesses/catalog.json)\n- [[literature/lit-20260817-hotl-01-issue-88589]] — upstream [issue #88589](https://github.com/NousResearch/hermes-agent/issues/88589)\n- [[literature/lit-20260817-hotl-02-spec]]\n- [[permanent/perm-20260817-intent-plan-observed]]\n- [[permanent/perm-20260817-no-aodl-repo]]\n\nStarmap/learning graph is a time-axis **projection** of memory, not orchestration edge semantics.\n\n## Keel\n\n- [[literature/lit-20260910-keel-level0-evidence-surface]]\n",
+      "body": "# Hermes Agent\n\nSnapshot: Self-improving agent with closed learning loop; built by Nous Research.\nStrengths: Messaging gateway across platforms; run anywhere compute backends; scheduled automations; skill creation from experience.\nGaps: Python/uv stack heavier than omp Rust core; no real DAP integration; crew worktree isolation less explicit than crush/firstmate.\nSources: https://github.com/NousResearch/hermes-agent, https://hermes-agent.nousresearch.com/\n\nNous Hermes Agent. Two secret systems, not one pile.\n\n## Secrets (accepted vs SOTA)\n\n**Sources (custody):** Bitwarden SM (`bws` → `os.environ`), 1Password, command helper. Plugin `SecretSource`. Bundled set closed (#22791).\n\n**Vault (browser fill):** #106480 / #107585. Kinds: login / payment / address. Origin-bound, password-blind, supervisor CDP. No SSN/file kind.\n\n**Origin we filed:** [#107698](https://github.com/NousResearch/hermes-agent/issues/107698) docs `--apply` warning. [#107700](https://github.com/NousResearch/hermes-agent/issues/107700) handles for tool credentials + wrap (Infisical/HASP), not vendored. [#107704](https://github.com/NousResearch/hermes-agent/issues/107704) identity field kind + vision freeze. [#107705](https://github.com/NousResearch/hermes-agent/issues/107705) documents are not vault items.\n\nSOTA gap left: those four issues are still open. Vault kinds remain login/payment/address until #107704 lands. Someone already asked to be assigned on #107700.\n\n[[permanent/perm-20260910-hermes-secrets-are-env-injection]] · [[permanent/perm-20260910-hermes-vault-is-login-payment-address]] · Linear [PER-1323](https://linear.app/0ism/issue/PER-1323)\n\n## SoL-Pi (port, do not import)\n\nSoL-Pi is a TypeScript Pi extension. Hermes integration is a **standalone Python plugin** (`~/.hermes/plugins/sol-pi/`, `register(ctx)`), not a PR into `hermes-agent` (`github_writes=0`) and not `pip install` of the npm package. A thin Hermes↔Pi plugin ABI is not thin — share policy across two host ports. Hermes Agent Plugins v1.0.0 is not Pi ExtensionAPI. See [[permanent/perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi]].\n\n| Mechanism | Hermes seam | Trap |\n| --- | --- | --- |\n| Action Fusion | `register_tool` wrapping file tools + optional `terminal` `then_run` | Tool names are not Pi `edit`/`write` |\n| ObservationPack | session archive + `obs_recall` + **request-time** rewrite | `transform_tool_result` mutates stored history; SoL-Pi does not. Prefer context-engine `select_context` **composed** with the default compressor |\n| EPR | `transform_tool_result` + auxiliary reducer model | Quote-verify against archive; skip likely-secret; fail open |\n| OCC | plan-boundary around built-in compressor | Only one `ContextEngine` may register; do not clobber `ContextCompressor` |\n\n[[literature/lit-20260911-sol-pi-harness-efficiency]] · [[permanent/perm-20260911-hermes-sol-pi-is-a-python-plugin-port]] · [[permanent/perm-20260911-observationpack-is-projection-not-history-rewrite]]\n\n## Snapshot\n\nKanban scheduler, gateway/peer A2A. Privilege/sudo broker is a separate lane (PR #63066 / PER-110).\n\n## Strengths\n\nVault fill is the OpenInstinct port. Sources compose and refuse to overwrite bootstrap tokens. Teknium issue shape: Overview → gap today → Current State (files) → phased plan + gates → what this is not.\n\n## Gaps (leapfrog targets)\n\nStop applying tool secrets into untrusted children. Identity kind + vision freeze. Documents via Skyflow/VGS wrap, not `hermes vault add`. Plaid (#12324) for bank, not Playwright.\n\n## Sources\n\n- https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/secrets/index.md\n- [[literature/lit-20260910-trustworthy-secret-brokers]]\n- [[literature/lit-20260910-agent-http-inject-brokers]]\n- [[literature/lit-20260910-pii-tokenization-vaults]]\n\n## Orchestration IR (proposal only)\n\nHermes has execution primitives (Kanban, runs, leases, review, goal/judge) but no machine-readable topology vocabulary. HOTL 0.1/0.2 is the proposed IR at [kvnloo/aodl](https://github.com/kvnloo/aodl); **not merged**, no second scheduler.\n\n- Catalog id `hermes`: [harnesses/catalog.json](https://github.com/kvnloo/aodl/blob/main/harnesses/catalog.json)\n- [[literature/lit-20260817-hotl-01-issue-88589]] — upstream [issue #88589](https://github.com/NousResearch/hermes-agent/issues/88589)\n- [[literature/lit-20260817-hotl-02-spec]]\n- [[permanent/perm-20260817-intent-plan-observed]]\n- [[permanent/perm-20260817-no-aodl-repo]]\n\nStarmap/learning graph is a time-axis **projection** of memory, not orchestration edge semantics.\n\n## Keel\n\n- [[literature/lit-20260910-keel-level0-evidence-surface]]\n",
       "distilled": "Snapshot: Self-improving agent with closed learning loop; built by Nous Research.",
       "tags": [
         "harness"
       ],
       "domains": [],
       "created": "2026-09-09",
-      "updated": "2026-09-10",
+      "updated": "2026-09-11",
       "weight": 1.0,
       "lastFired": null,
       "retrievalDue": true
@@ -1812,14 +2126,14 @@
       "title": "OMP (oh-my-pi)",
       "type": "harness",
       "status": "active",
-      "body": "# OMP\n\nSnapshot: Most capable agent surface shipped; fork of Pi. ~80k Rust core lines.\nStrengths: LSP/DAP wired in; real debugger; time-traveling stream rules; subagent fan-out.\nGaps: No persistent multi-agent crew management; no messaging gateway (hermes does this); multi-client workspace is missing vs crush serve.\nSources: https://github.com/can1357/oh-my-pi, https://omp.sh/\n\nOh My Pi. Three secret paths, not one pile: prompt obfuscation, sqlite provider credentials, auth-gateway inject.\n\n## Secrets (accepted vs SOTA)\n\n**Prompt filter** (`docs/secrets.md`, off by default): `secrets/index.ts:buildSecretObfuscator` collects env names matching KEY|SECRET|TOKEN|… (≥8 chars), `~/.omp/agent/secrets.yml` + `<cwd>/.omp/secrets.yml`, then builtin `SENSITIVE_TOKEN_RE`. `message-transform.ts:obfuscateProviderContext` rewrites conversation messages only. **System prompt and tool schemas are unwalked.** Images skipped. Restore is `deobfuscateToolArguments` — JSON-walk of model-authored tool args only (`sdk.ts:transformToolCallArguments`, `agent-session.ts` toolCall). `deobfuscateSessionContext` restores assistant/branch/compaction only; user/tool-result stay literal. Local tools see plaintext args. Leak if a secret lives in system/tools schema.\n\n**Provider custody:** `sqlite-credential-store.ts:serializeCredential` / `deserializeCredential` write `api_key`/`oauth` as JSON into `auth_credentials.data`. File mode 0600, no decrypt. `AuthCredentialStore` is already pluggable (`auth-storage.ts`): `SqliteAuthCredentialStore` vs `RemoteAuthCredentialStore` (refresh → `REMOTE_REFRESH_SENTINEL`; mutations throw).\n\n**HTTP inject already in tree for model keys:** `auth-gateway/server.ts` foreign-wire → `streamSimple` credential inject. Clients never see the access token. The only AES-GCM artifact is `auth-broker-snapshot.enc`. Tokens-off-laptop = broker + gateway. Infisical wrap does **not** replace that.\n\nCustody leaf (ours, open): [#11399](https://github.com/can1357/oh-my-pi/issues/11399) — optional at-rest wrap of the sqlite `data` blob via serialize/deserialize + wrap-key. Keep CAS/leases/ranking in SQLite. Do **not** expand it into Infisical-as-`AuthCredentialStore` (OAuth rows mutate ~60s with lease fencing; vault APIs are static). Leak: [#10027](https://github.com/can1357/oh-my-pi/issues/10027). PII NER: [#10828](https://github.com/can1357/oh-my-pi/issues/10828).\n\n**Compose, not vendor:** Infisical/HASP sit as a sibling process wrap for **tool-facing** GitHub/AWS keys (the restore hole), or as extra inject at `AuthGatewayBootOptions.storage` + `streamSimple`. Static keys already via `auth.broker.token` / config `!command` / env.\n\n**Ethos (CONTRIBUTING):** do **not** open an issue for work you are about to PR — robomp will pick it up. Major architecture: Discord first. Every PR needs one human sentence + live verification.\n\n[[permanent/perm-20260910-obfuscation-is-not-noninterference]] · Linear [PER-1324](https://linear.app/0ism/issue/PER-1324) (github_writes=0 until Todo)\n\n## Snapshot\n\nTyped task fan-out, MCP, browser/computer tools. robomp auto-implements actionable issues.\n\n## Strengths\n\nObfuscation exists and is tested. Auth-gateway already injects **provider** tokens. #11399 is the right custody leaf.\n\n## Gaps (leapfrog targets)\n\nRestore-in-tool-args is the Hermes `--apply` equivalent for `GITHUB_TOKEN`. Document wrap for tool credentials; stop teaching restore-as-success. No identity/document store — compose Skyflow/Plaid if needed. Discord-first.\n\n## Sources\n\n- https://github.com/can1357/oh-my-pi/blob/main/docs/secrets.md\n- [[literature/lit-20260910-trustworthy-secret-brokers]]\n- [[literature/lit-20260910-agent-http-inject-brokers]]\n- [[permanent/perm-20260910-identity-fields-are-not-documents]]\n",
+      "body": "# OMP\n\nSnapshot: Most capable agent surface shipped; fork of Pi. ~80k Rust core lines.\nStrengths: LSP/DAP wired in; real debugger; time-traveling stream rules; subagent fan-out.\nGaps: No persistent multi-agent crew management; no messaging gateway (hermes does this); multi-client workspace is missing vs crush serve.\nSources: https://github.com/can1357/oh-my-pi, https://omp.sh/\n\nOh My Pi. Three secret paths, not one pile: prompt obfuscation, sqlite provider credentials, auth-gateway inject.\n\n## Secrets (accepted vs SOTA)\n\n**Prompt filter** (`docs/secrets.md`, off by default): `secrets/index.ts:buildSecretObfuscator` collects env names matching KEY|SECRET|TOKEN|… (≥8 chars), `~/.omp/agent/secrets.yml` + `<cwd>/.omp/secrets.yml`, then builtin `SENSITIVE_TOKEN_RE`. `message-transform.ts:obfuscateProviderContext` rewrites conversation messages only. **System prompt and tool schemas are unwalked.** Images skipped. Restore is `deobfuscateToolArguments` — JSON-walk of model-authored tool args only (`sdk.ts:transformToolCallArguments`, `agent-session.ts` toolCall). `deobfuscateSessionContext` restores assistant/branch/compaction only; user/tool-result stay literal. Local tools see plaintext args. Leak if a secret lives in system/tools schema.\n\n**Provider custody:** `sqlite-credential-store.ts:serializeCredential` / `deserializeCredential` write `api_key`/`oauth` as JSON into `auth_credentials.data`. File mode 0600, no decrypt. `AuthCredentialStore` is already pluggable (`auth-storage.ts`): `SqliteAuthCredentialStore` vs `RemoteAuthCredentialStore` (refresh → `REMOTE_REFRESH_SENTINEL`; mutations throw).\n\n**HTTP inject already in tree for model keys:** `auth-gateway/server.ts` foreign-wire → `streamSimple` credential inject. Clients never see the access token. The only AES-GCM artifact is `auth-broker-snapshot.enc`. Tokens-off-laptop = broker + gateway. Infisical wrap does **not** replace that.\n\nCustody leaf (ours, open): [#11399](https://github.com/can1357/oh-my-pi/issues/11399) — optional at-rest wrap of the sqlite `data` blob via serialize/deserialize + wrap-key. Keep CAS/leases/ranking in SQLite. Do **not** expand it into Infisical-as-`AuthCredentialStore` (OAuth rows mutate ~60s with lease fencing; vault APIs are static). Leak: [#10027](https://github.com/can1357/oh-my-pi/issues/10027). PII NER: [#10828](https://github.com/can1357/oh-my-pi/issues/10828).\n\n**Compose, not vendor:** Infisical/HASP sit as a sibling process wrap for **tool-facing** GitHub/AWS keys (the restore hole), or as extra inject at `AuthGatewayBootOptions.storage` + `streamSimple`. Static keys already via `auth.broker.token` / config `!command` / env.\n\n**Ethos (CONTRIBUTING):** do **not** open an issue for work you are about to PR — robomp will pick it up. Major architecture: Discord first. Every PR needs one human sentence + live verification.\n\n[[permanent/perm-20260910-obfuscation-is-not-noninterference]] · Linear [PER-1324](https://linear.app/0ism/issue/PER-1324) (github_writes=0 until Todo)\n\n## SoL-Pi (NVIDIA efficiency extension)\n\nDo **not** merge SoL-Pi into omp core (`github_writes=0` on `can1357/oh-my-pi`). Load it as a plugin:\n\n```bash\nomp install github:NVlabs/SoL-Pi\n# or: omp plugin link /path/to/SoL-Pi\n# live smoke used: omp plugin install /path/to/SoL-Pi\n```\n\n`pi.extensions` + `@earendil-works/*` rewrite (`legacy-pi-coding-agent-shim`, #7094 edit/write factories) is the path. Live smoke (2026-09-11): `omp plugin install` listed `sol-pi` v0.1.0; `omp plugin doctor` reports the package ok. The stock `src/sol-pi/index.ts` entry still statically imports OCC/`findCutPoint`; OMP 18.1.17's shim does not export that symbol, so the default factory fails even when `onlineContextCompact` is false. Phase 0 is a thin wrapper that imports only Action Fusion + ObservationPack.\n\nConservative config (no extra model, no abort/continue):\n\n```json\n{\n  \"version\": 1,\n  \"actionFusion\": true,\n  \"observationPack\": true,\n  \"evidencePreservingReducer\": false,\n  \"onlineContextCompact\": false\n}\n```\n\nWrite it to `.omp/sol-pi.json` or `~/.omp/agent/sol-pi.json` (`CONFIG_DIR_NAME` is `.omp`). Action Fusion wraps OMP's `edit`/`write` (hashline preserved if those factories are the real tools). ObservationPack needs the `context` event — OMP has it. EPR is the same secret/log-exfil caution as Pi. OCC: OMP has `compact()` / `session_before_tree` / `session_stop` but **not** `agent_settled`; NVIDIA says OCC then starts no boundary compaction. Adapter later; Discord-first if core events are required.\n\n[[literature/lit-20260911-sol-pi-harness-efficiency]] · [[permanent/perm-20260911-omp-can-load-sol-pi-via-legacy-shim]]\n\n## Snapshot\n\nTyped task fan-out, MCP, browser/computer tools. robomp auto-implements actionable issues.\n\n## Strengths\n\nObfuscation exists and is tested. Auth-gateway already injects **provider** tokens. #11399 is the right custody leaf.\n\n## Gaps (leapfrog targets)\n\nRestore-in-tool-args is the Hermes `--apply` equivalent for `GITHUB_TOKEN`. Document wrap for tool credentials; stop teaching restore-as-success. No identity/document store — compose Skyflow/Plaid if needed. Discord-first.\n\n## Sources\n\n- https://github.com/can1357/oh-my-pi/blob/main/docs/secrets.md\n- [[literature/lit-20260910-trustworthy-secret-brokers]]\n- [[literature/lit-20260910-agent-http-inject-brokers]]\n- [[permanent/perm-20260910-identity-fields-are-not-documents]]\n",
       "distilled": "Snapshot: Most capable agent surface shipped; fork of Pi. ~80k Rust core lines.",
       "tags": [
         "harness"
       ],
       "domains": [],
       "created": "2026-09-09",
-      "updated": "2026-09-10",
+      "updated": "2026-09-11",
       "weight": 1.0,
       "lastFired": null,
       "retrievalDue": true
@@ -1847,15 +2161,16 @@
       "path": "harnesses/pi.md",
       "title": "pi",
       "type": "harness",
-      "status": "stub",
-      "body": "# pi\n\nStub — frontier fills on next pulse.\n",
-      "distilled": "Stub — frontier fills on next pulse.",
+      "status": "active",
+      "body": "# pi\n\nMario Zechner / Earendil `pi` (`@earendil-works/pi-coding-agent`). SoL-Pi's only first-party host.\n\n## Snapshot\n\nFour tools, extension modules, no opinions. SoL-Pi (`pi install git:github.com/NVlabs/SoL-Pi`) is the NVIDIA efficiency layer: Action Fusion, ObservationPack, Evidence-Preserving Reducer, Online Context Compact. Tested pin **0.84.2**. Mechanisms default off.\n\n## Strengths\n\nPublic extension events (`context`, `tool_result`, `before_provider_request`, `agent_settled`, `session_before_tree`) are stable enough that NVIDIA refused to vendor Pi. Config discovery uses `CONFIG_DIR_NAME` + `getAgentDir()` + `isProjectTrusted()`.\n\n## Gaps (leapfrog targets)\n\nPi is the research substrate, not the daily IDE. OMP already forked it and added hashline edits, LSP, subagents. SoL-Pi savings vs native Codex/Claude are author-reported on EdgeBench; TB4 63-task slice shows SoL-Pi solving **fewer** tasks (15 vs 18).\n\n## Sources\n\n- https://pi.dev/\n- https://github.com/earendil-works/pi\n- [[literature/lit-20260911-sol-pi-harness-efficiency]]\n- [[permanent/perm-20260911-sol-pi-is-pi-public-extension-not-core-patch]]\n- [[harnesses/omp]]\n",
+      "distilled": "Mario Zechner / Earendil `pi` (`@earendil-works/pi-coding-agent`). SoL-Pi's only first-party host.",
       "tags": [
-        "harness"
+        "harness",
+        "sol-pi"
       ],
       "domains": [],
       "created": "2026-09-09",
-      "updated": "2026-09-09",
+      "updated": "2026-09-11",
       "weight": 1.0,
       "lastFired": null,
       "retrievalDue": true
@@ -2134,7 +2449,7 @@
       "title": "Frontier KB home",
       "type": "moc",
       "status": "active",
-      "body": "# Frontier intelligence\n\n## Harness radar\n- [[harnesses/omp]] · [[harnesses/hermes]] · [[harnesses/devin]] · [[harnesses/claude-code]] · [[harnesses/codex]] · [[harnesses/cursor]] · [[harnesses/crush]] · [[harnesses/opencode]] · [[harnesses/firstmate]] · [[harnesses/pi]] · [[harnesses/o8]] · [[harnesses/grok]] · [[harnesses/fx]]\n\n## Discipline audit\n- [[domains/physics]] · [[domains/cs]] · [[domains/information-theory]] · [[domains/neuroscience]] · [[domains/learning-acceleration]] · [[domains/mathematics]] · [[domains/statistics]] · [[domains/data-science]] · [[domains/ai-ml]] · [[domains/tokenomics]] · [[domains/tool-use]] · [[domains/skills]] · [[domains/frameworks]]\n\n## Human learning acceleration (2026-09-11)\nThe vault is a brain: notes potentiate with use, idle synapses decay, noise is pruned. Frontend: [kvnloo/humanity-vault](https://github.com/kvnloo/humanity-vault) (GraphQL). Protocol stack: Sung (encode), Huberman (alert→rest), Johnson (measure), Patrick (MOVE/BDNF).\n- [[domains/learning-acceleration]] · [[domains/neuroscience]]\n- [[literature/lit-20260911-justin-sung-higher-order-encoding]] · [[literature/lit-20260911-huberman-plasticity-alert-rest]] · [[literature/lit-20260911-bryan-johnson-measure-dont-guess]] · [[literature/lit-20260911-rhonda-patrick-bdnf-exercise]]\n- [[literature/lit-20260911-synaptic-pruning-as-kb-policy]] · [[literature/lit-20260911-synaptic-homeostasis-sleep-shy]] · [[literature/lit-20260911-llm-frontier-teaching-surface]]\n- [[permanent/perm-20260911-encoding-beats-exposure]] · [[permanent/perm-20260911-plasticity-needs-alert-then-rest]] · [[permanent/perm-20260911-measure-the-learning-loop]] · [[permanent/perm-20260911-bdnf-is-a-learning-prerequisite]]\n- [[permanent/perm-20260911-kb-is-a-brain-prune-and-potentiate]] · [[permanent/perm-20260911-human-agent-synergy-is-the-loop]] · [[permanent/perm-20260911-distill-then-retrieve-llm-frontier]]\n- wave: `inbox/learning-acceleration-wave-2026-09-11.md`\n\n## SWE-2 / coding post-training (2026-09-10)\n- [[literature/lit-20260910-swe-2-pareto-rl]] · [[literature/lit-20260910-swe-1-7]] · [[literature/lit-20260910-swe-grep]] · [[literature/lit-20260910-oss-coding-plugins]]\n- [[literature/lit-20260910-evo-bench-harness-evolution]] · [[literature/lit-20260910-gsme-self-evolving-harness]] · [[literature/lit-20260910-rst-terminal-sft]]\n- [[permanent/perm-20260910-swe-2-is-a-posttrained-model]] · [[permanent/perm-20260910-no-universal-harness-plugin]] · [[permanent/perm-20260910-specialist-subagent-handoff]] · [[permanent/perm-20260910-small-models-are-workers-or-specialists]] · [[permanent/perm-20260910-scaffold-tool-shape-dominates]] · [[permanent/perm-20260910-evolver-lifts-frozen-policy]]\n- wave: `inbox/swe-2-wave-2026-09-10.md`\n\n## Concurrent store (2026-09-10)\n- [[literature/lit-20260910-agent-memory-postgres]] · [[literature/lit-20260910-agent-kb-concurrency]] · [[literature/lit-20260910-kb-hosting-postgres]] · [[literature/lit-20260910-kb-mesh-pair-keel]]\n- [[permanent/perm-20260910-git-vault-fails-at-100-writers]] · [[permanent/perm-20260910-postgres-is-the-operational-kb]] · [[permanent/perm-20260910-postgres-cas-plus-markdown-projection]]\n- [[permanent/perm-20260910-vault-to-sota-is-dsn]] · [[permanent/perm-20260910-host-kb-on-pc0-tailnet]] · [[permanent/perm-20260910-host-on-neon-pooled-postgres]]\n- wave: `inbox/kb-concurrency-2026-09-10.md`\n\n## Secret action portal (2026-09-10)\n- [[literature/lit-20260910-trustworthy-secret-brokers]] · [[literature/lit-20260910-agent-http-inject-brokers]] · [[literature/lit-20260910-pii-tokenization-vaults]]\n- [[permanent/perm-20260910-build-action-portal-not-password-manager]] · [[permanent/perm-20260910-custody-is-not-confinement]] · [[permanent/perm-20260910-hermes-secrets-are-env-injection]] · [[permanent/perm-20260910-obfuscation-is-not-noninterference]]\n- [[permanent/perm-20260910-hermes-vault-is-login-payment-address]] · [[permanent/perm-20260910-identity-fields-are-not-documents]] · [[permanent/perm-20260910-screenshots-bypass-vault-redaction]]\n- Origin: Hermes [#107698](https://github.com/NousResearch/hermes-agent/issues/107698) (docs), [#107700](https://github.com/NousResearch/hermes-agent/issues/107700) (handles/wrap), [#107704](https://github.com/NousResearch/hermes-agent/issues/107704) (identity), [#107705](https://github.com/NousResearch/hermes-agent/issues/107705) (documents). OMP: Discord-first (`inbox/omp-portal-discord-2026-09-10.md`). Linear [PER-1321](https://linear.app/0ism/issue/PER-1321) · wave: `inbox/secret-action-portal-wave-2026-09-10.md`\n\n## Keel (2026-09-10)\n- [[literature/lit-20260910-keel-level0-evidence-surface]]\n\n## Orchestration / AODL / HOTL (2026-08-17)\n- Public IR + harness catalog: [kvnloo/aodl](https://github.com/kvnloo/aodl) (`harnesses/catalog.json`, [network](https://github.com/kvnloo/aodl/blob/main/docs/network.md), [working note](https://github.com/kvnloo/aodl/blob/main/docs/working-note.md) — not a paper)\n- C(RAID) named hybrid: [[literature/lit-20260910-craid-blueprint]] · [[permanent/perm-20260910-craid-is-named-hybrid]]\n- Literature: [[literature/lit-20260817-aodl-voice-transcript]] · [[literature/lit-20260817-hotl-01-issue-88589]] · [[literature/lit-20260817-hotl-02-spec]]\n- Permanent: [[permanent/perm-20260817-orchestration-typed-dynamic-graph]] · [[permanent/perm-20260817-intent-plan-observed]] · [[permanent/perm-20260817-aodl-ir-first]] · [[permanent/perm-20260817-market-is-allocation-policy]] · [[permanent/perm-20260817-no-aodl-repo]]\n\n## First OMP wave (from frontier 2026-09-09)\nSee `inbox/omp-wave-2026-09-09.md`\n",
+      "body": "# Frontier intelligence\n\n## Harness radar\n- [[harnesses/omp]] · [[harnesses/hermes]] · [[harnesses/devin]] · [[harnesses/claude-code]] · [[harnesses/codex]] · [[harnesses/cursor]] · [[harnesses/crush]] · [[harnesses/opencode]] · [[harnesses/firstmate]] · [[harnesses/pi]] · [[harnesses/o8]] · [[harnesses/grok]] · [[harnesses/fx]]\n\n## Discipline audit\n- [[domains/physics]] · [[domains/cs]] · [[domains/information-theory]] · [[domains/neuroscience]] · [[domains/learning-acceleration]] · [[domains/mathematics]] · [[domains/statistics]] · [[domains/data-science]] · [[domains/ai-ml]] · [[domains/tokenomics]] · [[domains/tool-use]] · [[domains/skills]] · [[domains/frameworks]]\n\n## Human learning acceleration (2026-09-11)\nThe vault is a brain: notes potentiate with use, idle synapses decay, noise is pruned. Frontend: [kvnloo/humanity-vault](https://github.com/kvnloo/humanity-vault) (GraphQL). Protocol stack: Sung (encode), Huberman (alert→rest), Johnson (measure), Patrick (MOVE/BDNF).\n- [[domains/learning-acceleration]] · [[domains/neuroscience]]\n- [[literature/lit-20260911-justin-sung-higher-order-encoding]] · [[literature/lit-20260911-huberman-plasticity-alert-rest]] · [[literature/lit-20260911-bryan-johnson-measure-dont-guess]] · [[literature/lit-20260911-rhonda-patrick-bdnf-exercise]]\n- [[literature/lit-20260911-synaptic-pruning-as-kb-policy]] · [[literature/lit-20260911-synaptic-homeostasis-sleep-shy]] · [[literature/lit-20260911-llm-frontier-teaching-surface]]\n- [[permanent/perm-20260911-encoding-beats-exposure]] · [[permanent/perm-20260911-plasticity-needs-alert-then-rest]] · [[permanent/perm-20260911-measure-the-learning-loop]] · [[permanent/perm-20260911-bdnf-is-a-learning-prerequisite]]\n- [[permanent/perm-20260911-kb-is-a-brain-prune-and-potentiate]] · [[permanent/perm-20260911-human-agent-synergy-is-the-loop]] · [[permanent/perm-20260911-distill-then-retrieve-llm-frontier]]\n- wave: `inbox/learning-acceleration-wave-2026-09-11.md`\n\n## SWE-2 / coding post-training (2026-09-10)\n- [[literature/lit-20260910-swe-2-pareto-rl]] · [[literature/lit-20260910-swe-1-7]] · [[literature/lit-20260910-swe-grep]] · [[literature/lit-20260910-oss-coding-plugins]]\n- [[literature/lit-20260910-evo-bench-harness-evolution]] · [[literature/lit-20260910-gsme-self-evolving-harness]] · [[literature/lit-20260910-rst-terminal-sft]]\n- [[permanent/perm-20260910-swe-2-is-a-posttrained-model]] · [[permanent/perm-20260910-no-universal-harness-plugin]] · [[permanent/perm-20260910-specialist-subagent-handoff]] · [[permanent/perm-20260910-small-models-are-workers-or-specialists]] · [[permanent/perm-20260910-scaffold-tool-shape-dominates]] · [[permanent/perm-20260910-evolver-lifts-frozen-policy]]\n- wave: `inbox/swe-2-wave-2026-09-10.md`\n\n## Concurrent store (2026-09-10)\n- [[literature/lit-20260910-agent-memory-postgres]] · [[literature/lit-20260910-agent-kb-concurrency]] · [[literature/lit-20260910-kb-hosting-postgres]] · [[literature/lit-20260910-kb-mesh-pair-keel]]\n- [[permanent/perm-20260910-git-vault-fails-at-100-writers]] · [[permanent/perm-20260910-postgres-is-the-operational-kb]] · [[permanent/perm-20260910-postgres-cas-plus-markdown-projection]]\n- [[permanent/perm-20260910-vault-to-sota-is-dsn]] · [[permanent/perm-20260910-host-kb-on-pc0-tailnet]] · [[permanent/perm-20260910-host-on-neon-pooled-postgres]]\n- wave: `inbox/kb-concurrency-2026-09-10.md`\n\n## Secret action portal (2026-09-10)\n- [[literature/lit-20260910-trustworthy-secret-brokers]] · [[literature/lit-20260910-agent-http-inject-brokers]] · [[literature/lit-20260910-pii-tokenization-vaults]]\n- [[permanent/perm-20260910-build-action-portal-not-password-manager]] · [[permanent/perm-20260910-custody-is-not-confinement]] · [[permanent/perm-20260910-hermes-secrets-are-env-injection]] · [[permanent/perm-20260910-obfuscation-is-not-noninterference]]\n- [[permanent/perm-20260910-hermes-vault-is-login-payment-address]] · [[permanent/perm-20260910-identity-fields-are-not-documents]] · [[permanent/perm-20260910-screenshots-bypass-vault-redaction]]\n- Origin: Hermes [#107698](https://github.com/NousResearch/hermes-agent/issues/107698) (docs), [#107700](https://github.com/NousResearch/hermes-agent/issues/107700) (handles/wrap), [#107704](https://github.com/NousResearch/hermes-agent/issues/107704) (identity), [#107705](https://github.com/NousResearch/hermes-agent/issues/107705) (documents). OMP: Discord-first (`inbox/omp-portal-discord-2026-09-10.md`). Linear [PER-1321](https://linear.app/0ism/issue/PER-1321) · wave: `inbox/secret-action-portal-wave-2026-09-10.md`\n\n## Keel (2026-09-10)\n- [[literature/lit-20260910-keel-level0-evidence-surface]]\n\n## Orchestration / AODL / HOTL (2026-08-17)\n- Public IR + harness catalog: [kvnloo/aodl](https://github.com/kvnloo/aodl) (`harnesses/catalog.json`, [network](https://github.com/kvnloo/aodl/blob/main/docs/network.md), [working note](https://github.com/kvnloo/aodl/blob/main/docs/working-note.md) — not a paper)\n- C(RAID) named hybrid: [[literature/lit-20260910-craid-blueprint]] · [[permanent/perm-20260910-craid-is-named-hybrid]]\n- Literature: [[literature/lit-20260817-aodl-voice-transcript]] · [[literature/lit-20260817-hotl-01-issue-88589]] · [[literature/lit-20260817-hotl-02-spec]]\n- Permanent: [[permanent/perm-20260817-orchestration-typed-dynamic-graph]] · [[permanent/perm-20260817-intent-plan-observed]] · [[permanent/perm-20260817-aodl-ir-first]] · [[permanent/perm-20260817-market-is-allocation-policy]] · [[permanent/perm-20260817-no-aodl-repo]]\n\n## AODL C(RAID) R-phase (2026-09-12)\nCursor-node inbox only. CoS promotes to literature/permanent. Teaching surface: humanity-vault `/aodl`.\n- [[inbox/cursor/inbox-cursor-aodl-thesis-intent-20260912]] · [[inbox/cursor/inbox-cursor-aodl-evidence-chain-20260912]] · [[inbox/cursor/inbox-cursor-aodl-smm-xrisk-20260912]]\n- [[inbox/cursor/inbox-cursor-aodl-papers-20260911]] · [[inbox/cursor/inbox-cursor-aodl-formalism-20260911]] · [[inbox/cursor/inbox-cursor-aodl-lab-protocols-20260911]]\n- [[inbox/cursor/inbox-cursor-aodl-search-method-20260911]] · [[inbox/cursor/inbox-cursor-aodl-competitors-100-20260911]] · [[inbox/cursor/inbox-cursor-aodl-deep-wave2-20260912]]\n- Dash capture: [kvnloo/dash#38](https://github.com/kvnloo/dash/pull/38) · Linear [PER-1461](https://linear.app/0ism/issue/PER-1461)\n\n## First OMP wave (from frontier 2026-09-09)\nSee `inbox/omp-wave-2026-09-09.md`\n\n## SoL-Pi / harness efficiency (2026-09-11)\n- [[literature/lit-20260911-sol-pi-harness-efficiency]]\n- [[permanent/perm-20260911-sol-pi-is-pi-public-extension-not-core-patch]] · [[permanent/perm-20260911-omp-can-load-sol-pi-via-legacy-shim]] · [[permanent/perm-20260911-hermes-sol-pi-is-a-python-plugin-port]] · [[permanent/perm-20260911-observationpack-is-projection-not-history-rewrite]] · [[permanent/perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi]]\n- [[harnesses/pi]] · [[harnesses/omp]] · [[harnesses/hermes]]\n- wave: `inbox/sol-pi-wave-2026-09-11.md`\n",
       "distilled": "The vault is a brain: notes potentiate with use, idle synapses decay, noise is pruned. Frontend: [kvnloo/humanity-vault](https://github.com/kvnloo/humanity-vault) (GraphQL). Protocol stack: Sung (encode), Huberman (alert→rest), Johnson (measure), Patrick (MOVE/BDNF).",
       "tags": [
         "moc",
@@ -2142,7 +2457,7 @@
       ],
       "domains": [],
       "created": "2026-09-09",
-      "updated": "2026-09-11",
+      "updated": "2026-09-12",
       "weight": 1.0,
       "lastFired": null,
       "retrievalDue": true
@@ -2183,6 +2498,295 @@
       "domains": [],
       "created": "2026-09-10",
       "updated": "2026-09-10",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-cursor-agent-onboarding-20260911",
+      "path": "inbox/cursor/agent-onboarding-20260911.md",
+      "title": "Cursor cloud: GitNexus catalog + orient/anti-slop skills (do not vendor)",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# GitNexus + anti-slop → Verified OSS Loop skills\n\n## Context\n\nFollow-up on the quality-bot pass. Kit now catalogs GitNexus (PolyForm Noncommercial), Serena, Context7, DeepWiki, repomix/gitingest, ast-grep. Original Apache-2.0 skills `orient` and `anti-slop` copy into targets. `oss-onboard` must not run `gitnexus analyze` (rewrites AGENTS.md/CLAUDE.md).\n\n## Next action\n\nCoS: merge vault notes after schema CI. Kit PR on verified-oss-loop is the same quality-bots branch, not a second loop.\n\n## Links\n\n- [[literature/lit-20260911-agent-onboarding-tools]]\n- [[permanent/perm-20260911-orient-before-edit]]\n- [[permanent/perm-20260911-anti-slop-is-smallest-complete]]\n- https://github.com/abhigyanpatwari/GitNexus\n- https://github.com/kvnloo/verified-oss-loop\n",
+      "distilled": "Follow-up on the quality-bot pass. Kit now catalogs GitNexus (PolyForm Noncommercial), Serena, Context7, DeepWiki, repomix/gitingest, ast-grep. Original Apache-2.0 skills `orient` and `anti-slop` copy into targets. `oss-onboard` must not run `gitnexus analyze` (rewrites AGENTS.md/CLAUDE.md).",
+      "tags": [
+        "inbox",
+        "cursor",
+        "gitnexus",
+        "anti-slop",
+        "verified-oss-loop"
+      ],
+      "domains": [
+        "frameworks",
+        "skills",
+        "tool-use"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-cursor-aodl-competitors-100-20260911",
+      "path": "inbox/cursor/inbox-cursor-aodl-competitors-100-20260911.md",
+      "title": "AODL competitor batch: 58 papers + 42 repos",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# 100-wide competitor scan (inbox only)\n\nDistributed-writer rule: do not promote this into `literature/` or `permanent/` from the cursor node.\n\nDash holding pen (pushable): https://github.com/kvnloo/dash/blob/cursor/aodl-craid-research-e30f/docs/research/competitors-100-20260911.md\n\nCursor Task async cap is 10. The other 90 targets ran as a parallel arXiv+GitHub fetch. After keyword score + human override: 36 high / 41 med / 23 skip.\n\nNothing here is a replacement IR. Catalog Readings = λ_A, Pact/CoMPSeT, MASFactory, AdaptOrch, AgentSpawn, CodeCRDT, STP sheaves, RLM, Evo-Bench, HOTL legal, oversight inverted-U. Adapters = MCP / A2A / AG-UI. LangGraph/CrewAI/AutoGen/Dify = fragments. Prefect/Airflow/n8n = DAG runtimes. Hermes/Keel/Codex = this network.\n\nTwo GitHub ids moved: Aider-AI/aider, continuedev/continue.\n",
+      "distilled": "Distributed-writer rule: do not promote this into `literature/` or `permanent/` from the cursor node.",
+      "tags": [
+        "inbox",
+        "aodl",
+        "competitors",
+        "arxiv",
+        "github"
+      ],
+      "domains": [
+        "frameworks",
+        "mathematics",
+        "cs"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-cursor-aodl-deep-wave2-20260912",
+      "path": "inbox/cursor/inbox-cursor-aodl-deep-wave2-20260912.md",
+      "title": "AODL deep-read wave 2: cousins stay readings",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# Wave 2 closed (still no HOTL 0.3)\n\n## Context\n\nFull notes: Dash `docs/research/deep/` and `deep-20260912.md` §6.\n\n| arXiv | Keep | Skip |\n|---|---|---|\n| CoMPSeT 2510.24205 | `policies.choreo` feature vector | One dialect as schema; it does **not** compare Scribble/NuScr |\n| MASFactory 2603.06007 | NL→spec after acceptance = intent | Vibe canvas as language |\n| AgentSpawn 2602.07072 | Bounded `policies.dynamic` | Unbounded spawn |\n| CodeCRDT 2510.18893 | observation + stateStore; 5–10% semantic residual | CRDT as verify |\n| Evo-Bench 2608.09096 | Search \\(H_t\\), freeze \\(\\pi\\) | Schema from leaderboard |\n| HOTL legal 2606.19812 | existing `humanGate` | Name collision with hotl-0.2 |\n| MCP census 2509.25292 | \\(\\Gamma_t\\) allowlists | MCP as IR |\n| LiveMem 2608.02515 | node-local continuity | Continuity as \\(\\mathcal{O}_t\\) |\n| AgentRoom 2608.23740 | CRDT workspace + claims | Hive as swarm |\n| Qoreo 2607.20391 | EPP invariant | NetQASM / qubit types |\n\n## Next action\n\nPromote starred rows with the evidence-chain literature batch. Cursor does not write `literature/`.\n\n## Links\n\n- [[inbox/cursor/inbox-cursor-aodl-papers-20260911]]\n- [[inbox/cursor/inbox-cursor-aodl-evidence-chain-20260912]]\n- https://github.com/kvnloo/dash/blob/cursor/aodl-craid-research-e30f/docs/research/deep-20260912.md\n",
+      "distilled": "Full notes: Dash `docs/research/deep/` and `deep-20260912.md` §6.",
+      "tags": [
+        "inbox",
+        "aodl",
+        "literature"
+      ],
+      "domains": [
+        "frameworks",
+        "cs",
+        "information-theory"
+      ],
+      "created": "2026-09-12",
+      "updated": "2026-09-12",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-cursor-aodl-evidence-chain-20260912",
+      "path": "inbox/cursor/inbox-cursor-aodl-evidence-chain-20260912.md",
+      "title": "AODL thesis claims chained to math, physics, SOTA",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# High-T sentences must cite a primitive and a paper\n\n## Context\n\nThesis temperature is Arrival / Kardashev / screen lexicon. Grounding rule: if a claim has no blackboard object and no fetchable paper, it stays poetry in the utterance files.\n\nLoad-bearing chain (full table lives in Dash holding pen until CoS copies literature/):\n\n- \\(\\varepsilon\\) residual → Shannon \\(R(D)\\) + Tishby IB + [2607.08032](https://arxiv.org/abs/2607.08032) compaction + [2512.24601](https://arxiv.org/abs/2512.24601) RLM. Physics: Landauer \\(k_B T\\ln 2\\); finite-time [2601.04358](https://arxiv.org/abs/2601.04358). Slot: slice vs dump.\n- Codecs / capability → measurement needs an apparatus; λ_A ports [2604.11767](https://arxiv.org/abs/2604.11767); He et al. CHI 2023 capability-aware SMM. Slot: \\(\\pi_v\\).\n- Simultaneous \\(\\mathcal{O}_t\\) → sheaves / obstruction [2605.01879](https://arxiv.org/abs/2605.01879). \\(\\tau\\) is a decoder.\n- Fail closed → Girard CLL, Honda MPST, coherence-as-cut; Pact [2605.03143](https://arxiv.org/abs/2605.03143); rMPST [2501.18874](https://arxiv.org/abs/2501.18874); CoMPSeT [2510.24205](https://arxiv.org/abs/2510.24205). Slot: `policies.choreo`.\n- Smarter + shorter unlabeled → posterior fills from the prior; sleeper agents [2401.05566](https://arxiv.org/abs/2401.05566); AdaptOrch ε-convergence [2602.16873](https://arxiv.org/abs/2602.16873).\n- Kardashev → energy in \\(\\Gamma_t\\) not new kinds. SweetSpot LLM energy [2602.05695](https://arxiv.org/abs/2602.05695). Practical bottleneck is memory movement, not the Landauer floor.\n- SMM → Mathieu 2000; Vaccaro et al. 2024 *Nat Hum Behav* \\(g=-0.23\\) (decision loss, creation gain). Do not import Tong [2601.06030](https://arxiv.org/abs/2601.06030) “unitary agency.”\n- Explosion → Vinge 1993 IA vs AI; Evo-Bench saturation [2608.09096](https://arxiv.org/abs/2608.09096); AgentSpawn bounds [2602.07072](https://arxiv.org/abs/2602.07072).\n- Merge ≠ verify → CodeCRDT [2510.18893](https://arxiv.org/abs/2510.18893); StateFuse [2607.05844](https://arxiv.org/abs/2607.05844).\n\nDash export: https://github.com/kvnloo/dash/blob/cursor/aodl-craid-research-e30f/docs/research/thesis-evidence-chain-20260912.md\n\n## Next action\n\nCoS: one `literature/` note per starred arXiv (RD compaction, RLM, λ_A, Pact, STP, AdaptOrch, Vaccaro-as-lit, sleeper agents, SweetSpot). One `permanent/` claim: *SMM is the three objects made public; unlabeled holes are ε_compile.* Do not mint kinds. Cursor must not write `literature/` or `permanent/`.\n\n## Links\n\n- [[inbox/cursor/inbox-cursor-aodl-formalism-20260911]]\n- [[inbox/cursor/inbox-cursor-aodl-papers-20260911]]\n- [[inbox/cursor/inbox-cursor-aodl-thesis-intent-20260912]]\n- [[inbox/cursor/inbox-cursor-aodl-smm-xrisk-20260912]]\n- [[permanent/perm-20260817-intent-plan-observed]]\n- https://arxiv.org/abs/2607.08032\n- https://arxiv.org/abs/2512.24601\n- https://arxiv.org/abs/2401.05566\n- https://arxiv.org/abs/2602.05695\n",
+      "distilled": "Thesis temperature is Arrival / Kardashev / screen lexicon. Grounding rule: if a claim has no blackboard object and no fetchable paper, it stays poetry in the utterance files.",
+      "tags": [
+        "inbox",
+        "aodl",
+        "evidence-chain",
+        "rate-distortion",
+        "session-types",
+        "smm"
+      ],
+      "domains": [
+        "mathematics",
+        "physics",
+        "information-theory",
+        "cs",
+        "frameworks"
+      ],
+      "created": "2026-09-12",
+      "updated": "2026-09-12",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-cursor-aodl-formalism-20260911",
+      "path": "inbox/cursor/inbox-cursor-aodl-formalism-20260911.md",
+      "title": "Push AODL as a mathematical language without a new kind",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# Formalize orchestration as language, not as a new product\n\n## Context\n\nAODL already has $\\mathcal{O}_t=(V_t,E_t,S_t,\\Pi_t,\\Gamma_t)$ and intent $\\neq$ plan $\\neq$ observed. The 2026-09-11 pass says: add **readings and compiler profiles**, not schema kinds, until a Hermes dry-run exists.\n\nProposed composition (interpretation, not 0.3):\n\n- **Intra-node:** $\\lambda_A$ (oracle + bounded fix). Missing terminate / unbounded spawn is already fail-closed.\n- **Inter-node:** HOTL graph. `message` edges may later carry a global type (MPST / Pact). Duality failure is $\\bot$.\n- **Geometry:** intent/plan/observed as three sheaves on a time site; gluing = merge receipts; obstruction = fail closed. Do not JSON-encode a topos.\n- **Stats/control:** $\\Pi_t$ is a policy on a typed graph MDP. AdaptOrch: topology dominates once models converge.\n- **Info theory:** rate = tokens; distortion = missed deps / stale state. RLM = $\\mathcal{O}_t$ lives outside the window.\n- **Consciousness/philosophy (discipline):** blackboard $\\neq$ IIT; active inference $\\approx$ $\\Gamma_t$; Keel L0 is collective intentionality (\"router is not the project\"). Density of a drawing is not $\\Phi$.\n\nPush order: compiler dry-run, human-attention budget in $\\Gamma_t$, spawn coherence + verifier, architecture search over **valid documents**, then optional session-type profile.\n\n## Next action\n\nDo not change `schema/hotl-0.2.schema.json` from this note. If a construct lands later: one valid fixture and one invalid fixture.\n\n## Links\n\n- https://github.com/kvnloo/aodl/blob/main/docs/research-craid-20260911.md\n- [[permanent/perm-20260817-intent-plan-observed]]\n- [[permanent/perm-20260817-aodl-ir-first]]\n- [[permanent/perm-20260910-craid-is-named-hybrid]]\n- https://arxiv.org/abs/2604.11767\n- https://arxiv.org/abs/2605.03143\n- https://arxiv.org/abs/2605.01879\n",
+      "distilled": "AODL already has $\\mathcal{O}_t=(V_t,E_t,S_t,\\Pi_t,\\Gamma_t)$ and intent $\\neq$ plan $\\neq$ observed. The 2026-09-11 pass says: add **readings and compiler profiles**, not schema kinds, until a Hermes dry-run exists.",
+      "tags": [
+        "inbox",
+        "aodl",
+        "formalism",
+        "sheaf",
+        "session-types"
+      ],
+      "domains": [
+        "mathematics",
+        "physics",
+        "cs",
+        "information-theory",
+        "neuroscience"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-cursor-aodl-lab-protocols-20260911",
+      "path": "inbox/cursor/inbox-cursor-aodl-lab-protocols-20260911.md",
+      "title": "MCP, A2A, AG-UI, A2UI, skills, harnesses are adapters under AODL",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# Labs already speak AODL in three protocol layers\n\n## Context\n\nAG-UI docs state the split: **AG-UI** = agent↔user, **MCP** = agent↔tools/data, **A2A** = agent↔agent. A2UI is Google's agent-generated UI format (messages, not executable code). Agent Skills are packaged procedures. OpenAI harness engineering treats the **repo** as system of record and humans as specifiers of intent + feedback loops.\n\nAODL join:\n\n| Layer | Protocol / product | HOTL |\n|---|---|---|\n| User | AG-UI, A2UI, Dash, Solarpunk $\\tau$ | decoder of declared metadata + observed $S_t$ |\n| Tools | MCP, skills, plugins | `tool` / `service` nodes + ports |\n| Peers | A2A, Hermes A2A, FIPA | `message` / `delegation` |\n| Control plane | LangGraph, Kanban, Codex loop | compiled plan, not intent |\n| Observed | OTel, PROV, traces, `/roster` | observed $V$ / event log |\n\nDo not collapse MCP into $\\mathcal{O}_t$. Do not treat Cursor cloud agents, Claude Code, Codex, Hermes, or OMP as extra harness ids. Catalog stays `hermes omp o8 grok codex claude pi fx`. Firstmate is a distro. o8 is a control room.\n\nHarness evolution papers (Evo-Bench, Live-SWE-agent, Agentic Harness Engineering) are **search over compiled $\\Pi$**, which is exactly the 0.2 line \"architecture search is search over programs in this IR.\"\n\n## Next action\n\nCompiler profiles, not new ids. Frontier-kb already lists poll URLs in `data/sources.yaml`; add AG-UI / A2UI / $\\lambda_A$ / Pact only if CoS wants them as poll targets.\n\n## Links\n\n- https://docs.ag-ui.com/introduction\n- https://a2a-protocol.org/latest/specification/\n- https://modelcontextprotocol.io/specification/2026-07-28\n- https://developers.googleblog.com/introducing-a2ui-an-open-project-for-agent-driven-interfaces/\n- https://agentskills.io/\n- https://openai.com/index/harness-engineering/\n- https://openai.com/index/the-next-evolution-of-the-agents-sdk/\n- [[harnesses/hermes]]\n- [[permanent/perm-20260817-market-is-allocation-policy]]\n",
+      "distilled": "AG-UI docs state the split: **AG-UI** = agent↔user, **MCP** = agent↔tools/data, **A2A** = agent↔agent. A2UI is Google's agent-generated UI format (messages, not executable code). Agent Skills are packaged procedures. OpenAI harness engineering treats the **repo** as system of record and humans as specifiers of intent + feedback loops.",
+      "tags": [
+        "inbox",
+        "aodl",
+        "mcp",
+        "a2a",
+        "ag-ui",
+        "harness"
+      ],
+      "domains": [
+        "frameworks",
+        "tool-use",
+        "skills"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-cursor-aodl-papers-20260911",
+      "path": "inbox/cursor/inbox-cursor-aodl-papers-20260911.md",
+      "title": "AODL-adjacent papers (58 arXiv ids, Jina-read primaries)",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# Primaries that share AODL's structure under other names\n\n## Context\n\nPulled abstracts for 58 arXiv ids from DuckDuckGo hits; Jina-read the ones that actually change the language (not enterprise surveys).\n\nHighest leverage (fact vs interpretation in the AODL capture):\n\n| arXiv | Claim (one sentence) | AODL object |\n|---|---|---|\n| [2604.11767](https://arxiv.org/abs/2604.11767) | $\\lambda_A$: typed agent calculus; 94.1% of 835 GitHub configs structurally incomplete; five frameworks embed as fragments | intra-node semantics; bounded `fix_n` |\n| [2605.03143](https://arxiv.org/abs/2605.03143) | Pact: choreography + choices/utilities/nature $\\mapsto$ a game (why an agent follows a protocol) | `message` + auction $\\Pi_t$ |\n| [2603.06007](https://arxiv.org/abs/2603.06007) | MASFactory: NL $\\to$ editable graph spec $\\to$ executable; control/message/state flows | intent vs plan; data vs control |\n| [2602.16873](https://arxiv.org/abs/2602.16873) | AdaptOrch: after model-quality convergence, topology dominates model choice | search over $\\Pi_t$ |\n| [2602.07072](https://arxiv.org/abs/2602.07072) | AgentSpawn: runtime spawn + memory slice + coherence | bounded graph mutation |\n| [2605.01879](https://arxiv.org/abs/2605.01879) | Sheaf-theoretic planning: local histories glue; obstruction $\\mapsto$ abduction | three objects as sheaves |\n| [2510.18893](https://arxiv.org/abs/2510.18893) | CodeCRDT: observation-driven coordination; character merge $\\neq$ semantic merge | `observation` + verifier |\n| [2512.24601](https://arxiv.org/abs/2512.24601) | RLM: prompt is an environment object; recursive slices beat dump/compaction | token-slice hypothesis |\n| [2608.09096](https://arxiv.org/abs/2608.09096) | Evo-Bench: evolver edits harness $H_t$ under budget; early saturation | architecture search |\n| [2606.19812](https://arxiv.org/abs/2606.19812) | HOTL legal: trajectory collapse; calibrated escalation | `humanGate` + evidence |\n| [2606.08919](https://arxiv.org/abs/2606.08919) | Oversight inverted-U: more escalation can be less safe | human-attention budget in $\\Gamma_t$ |\n| [2510.24205](https://arxiv.org/abs/2510.24205) | CoMPSeT: compare MPST dialects; global type $\\to$ local projection | optional session-type profile |\n| [2606.04990](https://arxiv.org/abs/2606.04990) | Survey: traces $\\to$ trust / provenance for LLM agents | event log / PROV |\n| [2604.25850](https://arxiv.org/abs/2604.25850) | Agentic harness engineering from observability | compile AODL $\\to$ harness, not reverse |\n| [2607.08032](https://arxiv.org/abs/2607.08032) | Rate-distortion view of memory compaction | slice vs dump |\n| [2511.13646](https://arxiv.org/abs/2511.13646) | Live-SWE-agent: on-the-fly scaffold evolution | $H_t$ mutation at runtime |\n| [2511.03690](https://arxiv.org/abs/2511.03690) | OpenHands SDK: composable production agent foundation | compiler profile / adapter |\n| [2505.19591](https://arxiv.org/abs/2505.19591) | Evolving orchestration (NeurIPS 2025) | dynamic $\\Pi_t$, still needs bounds |\n\nFull id list (newest first) is in the AODL capture. Do not treat [2601.13671](https://arxiv.org/abs/2601.13671) as a formal semantics; it is a survey that correctly splits MCP vs A2A vs control plane.\n\n## Next action\n\nPromote selected rows to `literature/` with `sources:` pointing at arXiv html. Do not mint a second IR.\n\n## Links\n\n- https://github.com/kvnloo/aodl/blob/main/docs/research-craid-20260911.md\n- [[permanent/perm-20260817-orchestration-typed-dynamic-graph]]\n- [[literature/lit-20260817-hotl-02-spec]]\n",
+      "distilled": "Pulled abstracts for 58 arXiv ids from DuckDuckGo hits; Jina-read the ones that actually change the language (not enterprise surveys).",
+      "tags": [
+        "inbox",
+        "aodl",
+        "literature",
+        "arxiv"
+      ],
+      "domains": [
+        "frameworks",
+        "mathematics",
+        "cs",
+        "information-theory"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-cursor-aodl-search-method-20260911",
+      "path": "inbox/cursor/inbox-cursor-aodl-search-method-20260911.md",
+      "title": "AODL research search: alias queries, DuckDuckGo, agent-reach",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# Alias search for orchestration (same structure, different labels)\n\n## Context\n\nContinuous Research for AODL. Tavily MCP was down. Used DuckDuckGo via `ddgs` plus agent-reach Jina Reader (`https://r.jina.ai/URL`), `gh`, and arXiv `id_list`.\n\nNative `ddgs` backend `duckduckgo` returned no results from this IP (html.duckduckgo.com/lite served an anomaly/botnet interstitial). `ddgs text -b auto` / `brave` worked (398 hits / 50 alias queries / 395 unique URLs / 58 arXiv ids). That is a metasearch through the DDGS client the user asked for, not Google CSE.\n\nInformation-theoretic move: treat labels as a lossy codec. Query the **invariants** (ports, authority, bounded mutation, evidence, human gates, intent≠plan≠observed) and the **aliases** (swarm, crew, vibe graphing, choreography, sheaf, CRDT, harness, skill, MCP, A2A, AG-UI). Maximize coverage of the concept, not the token \"AODL\".\n\n## Next action\n\nCoS: promote the companion inbox notes to literature/permanent. AODL tree: `docs/research-craid-20260911.md` (working capture, not a schema change).\n\n## Links\n\n- [[inbox/cursor/inbox-cursor-aodl-papers-20260911]]\n- [[inbox/cursor/inbox-cursor-aodl-formalism-20260911]]\n- [[inbox/cursor/inbox-cursor-aodl-lab-protocols-20260911]]\n- https://github.com/kvnloo/aodl/blob/main/docs/research-craid-20260911.md\n- https://github.com/Panniantong/Agent-Reach\n",
+      "distilled": "Continuous Research for AODL. Tavily MCP was down. Used DuckDuckGo via `ddgs` plus agent-reach Jina Reader (`https://r.jina.ai/URL`), `gh`, and arXiv `id_list`.",
+      "tags": [
+        "inbox",
+        "aodl",
+        "craid",
+        "search"
+      ],
+      "domains": [
+        "information-theory",
+        "frameworks",
+        "cs"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-cursor-aodl-smm-xrisk-20260912",
+      "path": "inbox/cursor/inbox-cursor-aodl-smm-xrisk-20260912.md",
+      "title": "Shared mental model is public three objects; replacement is a private model plus energy",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# Augmentation: Engelbart L + Licklider criteria\n\n## Context\n\nHumanitarian constraint: work together, do not replace. SMM (Cannon-Bowers / Mathieu 2000) is task/team/equipment/interaction knowledge — not a vibe. Vaccaro, Almaatouq, Malone 2024 *Nat Hum Behav*: human+AI **worse** than best-alone on average (Hedges’ g = −0.23), especially **decisions**; better on **creation**. That is algorithm-in-the-loop without a shared \\(H\\).\n\nAODL reading: \\(\\mathrm{SMM}_t = (\\mathcal{O}^{\\mathrm{intent}}, H_t, \\mathcal{O}_t)\\) readable by both; \\(\\bot\\) on disagreement. Skip Tong [2601.06030](https://arxiv.org/abs/2601.06030) “unitary symbiotic agency” as fusion/replacement.\n\nScreen as **named holes** (not kinds): Inception = planted \\(U\\); Feed mundles = dump; Pantheon UI = destructive compile; Altered Carbon stack = observed sold as identity; Upload = intent under duress; Expanse protomolecule = foreign \\(H_t\\) on wrong World; Vinge IA vs AI (1993) is the fork that keeps humans in the loop.\n\n## Next action\n\nCoS: permanent claim *SMM is the three objects made public*. Literature for Vaccaro 2024 and Vinge 1993. Do not write Dark Forest into \\(\\Pi_t\\).\n\n## Links\n\n- [[inbox/cursor/inbox-cursor-aodl-evidence-chain-20260912]]\n- [[inbox/cursor/inbox-cursor-aodl-thesis-intent-20260912]]\n- [[permanent/perm-20260817-intent-plan-observed]]\n- https://github.com/kvnloo/dash/blob/cursor/aodl-craid-research-e30f/docs/research/thesis-shared-model-xrisk-20260912.md\n- https://www.nature.com/articles/s41562-024-02024-1\n",
+      "distilled": "Humanitarian constraint: work together, do not replace. SMM (Cannon-Bowers / Mathieu 2000) is task/team/equipment/interaction knowledge — not a vibe. Vaccaro, Almaatouq, Malone 2024 *Nat Hum Behav*: human+AI **worse** than best-alone on average (Hedges’ g = −0.23), especially **decisions**; better on **creation**. That is algorithm-in-the-loop without a shared \\(H\\).",
+      "tags": [
+        "inbox",
+        "aodl",
+        "smm",
+        "humanitarian",
+        "x-risk"
+      ],
+      "domains": [
+        "cs",
+        "frameworks",
+        "information-theory"
+      ],
+      "created": "2026-09-12",
+      "updated": "2026-09-12",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-cursor-aodl-thesis-intent-20260912",
+      "path": "inbox/cursor/inbox-cursor-aodl-thesis-intent-20260912.md",
+      "title": "AODL is a contract on ε(I, O_t), not shorter prompts",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# Intent residual; Kardashev is Γ_t\n\n## Context\n\nUtterance saved verbatim in Dash `docs/research/thesis-intent-kardashev-20260912.md` (PR kvnloo/dash#38). Claim: AODL names \\(d(I,\\mathcal{O}_t)\\) as a triangle (codec / compile / run). Fail-closed drives the residual toward 0 instead of letting a stronger decoder fill holes with its prior. Arrival = simultaneous tuple, codecs (text/image/video/τ) of that object. Kardashev changes budgets (tokens, attention, joules, spawn), not kinds. DeepSeek “I can stand up an SVLM” is a capability certificate on ports, not phenomenology.\n\nNo HOTL 0.3. No `consciousness` kind.\n\n## Next action\n\nPromote after evidence-chain literature notes exist. Fixture: image payload + text-only plan → exit nonzero unless bounded vision child.\n\n## Links\n\n- [[inbox/cursor/inbox-cursor-aodl-evidence-chain-20260912]]\n- [[inbox/cursor/inbox-cursor-aodl-smm-xrisk-20260912]]\n- [[permanent/perm-20260817-intent-plan-observed]]\n- https://github.com/kvnloo/dash/blob/cursor/aodl-craid-research-e30f/docs/research/thesis-intent-kardashev-20260912.md\n",
+      "distilled": "Utterance saved verbatim in Dash `docs/research/thesis-intent-kardashev-20260912.md` (PR kvnloo/dash#38). Claim: AODL names \\(d(I,\\mathcal{O}_t)\\) as a triangle (codec / compile / run). Fail-closed drives the residual toward 0 instead of letting a stronger decoder fill holes with its prior. Arrival = simultaneous tuple, codecs (text/image/video/τ) of that object. Kardashev changes budgets (tokens, attention, joules, spawn), not kinds. DeepSeek “I can stand up an SVLM” is a capability certificate on ports, not phenomenology.",
+      "tags": [
+        "inbox",
+        "aodl",
+        "thesis",
+        "intent",
+        "kardashev"
+      ],
+      "domains": [
+        "information-theory",
+        "mathematics",
+        "cs"
+      ],
+      "created": "2026-09-12",
+      "updated": "2026-09-12",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-cursor-oss-quality-bots-20260911",
+      "path": "inbox/cursor/oss-quality-bots-20260911.md",
+      "title": "Cursor cloud: S-tier OSS quality-bot mesh + Verified OSS Loop factory adapter",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# S-tier OSS quality bots → Verified OSS Loop\n\n## Context\n\nTriggered by [BerriAI/litellm#40744](https://github.com/BerriAI/litellm/pull/40744) (Greptile 4/5 + CodSpeed + Codecov on one registry PR). Research stored as literature + permanent notes. Kit PR on `kvnloo/verified-oss-loop` copies Level-1 receipt/expiry/Scorecard; catalog does not dump vendor apps. Factory HITL maps onto SPEC.\n\n## Next action\n\nCoS: merge vault PR after schema CI; merge kit PR (human). HITL: wire `kvnloo/oss-factory` HITL.md to the loop (Backlog until Kevin Todos origin-adjacent work).\n\n## Links\n\n- [[literature/lit-20260911-oss-quality-bot-stacks]]\n- [[permanent/perm-20260911-bots-advise-humans-merge]]\n- [[permanent/perm-20260911-factory-applies-verified-oss-loop]]\n- https://github.com/kvnloo/verified-oss-loop\n- https://github.com/kvnloo/oss-factory\n",
+      "distilled": "Triggered by [BerriAI/litellm#40744](https://github.com/BerriAI/litellm/pull/40744) (Greptile 4/5 + CodSpeed + Codecov on one registry PR). Research stored as literature + permanent notes. Kit PR on `kvnloo/verified-oss-loop` copies Level-1 receipt/expiry/Scorecard; catalog does not dump vendor apps. Factory HITL maps onto SPEC.",
+      "tags": [
+        "inbox",
+        "cursor",
+        "oss",
+        "quality-bots",
+        "verified-oss-loop"
+      ],
+      "domains": [
+        "frameworks",
+        "skills",
+        "tool-use"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
       "weight": 1.0,
       "lastFired": null,
       "retrievalDue": true
@@ -2353,6 +2957,30 @@
       "domains": [],
       "created": "2026-09-10",
       "updated": "2026-09-10",
+      "weight": 1.0,
+      "lastFired": null,
+      "retrievalDue": true
+    },
+    {
+      "id": "inbox-sol-pi-wave-20260911",
+      "path": "inbox/sol-pi-wave-2026-09-11.md",
+      "title": "SoL-Pi ingest + OMP/Hermes integration plan (2026-09-11)",
+      "type": "inbox",
+      "status": "draft",
+      "body": "# SoL-Pi wave\n\nUser ask 2026-09-11: clone https://github.com/NVlabs/SoL-Pi and figure out how to integrate it into oh-my-pi and Hermes; store research in frontier-kb.\n\nCheckout: `/tmp/SoL-Pi` @ `22277b7e` (NVlabs/SoL-Pi). Fork already exists at `kvnloo/SoL-Pi`. Vault merge is this wave. Public OSS only — no Hermes personal memory.\n\nProcessed:\n\n- [[literature/lit-20260911-sol-pi-harness-efficiency]]\n- [[permanent/perm-20260911-sol-pi-is-pi-public-extension-not-core-patch]]\n- [[permanent/perm-20260911-omp-can-load-sol-pi-via-legacy-shim]]\n- [[permanent/perm-20260911-hermes-sol-pi-is-a-python-plugin-port]]\n- [[permanent/perm-20260911-observationpack-is-projection-not-history-rewrite]]\n- [[permanent/perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi]]\n- [[harnesses/pi]] stub → active\n- [[harnesses/omp]] / [[harnesses/hermes]] SoL-Pi sections\n\n## Next action\n\n1. CoS: HITL merge this vault wave (schema CI). Postgres ingest on host 0 after merge (`FRONTIER_KB_DSN` was not available in this VM).\n2. OMP: stock SoL-Pi entry fails on OMP 18.1.17 (`findCutPoint` missing from the legacy shim). Phase 0 is a wrapper that imports Action Fusion + ObservationPack only. Discord-first if a core change is needed; do not origin-write until Todo.\n3. Hermes: standalone Python plugin on Hermes hooks, not a TS/Pi ABI adapter. Do not vendor into `hermes-agent`.\n4. Do **not** reopen secret-portal / Cursor-cloud factory cards. Dedup vs [[permanent/perm-20260910-no-universal-harness-plugin]]: SoL-Pi is the Pi-API exception, not a universal scaffold.\n\n## Links\n\n- https://github.com/NVlabs/SoL-Pi\n- https://nvlabs.github.io/SoL-Pi/\n- https://github.com/can1357/oh-my-pi/blob/main/docs/extension-loading.md\n- https://hermes-agent.nousresearch.com/docs/developer-guide/plugins\n- Linear [PER-1402](https://linear.app/0ism/issue/PER-1402/hitl-frontier-kb-pr-sol-pi-omphermes-integration-research)\n",
+      "distilled": "User ask 2026-09-11: clone https://github.com/NVlabs/SoL-Pi and figure out how to integrate it into oh-my-pi and Hermes; store research in frontier-kb.",
+      "tags": [
+        "inbox",
+        "sol-pi",
+        "nvidia"
+      ],
+      "domains": [
+        "frameworks",
+        "tokenomics",
+        "tool-use"
+      ],
+      "created": "2026-09-11",
+      "updated": "2026-09-11",
       "weight": 1.0,
       "lastFired": null,
       "retrievalDue": true
@@ -2748,6 +3376,30 @@
       "lastFired": null
     },
     {
+      "src": "lit-20260911-agent-onboarding-tools",
+      "dst": "perm-20260911-orient-before-edit",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-agent-onboarding-tools",
+      "dst": "perm-20260911-anti-slop-is-smallest-complete",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-agent-onboarding-tools",
+      "dst": "lit-20260911-oss-quality-bot-stacks",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
       "src": "lit-20260911-bryan-johnson-measure-dont-guess",
       "dst": "perm-20260911-measure-the-learning-loop",
       "rel": "wikilink",
@@ -2892,6 +3544,22 @@
       "lastFired": null
     },
     {
+      "src": "lit-20260911-oss-quality-bot-stacks",
+      "dst": "perm-20260911-bots-advise-humans-merge",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-oss-quality-bot-stacks",
+      "dst": "perm-20260911-factory-applies-verified-oss-loop",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
       "src": "lit-20260911-rhonda-patrick-bdnf-exercise",
       "dst": "perm-20260911-bdnf-is-a-learning-prerequisite",
       "rel": "wikilink",
@@ -2910,6 +3578,78 @@
     {
       "src": "lit-20260911-rhonda-patrick-bdnf-exercise",
       "dst": "neuroscience",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-sol-pi-harness-efficiency",
+      "dst": "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-sol-pi-harness-efficiency",
+      "dst": "perm-20260911-omp-can-load-sol-pi-via-legacy-shim",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-sol-pi-harness-efficiency",
+      "dst": "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-sol-pi-harness-efficiency",
+      "dst": "perm-20260911-observationpack-is-projection-not-history-rewrite",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-sol-pi-harness-efficiency",
+      "dst": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-sol-pi-harness-efficiency",
+      "dst": "perm-20260910-no-universal-harness-plugin",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-sol-pi-harness-efficiency",
+      "dst": "pi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-sol-pi-harness-efficiency",
+      "dst": "omp",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "lit-20260911-sol-pi-harness-efficiency",
+      "dst": "hermes",
       "rel": "wikilink",
       "weight": 1.0,
       "fires": 0,
@@ -3908,6 +4648,30 @@
       "lastFired": null
     },
     {
+      "src": "perm-20260911-anti-slop-is-smallest-complete",
+      "dst": "lit-20260911-agent-onboarding-tools",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-anti-slop-is-smallest-complete",
+      "dst": "perm-20260911-orient-before-edit",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-anti-slop-is-smallest-complete",
+      "dst": "perm-20260911-bots-advise-humans-merge",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
       "src": "perm-20260911-bdnf-is-a-learning-prerequisite",
       "dst": "lit-20260911-rhonda-patrick-bdnf-exercise",
       "rel": "wikilink",
@@ -3926,6 +4690,22 @@
     {
       "src": "perm-20260911-bdnf-is-a-learning-prerequisite",
       "dst": "neuroscience",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-bots-advise-humans-merge",
+      "dst": "lit-20260911-oss-quality-bot-stacks",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-bots-advise-humans-merge",
+      "dst": "perm-20260911-factory-applies-verified-oss-loop",
       "rel": "wikilink",
       "weight": 1.0,
       "fires": 0,
@@ -3982,6 +4762,94 @@
     {
       "src": "perm-20260911-encoding-beats-exposure",
       "dst": "learning-acceleration",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-factory-applies-verified-oss-loop",
+      "dst": "lit-20260911-oss-quality-bot-stacks",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-factory-applies-verified-oss-loop",
+      "dst": "perm-20260911-bots-advise-humans-merge",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "dst": "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "dst": "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "dst": "perm-20260910-no-universal-harness-plugin",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "dst": "hermes",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "dst": "pi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "dst": "lit-20260911-sol-pi-harness-efficiency",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "dst": "perm-20260911-observationpack-is-projection-not-history-rewrite",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "dst": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "dst": "hermes",
       "rel": "wikilink",
       "weight": 1.0,
       "fires": 0,
@@ -4068,6 +4936,70 @@
       "lastFired": null
     },
     {
+      "src": "perm-20260911-observationpack-is-projection-not-history-rewrite",
+      "dst": "lit-20260911-sol-pi-harness-efficiency",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-observationpack-is-projection-not-history-rewrite",
+      "dst": "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-observationpack-is-projection-not-history-rewrite",
+      "dst": "pi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-omp-can-load-sol-pi-via-legacy-shim",
+      "dst": "lit-20260911-sol-pi-harness-efficiency",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-omp-can-load-sol-pi-via-legacy-shim",
+      "dst": "omp",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-omp-can-load-sol-pi-via-legacy-shim",
+      "dst": "pi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-orient-before-edit",
+      "dst": "lit-20260911-agent-onboarding-tools",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-orient-before-edit",
+      "dst": "perm-20260911-anti-slop-is-smallest-complete",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
       "src": "perm-20260911-plasticity-needs-alert-then-rest",
       "dst": "lit-20260911-huberman-plasticity-alert-rest",
       "rel": "wikilink",
@@ -4086,6 +5018,46 @@
     {
       "src": "perm-20260911-plasticity-needs-alert-then-rest",
       "dst": "learning-acceleration",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "dst": "perm-20260910-no-universal-harness-plugin",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "dst": "lit-20260911-sol-pi-harness-efficiency",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "dst": "perm-20260910-no-universal-harness-plugin",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "dst": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "dst": "pi",
       "rel": "wikilink",
       "weight": 1.0,
       "fires": 0,
@@ -4142,6 +5114,38 @@
     {
       "src": "harness-hermes",
       "dst": "perm-20260910-hermes-vault-is-login-payment-address",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "harness-hermes",
+      "dst": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "harness-hermes",
+      "dst": "lit-20260911-sol-pi-harness-efficiency",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "harness-hermes",
+      "dst": "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "harness-hermes",
+      "dst": "perm-20260911-observationpack-is-projection-not-history-rewrite",
       "rel": "wikilink",
       "weight": 1.0,
       "fires": 0,
@@ -4221,6 +5225,22 @@
     },
     {
       "src": "harness-omp",
+      "dst": "lit-20260911-sol-pi-harness-efficiency",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "harness-omp",
+      "dst": "perm-20260911-omp-can-load-sol-pi-via-legacy-shim",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "harness-omp",
       "dst": "lit-20260910-trustworthy-secret-brokers",
       "rel": "wikilink",
       "weight": 1.0,
@@ -4246,6 +5266,30 @@
     {
       "src": "harness-opencode",
       "dst": "lit-20260910-oss-coding-plugins",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "harness-pi",
+      "dst": "lit-20260911-sol-pi-harness-efficiency",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "harness-pi",
+      "dst": "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "harness-pi",
+      "dst": "omp",
       "rel": "wikilink",
       "weight": 1.0,
       "fires": 0,
@@ -5900,6 +6944,150 @@
       "lastFired": null
     },
     {
+      "src": "atlas-home",
+      "dst": "inbox-cursor-aodl-thesis-intent-20260912",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "inbox-cursor-aodl-evidence-chain-20260912",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "inbox-cursor-aodl-smm-xrisk-20260912",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "inbox-cursor-aodl-papers-20260911",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "inbox-cursor-aodl-formalism-20260911",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "inbox-cursor-aodl-lab-protocols-20260911",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "inbox-cursor-aodl-search-method-20260911",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "inbox-cursor-aodl-competitors-100-20260911",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "inbox-cursor-aodl-deep-wave2-20260912",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "lit-20260911-sol-pi-harness-efficiency",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "perm-20260911-omp-can-load-sol-pi-via-legacy-shim",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "perm-20260911-observationpack-is-projection-not-history-rewrite",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "pi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "omp",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "atlas-home",
+      "dst": "hermes",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
       "src": "inbox-aodl-hotl-20260817",
       "dst": "lit-20260817-aodl-voice-transcript",
       "rel": "wikilink",
@@ -5910,6 +7098,238 @@
     {
       "src": "inbox-aodl-hotl-20260817",
       "dst": "home",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-agent-onboarding-20260911",
+      "dst": "lit-20260911-agent-onboarding-tools",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-agent-onboarding-20260911",
+      "dst": "perm-20260911-orient-before-edit",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-agent-onboarding-20260911",
+      "dst": "perm-20260911-anti-slop-is-smallest-complete",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-deep-wave2-20260912",
+      "dst": "inbox-cursor-aodl-papers-20260911",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-deep-wave2-20260912",
+      "dst": "inbox-cursor-aodl-evidence-chain-20260912",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-evidence-chain-20260912",
+      "dst": "inbox-cursor-aodl-formalism-20260911",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-evidence-chain-20260912",
+      "dst": "inbox-cursor-aodl-papers-20260911",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-evidence-chain-20260912",
+      "dst": "inbox-cursor-aodl-thesis-intent-20260912",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-evidence-chain-20260912",
+      "dst": "inbox-cursor-aodl-smm-xrisk-20260912",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-evidence-chain-20260912",
+      "dst": "perm-20260817-intent-plan-observed",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-formalism-20260911",
+      "dst": "perm-20260817-intent-plan-observed",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-formalism-20260911",
+      "dst": "perm-20260817-aodl-ir-first",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-formalism-20260911",
+      "dst": "perm-20260910-craid-is-named-hybrid",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-lab-protocols-20260911",
+      "dst": "hermes",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-lab-protocols-20260911",
+      "dst": "perm-20260817-market-is-allocation-policy",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-papers-20260911",
+      "dst": "perm-20260817-orchestration-typed-dynamic-graph",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-papers-20260911",
+      "dst": "lit-20260817-hotl-02-spec",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-search-method-20260911",
+      "dst": "inbox-cursor-aodl-papers-20260911",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-search-method-20260911",
+      "dst": "inbox-cursor-aodl-formalism-20260911",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-search-method-20260911",
+      "dst": "inbox-cursor-aodl-lab-protocols-20260911",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-smm-xrisk-20260912",
+      "dst": "inbox-cursor-aodl-evidence-chain-20260912",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-smm-xrisk-20260912",
+      "dst": "inbox-cursor-aodl-thesis-intent-20260912",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-smm-xrisk-20260912",
+      "dst": "perm-20260817-intent-plan-observed",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-thesis-intent-20260912",
+      "dst": "inbox-cursor-aodl-evidence-chain-20260912",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-thesis-intent-20260912",
+      "dst": "inbox-cursor-aodl-smm-xrisk-20260912",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-aodl-thesis-intent-20260912",
+      "dst": "perm-20260817-intent-plan-observed",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-oss-quality-bots-20260911",
+      "dst": "lit-20260911-oss-quality-bot-stacks",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-oss-quality-bots-20260911",
+      "dst": "perm-20260911-bots-advise-humans-merge",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-cursor-oss-quality-bots-20260911",
+      "dst": "perm-20260911-factory-applies-verified-oss-loop",
       "rel": "wikilink",
       "weight": 1.0,
       "fires": 0,
@@ -6070,6 +7490,86 @@
     {
       "src": "inbox-secret-action-portal-wave-20260910",
       "dst": "lit-20260910-trustworthy-secret-brokers",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-sol-pi-wave-20260911",
+      "dst": "lit-20260911-sol-pi-harness-efficiency",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-sol-pi-wave-20260911",
+      "dst": "perm-20260911-sol-pi-is-pi-public-extension-not-core-patch",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-sol-pi-wave-20260911",
+      "dst": "perm-20260911-omp-can-load-sol-pi-via-legacy-shim",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-sol-pi-wave-20260911",
+      "dst": "perm-20260911-hermes-sol-pi-is-a-python-plugin-port",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-sol-pi-wave-20260911",
+      "dst": "perm-20260911-observationpack-is-projection-not-history-rewrite",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-sol-pi-wave-20260911",
+      "dst": "perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-sol-pi-wave-20260911",
+      "dst": "pi",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-sol-pi-wave-20260911",
+      "dst": "omp",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-sol-pi-wave-20260911",
+      "dst": "hermes",
+      "rel": "wikilink",
+      "weight": 1.0,
+      "fires": 0,
+      "lastFired": null
+    },
+    {
+      "src": "inbox-sol-pi-wave-20260911",
+      "dst": "perm-20260910-no-universal-harness-plugin",
       "rel": "wikilink",
       "weight": 1.0,
       "fires": 0,

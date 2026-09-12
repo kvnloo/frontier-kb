@@ -43,6 +43,7 @@ enum ClusterId {
   LEARNING_ACCELERATION
   LLM_FRONTIER
   HARNESS_RADAR
+  AODL_THESIS
 }
 
 type Note {

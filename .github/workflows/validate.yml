@@ -11,6 +11,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/validate-schema.py
+      - run: python scripts/test_clusters.py
   sqlite-busy:
     runs-on: ubuntu-latest
     steps:
