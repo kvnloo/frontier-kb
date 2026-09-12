@@ -20,7 +20,7 @@ The critical path is **lock a verified Hermes recovery contract, then run a cont
 
 ## Evidence
 
-This note compiles the ChatGPT share ([[literature/lit-20260912-chatgpt-flyforge-share]]), the 10-agent genuine-apps loop ([[literature/lit-20260912-connectome-genuine-apps]]), and the AODL network ([kvnloo/aodl `docs/network.md`](https://github.com/kvnloo/aodl/blob/main/docs/network.md)). No FlyForge measurements have been run in this workspace.
+This note compiles the ChatGPT share ([[literature/lit-20260912-chatgpt-flyforge-share]]), the 10-agent genuine-apps loop ([[literature/lit-20260912-connectome-genuine-apps]]), and the AODL network ([kvnloo/aodl `docs/network.md`](https://github.com/kvnloo/aodl/blob/main/docs/network.md)). The **runner** is `apps/evolution-lab` ([[literature/lit-20260912-chatgpt-evolution-lab-share]]). No Tinker or MaleCNS SGD has been run.
 
 ### What the idea is (and is not)
 

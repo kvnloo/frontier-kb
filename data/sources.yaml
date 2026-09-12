@@ -121,6 +121,7 @@ learning:
   arxiv_qbio_nc: https://arxiv.org/list/q-bio.NC/recent
 fly_connectome:
   chatgpt_flyforge_share: https://chatgpt.com/share/6aa4e9ce-e88c-83ea-bf45-0e9496a1ad6f
+  chatgpt_evolution_lab_share: https://chatgpt.com/share/6aa4ef4a-f390-83e9-8afc-34905baf22eb
   flm_flies_are_all_you_need: https://artificialscientific.com/papers/flies-are-all-you-need
   fly_hf: https://huggingface.co/ngxson/fly-hf
   costi_reservoir: https://doi.org/10.3390/biomimetics10050341
