@@ -4,13 +4,14 @@ title: OMP (oh-my-pi)
 type: harness
 status: active
 created: 2026-09-09
-updated: 2026-09-10
+updated: 2026-09-11
 urls:
   - https://github.com/can1357/oh-my-pi
   - https://omp.sh/
   - https://github.com/can1357/oh-my-pi/issues/11399
   - https://github.com/can1357/oh-my-pi/issues/10027
   - https://github.com/can1357/oh-my-pi/issues/10828
+  - https://github.com/NVlabs/SoL-Pi
 capabilities:
   - secret-obfuscation-placeholders
   - auth-broker-gateway
@@ -19,6 +20,7 @@ capabilities:
   - Multi-model (60+ providers), Rust core, persistent Python/Bun worker
   - First-class task fan-out into isolated worktrees, reviewer model
   - Native terminal TUI with MCP/http/stdio/sse extensibility
+  - Legacy Pi extension load (pi.extensions + earendil-works shim)
 gaps_vs_peers:
   - obfuscation-not-noninterference
   - plaintext-auth-credentials
@@ -27,6 +29,8 @@ gaps_vs_peers:
   - No built-in agent crew orchestration (firstmate/crush cover this)
   - No cross-platform messaging gateway (hermes covers Telegram/Discord)
   - Lacks secondmate persistent multi-client workspace (crush serve does multi-client)
+  - SoL-Pi Online Context Compact likely no-ops (no agent_settled)
+  - Stock SoL-Pi factory fails without findCutPoint (OMP 18.1.17 shim)
 omp_actionable: true
 confidence: high
 tags: [harness]
@@ -55,6 +59,34 @@ Custody leaf (ours, open): [#11399](https://github.com/can1357/oh-my-pi/issues/1
 **Ethos (CONTRIBUTING):** do **not** open an issue for work you are about to PR — robomp will pick it up. Major architecture: Discord first. Every PR needs one human sentence + live verification.
 
 [[permanent/perm-20260910-obfuscation-is-not-noninterference]] · Linear [PER-1324](https://linear.app/0ism/issue/PER-1324) (github_writes=0 until Todo)
+
+## SoL-Pi (NVIDIA efficiency extension)
+
+Do **not** merge SoL-Pi into omp core (`github_writes=0` on `can1357/oh-my-pi`). Load it as a plugin:
+
+```bash
+omp install github:NVlabs/SoL-Pi
+# or: omp plugin link /path/to/SoL-Pi
+# live smoke used: omp plugin install /path/to/SoL-Pi
+```
+
+`pi.extensions` + `@earendil-works/*` rewrite (`legacy-pi-coding-agent-shim`, #7094 edit/write factories) is the path. Live smoke (2026-09-11): `omp plugin install` listed `sol-pi` v0.1.0; `omp plugin doctor` reports the package ok. The stock `src/sol-pi/index.ts` entry still statically imports OCC/`findCutPoint`; OMP 18.1.17's shim does not export that symbol, so the default factory fails even when `onlineContextCompact` is false. Phase 0 is a thin wrapper that imports only Action Fusion + ObservationPack.
+
+Conservative config (no extra model, no abort/continue):
+
+```json
+{
+  "version": 1,
+  "actionFusion": true,
+  "observationPack": true,
+  "evidencePreservingReducer": false,
+  "onlineContextCompact": false
+}
+```
+
+Write it to `.omp/sol-pi.json` or `~/.omp/agent/sol-pi.json` (`CONFIG_DIR_NAME` is `.omp`). Action Fusion wraps OMP's `edit`/`write` (hashline preserved if those factories are the real tools). ObservationPack needs the `context` event — OMP has it. EPR is the same secret/log-exfil caution as Pi. OCC: OMP has `compact()` / `session_before_tree` / `session_stop` but **not** `agent_settled`; NVIDIA says OCC then starts no boundary compaction. Adapter later; Discord-first if core events are required.
+
+[[literature/lit-20260911-sol-pi-harness-efficiency]] · [[permanent/perm-20260911-omp-can-load-sol-pi-via-legacy-shim]]
 
 ## Snapshot
 

@@ -54,3 +54,9 @@ The vault is a brain: notes potentiate with use, idle synapses decay, noise is p
 
 ## First OMP wave (from frontier 2026-09-09)
 See `inbox/omp-wave-2026-09-09.md`
+
+## SoL-Pi / harness efficiency (2026-09-11)
+- [[literature/lit-20260911-sol-pi-harness-efficiency]]
+- [[permanent/perm-20260911-sol-pi-is-pi-public-extension-not-core-patch]] · [[permanent/perm-20260911-omp-can-load-sol-pi-via-legacy-shim]] · [[permanent/perm-20260911-hermes-sol-pi-is-a-python-plugin-port]] · [[permanent/perm-20260911-observationpack-is-projection-not-history-rewrite]] · [[permanent/perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi]]
+- [[harnesses/pi]] · [[harnesses/omp]] · [[harnesses/hermes]]
+- wave: `inbox/sol-pi-wave-2026-09-11.md`
