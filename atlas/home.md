@@ -62,6 +62,15 @@ Cursor-node inbox only. CoS promotes to literature/permanent. Teaching surface: 
 ## First OMP wave (from frontier 2026-09-09)
 See `inbox/omp-wave-2026-09-09.md`
 
+## Fly connectome / physical computation (2026-09-12)
+
+The X meme is I/O remapping on MaleCNS (*Drosophila*, not house fly). Connectome = compiled prior. Mushroom body = LoRA. Emulation inverts nanowatt biology. Qwen3.8-27B stays the SVLM worker.
+
+- [[literature/lit-20260912-fly-connectome-task-meme]] · [[literature/lit-20260912-shiu-huang-malecns-physiology]] · [[literature/lit-20260912-biology-vs-silicon-energy]] · [[literature/lit-20260912-qwen38-27b-vs-fly-snn]]
+- [[permanent/perm-20260912-physical-computation-is-one-stack]] · [[permanent/perm-20260912-connectome-is-wiring-not-a-trainable-llm]] · [[permanent/perm-20260912-emulation-inverts-biological-efficiency]]
+- [[permanent/perm-20260912-mushroom-body-is-the-only-plastic-specialist]] · [[permanent/perm-20260912-fly-snn-is-sensorimotor-worker-not-svlm]] · [[permanent/perm-20260912-optimize-fly-via-mb-pinout-substrate]]
+- wave: `inbox/cursor/inbox-cursor-fly-connectome-wave-20260912.md`
+
 ## SoL-Pi / harness efficiency (2026-09-11)
 - [[literature/lit-20260911-sol-pi-harness-efficiency]]
 - [[permanent/perm-20260911-sol-pi-is-pi-public-extension-not-core-patch]] · [[permanent/perm-20260911-omp-can-load-sol-pi-via-legacy-shim]] · [[permanent/perm-20260911-hermes-sol-pi-is-a-python-plugin-port]] · [[permanent/perm-20260911-observationpack-is-projection-not-history-rewrite]] · [[permanent/perm-20260911-hermes-pi-plugin-adapter-is-host-port-not-abi]]
