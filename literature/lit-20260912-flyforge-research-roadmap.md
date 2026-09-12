@@ -20,7 +20,7 @@ The critical path is **lock a verified Hermes recovery contract, then run a cont
 
 ## Evidence
 
-This note compiles the ChatGPT share ([[literature/lit-20260912-chatgpt-flyforge-share]]), the 10-agent genuine-apps loop ([[literature/lit-20260912-connectome-genuine-apps]]), and the AODL network ([kvnloo/aodl `docs/network.md`](https://github.com/kvnloo/aodl/blob/main/docs/network.md)). The **runner** is [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) ([[literature/lit-20260912-chatgpt-evolution-lab-share]]). No Tinker or MaleCNS SGD has been run.
+This note compiles the ChatGPT share ([[literature/lit-20260912-chatgpt-flyforge-share]]), the 10-agent genuine-apps loop ([[literature/lit-20260912-connectome-genuine-apps]]), and the AODL network ([kvnloo/aodl `docs/network.md`](https://github.com/kvnloo/aodl/blob/main/docs/network.md)). The **runner** is [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) (Verified OSS Loop onboard; `ROADMAP.md` maintainer-owned) ([[literature/lit-20260912-chatgpt-evolution-lab-share]], [[literature/lit-20260912-evolution-lab-vol-onboard]]). No Tinker or MaleCNS SGD has been run.
 
 ### What the idea is (and is not)
 
@@ -148,11 +148,11 @@ Viral apps (DOOMFLY, Flyhard, Tello, Stonkfly, fly-wirehead): useful as **pinout
 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | recovery events, Kanban, gateway; HOTL proposed at #88589 | fly student weights |
 | [kvnloo/humanity-vault](https://github.com/kvnloo/humanity-vault) | teaching surface for the cluster | claims of truth |
 | [kvnloo/fly-wirehead](https://github.com/kvnloo/fly-wirehead) | MaleCNS LIF playback, photoreceptor pinout, PAM11 20 mV, KC→MBON plasticity **assay** | learning result, Pareto claim |
-| [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) | experiment genomes, `hermes_recovery` gym, ΔHV / MAP-Elites | FlyGym / OpenEvolve as the engine; vault claims |
+| [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) | experiment genomes, `hermes_recovery` gym, ΔHV / MAP-Elites; VOL claim leases + receipts | FlyGym / OpenEvolve as the engine; vault claims; worker rewrite of `ROADMAP.md` |
 | [NeLy-EPFL/flygym](https://github.com/NeLy-EPFL/flygym) | Later visuo-motor env (consume 2.x) | P0; do not fork `flygym-gymnasium` to go faster |
 | [algorithmicsuperintelligence/openevolve](https://github.com/algorithmicsuperintelligence/openevolve) | Later LLM mutation backend | Gym, control table, ΔHV |
 | [huggingface/OpenEnv](https://github.com/huggingface/OpenEnv) | Later isolated Hermes sandbox | In-process P0 |
-| [kvnloo/verified-oss-loop](https://github.com/kvnloo/verified-oss-loop) | claim leases / evidence receipts when a Pareto point is asserted | schema |
+| [kvnloo/verified-oss-loop](https://github.com/kvnloo/verified-oss-loop) | claim-lease / evidence-receipt **protocol** (evolution-lab is onboarded) | schema; the lease surface itself (that is evolution-lab GitHub) |
 | [kvnloo/blueprint](https://github.com/kvnloo/blueprint) / evolve / solarpunk | C(RAID) product loop; digital-twin **cores** | this fly graph (solarpunk twin ≠ MaleCNS upload) |
 
 AODL kinds already allowed: `task`, `executor`, `model`, `tool`, `service`, `memory`, `stateStore`, `humanGate`, `environment`, `artifact`, `verifier`. **No `consciousness` kind.** Kardashev changes `constraints.budgets` (tokens, joules, spawn), not kinds. Fail-closed: image/video payload into a text-only specialist is invalid unless a vision child is bound ([[inbox/cursor/inbox-cursor-aodl-thesis-intent-20260912]]).
@@ -177,6 +177,7 @@ Qwen remains the language/tool worker ([[permanent/perm-20260912-fly-snn-is-sens
 - Virtual patient / tau HTS.
 - FlyWire@Loihi as green AI without joules.
 - Inventing a second AODL spec in Dash or fly-wirehead.
+- VOL claim leases on fly-wirehead; worker rewrite of evolution-lab `ROADMAP.md`.
 
 ## Fact vs interpretation
 
@@ -201,4 +202,6 @@ Qwen remains the language/tool worker ([[permanent/perm-20260912-fly-snn-is-sens
 - [[inbox/cursor/inbox-cursor-flyforge-roadmap-20260912]]
 - [[harnesses/hermes]]
 - [[literature/lit-20260912-consume-gym-do-not-fork-engine]]
+- [[literature/lit-20260912-evolution-lab-vol-onboard]]
 - [[permanent/perm-20260912-gym-is-the-task-engine-is-ours]]
+- [[inbox/cursor/inbox-cursor-vol-onboard-20260912]]
