@@ -27,7 +27,7 @@ Workspace still has only `frontier-kb` and `fly-wirehead` cloned. AODL join is c
 1. CoS: **do not** mint a virtual-patient or MaleCNS-worker HITL. Optional new HITL: “P0 Hermes recovery controller (GRU vs reservoir vs motif) under joules/success.” PER-944 stays Backlog viewer.
 2. Copy the intent sketch into [kvnloo/aodl](https://github.com/kvnloo/aodl) as `examples/valid/fly-specialist-port.json` (existing kinds only; fail-closed vision). Do not invent HOTL 0.3.
 3. fly-wirehead `docs/research-join.md` is the demo’s place in the table (interface / negative control), not a second research language.
-4. After GRU baseline logs exist, verified-oss-loop can lease a Pareto claim. Empty charts until then.
+4. After GRU baseline logs exist, lease [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2) only. PER-1524/1525/1526 stay Backlog. Empty charts until then.
 5. No personal data. No `consciousness` kind.
 
 ## Links

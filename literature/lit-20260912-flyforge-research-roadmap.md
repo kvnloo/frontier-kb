@@ -142,7 +142,7 @@ Viral apps (DOOMFLY, Flyhard, Tello, Stonkfly, fly-wirehead): useful as **pinout
 | Repo | Owns in this program | Does not own |
 | --- | --- | --- |
 | [kvnloo/aodl](https://github.com/kvnloo/aodl) | \(\mathcal{O}_t\), ports, budgets \(\Gamma_t\), harness ids; proposed `fly-specialist-port` example | scheduler, training loop, MaleCNS arrays |
-| [kvnloo/frontier-kb](https://github.com/kvnloo/frontier-kb) | claims, protocol, Pareto logs (this note) | runtime |
+| [kvnloo/frontier-kb](https://github.com/kvnloo/frontier-kb) | research notes / protocol pointers (this note) | runtime; VOL lease surface |
 | [kvnloo/dash](https://github.com/kvnloo/dash) | orchestra pane **decodes** the graph; thesis-intent PR #38 | a second IR |
 | [kvnloo/hermes-keel](https://github.com/kvnloo/hermes-keel) | L0: default router cannot do project work; controller never holds secrets | AODL schema |
 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | recovery events, Kanban, gateway; HOTL proposed at #88589 | fly student weights |
@@ -183,7 +183,7 @@ Qwen remains the language/tool worker ([[permanent/perm-20260912-fly-snn-is-sens
 
 - Fact: FLM’s direct-input wins on language NLL; Costi’s topology+weights help chaotic forecasting; FlyGM trains a graph policy with rewire/MLP controls; Sphinx shows walking is not fidelity; fly-hf’s readout dominates params.
 - Interpretation: P0 is a **harness** experiment (Hermes + AODL ports + verifier), not a neuroscience upload and not a 27B midpoint hunt. The 10-agent motif consensus is the likely P1 winner; the control table is how we would notice if we were wrong.
-- HOLD: the 95%/50% product target is unregistered. CoS mints any Linear HITL; PER-944 stays a viewer.
+- HOLD: the 95%/50% product target is unregistered. Hosted joules unknown. Mutation n/a. CoS does **not** mint PER-1524/1525/1526 to Todo — they stay Backlog viewers. PER-944 stays a viewer. Claimable work is [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2).
 
 ## Links
 

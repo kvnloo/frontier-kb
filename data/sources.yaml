@@ -131,8 +131,15 @@ fly_connectome:
   connectome_to_function: https://arxiv.org/abs/2609.06093
   aodl: https://github.com/kvnloo/aodl
   aodl_network: https://github.com/kvnloo/aodl/blob/main/docs/network.md
+  evolution_lab: https://github.com/kvnloo/evolution-lab
+  evolution_lab_roadmap: https://github.com/kvnloo/evolution-lab/blob/main/ROADMAP.md
+  evolution_lab_p0_claimable: https://github.com/kvnloo/evolution-lab/issues/2
+  verified_oss_loop: https://github.com/kvnloo/verified-oss-loop
   fly_wirehead: https://github.com/kvnloo/fly-wirehead
   per_944: https://linear.app/0ism/issue/PER-944
+  per_1524: https://linear.app/0ism/issue/PER-1524
+  per_1525: https://linear.app/0ism/issue/PER-1525
+  per_1526: https://linear.app/0ism/issue/PER-1526
 # Resolved 2026-09-10 (PER-1296 OMP research); keep keys for audit
 resolved_urls:
   prime_intelligence: https://www.primeintellect.ai/blog/prime-agent

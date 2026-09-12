@@ -28,15 +28,21 @@ What the kit wrote (not a second loop):
 - Issue/PR templates, claim-expiry + receipt workflows, labels docs
 - `.verified-oss-loop/` (kit inventory, `rollout.py`, `rollout.yml`)
 
-`ROADMAP.md` opens **FlyForge roadmap (maintainer-owned)**. Revision binds via `.verified-oss-loop/roadmap.yml`. Contributors **do not** rewrite it. Issues labeled `needs-discussion` are not claims. Maintainers promote to `claimable`. Workers take **one** `claimable` issue (24h lease comment), then isolated branch + receipt; they never merge `main` or `dev`.
+[`ROADMAP.md`](https://github.com/kvnloo/evolution-lab/blob/main/ROADMAP.md) opens **FlyForge roadmap (maintainer-owned)**. Revision binds via `.verified-oss-loop/roadmap.yml`. Contributors **do not** rewrite it. Issues labeled `needs-discussion` are not claims. Maintainers promote to `claimable`. Workers take **one** `claimable` issue (24h lease comment), then isolated branch + receipt; they never merge `main` or `dev`.
 
-The engine is an original repo (`isFork: false`), not `apps/evolution-lab` in this vault (pointer README only) and not a FlyGym/OpenEvolve fork. Gym remains `hermes_recovery`. Protocol kit stays [kvnloo/verified-oss-loop](https://github.com/kvnloo/verified-oss-loop); the **lease surface** is evolution-lab issues, not [kvnloo/fly-wirehead](https://github.com/kvnloo/fly-wirehead).
+Lease surface now (do not invert):
+
+- **Claimable P0:** [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2) (`claimable`, `priority:P0`) — lock Hermes recovery contract
+- **P1–P6:** [#3](https://github.com/kvnloo/evolution-lab/issues/3)–[#8](https://github.com/kvnloo/evolution-lab/issues/8) remain `needs-discussion` — not claims
+- **Linear viewers only:** [PER-1524](https://linear.app/0ism/issue/PER-1524), [PER-1525](https://linear.app/0ism/issue/PER-1525), [PER-1526](https://linear.app/0ism/issue/PER-1526) stay **Backlog**, not Todo. Do not mint them into factory Todo.
+
+The engine is an original repo (`isFork: false`), not `apps/evolution-lab` in this vault (pointer README only) and not a FlyGym/OpenEvolve fork. Gym remains `hermes_recovery`. Protocol kit stays [kvnloo/verified-oss-loop](https://github.com/kvnloo/verified-oss-loop); the **lease surface** is evolution-lab issues, not [kvnloo/fly-wirehead](https://github.com/kvnloo/fly-wirehead) (pinout demo only). Formal language is [kvnloo/aodl](https://github.com/kvnloo/aodl) HOTL 0.2 — no `consciousness` kind.
 
 ## Fact vs interpretation
 
-- Fact: kit files and `synced_at` exist on the evolution-lab tree; ROADMAP forbids contributor rewrite; SPEC is research → claimable → claim lease → isolated work → receipt → independent review → human merge.
-- Interpretation: a Pareto point is not asserted until a VOL receipt binds to an evolution-lab revision. Opening a “claim” on fly-wirehead or rewriting ROADMAP from a worker is out of contract.
-- HOLD: GitHub `claimable` labels exist only after `create-labels.sh` / `--labels` on that repo. No Pareto receipt has been filed yet. Empty charts stay honest.
+- Fact: kit files and `synced_at` exist on the evolution-lab tree; ROADMAP forbids contributor rewrite; SPEC is research → claimable → claim lease → isolated work → receipt → independent review → human merge. #2 is the only `claimable` issue; #3–#8 are `needs-discussion`.
+- Interpretation: a Pareto point is not asserted until a VOL receipt binds to an evolution-lab revision. Opening a “claim” on fly-wirehead, rewriting ROADMAP from a worker, or moving PER-1524/1525/1526 to Todo is out of contract.
+- HOLD: No Pareto receipt has been filed yet. Empty charts stay honest. Hosted joules remain unknown. Mutation coverage is n/a.
 
 ## Links
 
@@ -50,4 +56,6 @@ The engine is an original repo (`isFork: false`), not `apps/evolution-lab` in th
 - [[inbox/cursor/inbox-cursor-vol-onboard-20260912]]
 - [[inbox/cursor/inbox-cursor-evolution-lab-repo-20260912]]
 - https://github.com/kvnloo/evolution-lab
+- https://github.com/kvnloo/evolution-lab/blob/main/ROADMAP.md
+- https://github.com/kvnloo/evolution-lab/issues/2
 - https://github.com/kvnloo/verified-oss-loop

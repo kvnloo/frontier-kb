@@ -120,7 +120,9 @@ Open this folder as a vault. Graph view + wikilinks work out of the box. Optiona
 
 ## Network
 
-- IR: [kvnloo/aodl](https://github.com/kvnloo/aodl)
+- IR: [kvnloo/aodl](https://github.com/kvnloo/aodl) (HOTL 0.2; no `consciousness` kind)
+- FlyForge engine: [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) ([ROADMAP.md](https://github.com/kvnloo/evolution-lab/blob/main/ROADMAP.md); claimable P0 is [issue #2](https://github.com/kvnloo/evolution-lab/issues/2))
+- Claim protocol: [kvnloo/verified-oss-loop](https://github.com/kvnloo/verified-oss-loop) (leases on evolution-lab GitHub, not this vault)
 - Phone: [kvnloo/dash](https://github.com/kvnloo/dash)
 - Hermes governance: [kvnloo/hermes-keel](https://github.com/kvnloo/hermes-keel)
 - Human frontend: [kvnloo/humanity-vault](https://github.com/kvnloo/humanity-vault) (GraphQL learning OS)
