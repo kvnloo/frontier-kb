@@ -66,10 +66,14 @@ See `inbox/omp-wave-2026-09-09.md`
 
 The X meme is I/O remapping on MaleCNS (*Drosophila*, not house fly). Connectome = compiled prior. Mushroom body = LoRA. Emulation inverts nanowatt biology. Qwen3.8-27B stays the SVLM worker.
 
+**Genuine apps (10-agent loop):** lab compiler (NeuronBridge → split-GAL4), optogenetic prior (Shiu/Sapkal/Pugliese), motif distillation (EMD, loom, FlyHash). Not an upload, not a virtual patient.
+
 - [[literature/lit-20260912-fly-connectome-task-meme]] · [[literature/lit-20260912-shiu-huang-malecns-physiology]] · [[literature/lit-20260912-biology-vs-silicon-energy]] · [[literature/lit-20260912-qwen38-27b-vs-fly-snn]]
+- [[literature/lit-20260912-connectome-genuine-apps]] · [[literature/lit-20260912-circuit-discovery-shiu-sapkal-ozdil]] · [[literature/lit-20260912-neuromorphic-and-robot-motifs]] · [[literature/lit-20260912-mb-few-shot-learners]] · [[literature/lit-20260912-optic-lobe-visual-front-end]]
 - [[permanent/perm-20260912-physical-computation-is-one-stack]] · [[permanent/perm-20260912-connectome-is-wiring-not-a-trainable-llm]] · [[permanent/perm-20260912-emulation-inverts-biological-efficiency]]
 - [[permanent/perm-20260912-mushroom-body-is-the-only-plastic-specialist]] · [[permanent/perm-20260912-fly-snn-is-sensorimotor-worker-not-svlm]] · [[permanent/perm-20260912-optimize-fly-via-mb-pinout-substrate]]
-- wave: `inbox/cursor/inbox-cursor-fly-connectome-wave-20260912.md`
+- [[permanent/perm-20260912-connectome-is-a-lab-instrument]] · [[permanent/perm-20260912-distill-motifs-not-upload-the-graph]] · [[permanent/perm-20260912-useful-twin-predicts-the-next-experiment]]
+- waves: `inbox/cursor/inbox-cursor-fly-connectome-wave-20260912.md` · `inbox/cursor/inbox-cursor-fly-apps-swarm-20260912.md` · `inbox/cursor/inbox-cursor-connectome-compiler-lab-20260912.md`
 
 ## SoL-Pi / harness efficiency (2026-09-11)
 - [[literature/lit-20260911-sol-pi-harness-efficiency]]

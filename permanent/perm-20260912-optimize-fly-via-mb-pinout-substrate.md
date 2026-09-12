@@ -28,3 +28,6 @@ Wirehead already has the right *shape* of experiment: frozen graph, optional `--
 - [[permanent/perm-20260912-mushroom-body-is-the-only-plastic-specialist]]
 - [[permanent/perm-20260912-emulation-inverts-biological-efficiency]]
 - [[permanent/perm-20260911-measure-the-learning-loop]]
+- [[permanent/perm-20260912-distill-motifs-not-upload-the-graph]]
+- [[literature/lit-20260912-neuromorphic-and-robot-motifs]]
+- [[literature/lit-20260912-circuit-discovery-shiu-sapkal-ozdil]]

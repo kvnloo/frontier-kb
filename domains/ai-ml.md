@@ -36,6 +36,11 @@ Qwen3.8-27B remains the language/tool worker. A MaleCNS SNN is a sensorimotor sp
 - [[permanent/perm-20260912-fly-snn-is-sensorimotor-worker-not-svlm]]
 - [[permanent/perm-20260912-optimize-fly-via-mb-pinout-substrate]]
 - [[permanent/perm-20260912-physical-computation-is-one-stack]]
+- [[literature/lit-20260912-connectome-genuine-apps]]
+- [[literature/lit-20260912-mb-few-shot-learners]]
+- [[literature/lit-20260912-neuromorphic-and-robot-motifs]]
+- [[permanent/perm-20260912-distill-motifs-not-upload-the-graph]]
+- [[permanent/perm-20260912-connectome-is-a-lab-instrument]]
 
 ## Architecture search over IR
 

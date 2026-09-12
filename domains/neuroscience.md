@@ -33,3 +33,9 @@ Map of content for [[atlas/home]]. Learning-system notes live in [[domains/learn
 - A connectome is compiled wiring. The 2026 X meme (Stonkfly, fly-wirehead, Xenova) remaps I/O on MaleCNS 166,700 LIF cells; it is not a house fly and not an LLM. Plasticity belongs in the mushroom body (Kenyon cells × DANs × MBONs), i.e. the fly's LoRA. [[literature/lit-20260912-fly-connectome-task-meme]] · [[literature/lit-20260912-shiu-huang-malecns-physiology]] · [[permanent/perm-20260912-connectome-is-wiring-not-a-trainable-llm]] · [[permanent/perm-20260912-mushroom-body-is-the-only-plastic-specialist]]
 
 - Living Drosophila CNS power is ~0.12–0.26 μW. CPU/GPU emulation of the same graph inverts that efficiency. [[literature/lit-20260912-biology-vs-silicon-energy]] · [[permanent/perm-20260912-emulation-inverts-biological-efficiency]] · [[permanent/perm-20260912-physical-computation-is-one-stack]]
+
+## Lab instrument, not upload (2026-09-12)
+
+- A useful twin predicts the next split-GAL4, not a walking video. Shiu/Sapkal/Özdil/Pugliese pass; Eon “upload” does not. [[literature/lit-20260912-connectome-genuine-apps]] · [[literature/lit-20260912-circuit-discovery-shiu-sapkal-ozdil]] · [[permanent/perm-20260912-connectome-is-a-lab-instrument]] · [[permanent/perm-20260912-useful-twin-predicts-the-next-experiment]]
+- Genes compile into wiring; NeuronBridge is the linker. [[inbox/cursor/inbox-cursor-connectome-compiler-lab-20260912]]
+- Optic lobe is a ~800-pixel multi-task front-end. [[literature/lit-20260912-optic-lobe-visual-front-end]]

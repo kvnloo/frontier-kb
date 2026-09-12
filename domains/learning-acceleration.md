@@ -36,6 +36,8 @@ Four public teaching/protocol surfaces, distilled into vault policy. None of thi
 - [[permanent/perm-20260911-distill-then-retrieve-llm-frontier]]
 - [[permanent/perm-20260912-physical-computation-is-one-stack]]
 - [[permanent/perm-20260912-mushroom-body-is-the-only-plastic-specialist]]
+- [[literature/lit-20260912-mb-few-shot-learners]]
+- [[permanent/perm-20260912-distill-motifs-not-upload-the-graph]]
 
 ## Literature
 
