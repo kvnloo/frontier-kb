@@ -19,7 +19,6 @@ const PLATES = [
   { href: "/brain", src: ART.synapses, kicker: "Hebb", title: "Brain" },
   { href: "/measure", src: ART.measure, kicker: "Johnson", title: "Measure" },
   { href: "/prune", src: ART.prune, kicker: "Homeostasis", title: "Prune" },
-  { href: "/measure", src: ART.rest, kicker: "Huberman", title: "Rest" },
   { href: "/llms", src: ART.llms, kicker: "Frontier", title: "LLMs" },
 ] as const;
 
@@ -72,7 +71,7 @@ export default async function HomePage() {
         <p className="kicker">The cycle</p>
         <div className="gallery">
           {PLATES.map((p) => (
-            <Link key={p.href} href={p.href} className="plate">
+            <Link key={p.title} href={p.href} className="plate">
               <img src={asset(p.src)} alt="" />
               <span>
                 <small>{p.kicker}</small>
@@ -80,6 +79,13 @@ export default async function HomePage() {
               </span>
             </Link>
           ))}
+          <div className="plate">
+            <img src={asset(ART.rest)} alt="" />
+            <span>
+              <small>Huberman</small>
+              Rest
+            </span>
+          </div>
         </div>
 
         <p className="kicker">Encode next</p>

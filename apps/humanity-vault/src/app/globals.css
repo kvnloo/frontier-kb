@@ -47,13 +47,17 @@ img { max-width: 100%; display: block; }
 }
 
 .brand {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 8;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: calc(0.7rem + env(safe-area-inset-top)) var(--gutter) 0.7rem;
-  max-width: var(--well);
-  margin: 0 auto;
+  padding: calc(0.7rem + env(safe-area-inset-top)) var(--gutter) 1.6rem;
   width: 100%;
+  background: linear-gradient(180deg, rgba(5, 5, 8, 0.78) 0%, transparent 100%);
 }
 .mark {
   display: flex;
@@ -78,13 +82,6 @@ img { max-width: 100%; display: block; }
 }
 
 .shell-home .brand {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 6;
-  max-width: none;
-  padding: calc(0.75rem + env(safe-area-inset-top)) var(--gutter) 2.4rem;
   background: linear-gradient(180deg, rgba(5, 5, 8, 0.72) 0%, transparent 100%);
 }
 
@@ -268,7 +265,7 @@ img { max-width: 100%; display: block; }
 .scene {
   position: relative;
   isolation: isolate;
-  min-height: min(46vh, 22rem);
+  min-height: min(52vh, 24rem);
   display: flex;
   align-items: flex-end;
   margin: 0 0 1.2rem;
