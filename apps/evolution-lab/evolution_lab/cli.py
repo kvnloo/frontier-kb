@@ -11,6 +11,7 @@ from .archive import Archive
 from .dashboard import write_dashboard
 from .elites import MapElites
 from .engine import run_one, seed_genomes, summarize
+from .gym import make_env, rollout_teacher
 from .mutate import crossover, mutate
 from .schema import ExperimentGenome, genome_from_dict, load_genome
 
@@ -83,6 +84,25 @@ def cmd_evolve(run_dir: Path, generations: int, level: int, n_children: int) -> 
     print(json.dumps(summarize(archive.read()), indent=2))
 
 
+def cmd_gym_smoke(n: int, delayed_cue: bool) -> None:
+    """Closed-loop teacher on the P0 gym. Not FlyGym, not OpenEvolve."""
+    env = make_env("hermes_recovery", delayed_cue=delayed_cue)
+    rewards = []
+    for seed in range(n):
+        _ep, mean = rollout_teacher(env, seed=seed)
+        rewards.append(mean)
+    report = {
+        "env": "hermes_recovery",
+        "n": n,
+        "teacher_mean_reward": float(np.mean(rewards)),
+        "teacher_perfect": all(r == 1.0 for r in rewards),
+        "note": "FlyGym/OpenEvolve are not this env; make_env refuses those names.",
+    }
+    print(json.dumps(report, indent=2))
+    if not report["teacher_perfect"]:
+        raise SystemExit(1)
+
+
 def cmd_quest_falsification(run_dir: Path, level: int) -> None:
     """Does the best reservoir still beat a refit rewired graph?"""
     from .schema import Architecture, Training
@@ -142,6 +162,9 @@ def main(argv: list[str] | None = None) -> int:
     pq.add_argument("name", choices=["falsification"])
     pq.add_argument("--level", type=int, default=1)
     sub.add_parser("dashboard", parents=[parent])
+    pg = sub.add_parser("gym-smoke", parents=[parent])
+    pg.add_argument("--n", type=int, default=24)
+    pg.add_argument("--no-delayed-cue", action="store_true")
     args = p.parse_args(argv)
     run_dir = args.run_dir
     if args.cmd == "seed":
@@ -156,4 +179,6 @@ def main(argv: list[str] | None = None) -> int:
         archive = Archive(run_dir / "archive.jsonl")
         dest = write_dashboard(archive.read(), run_dir / "dashboard.html")
         print(dest)
+    elif args.cmd == "gym-smoke":
+        cmd_gym_smoke(args.n, delayed_cue=not args.no_delayed_cue)
     return 0

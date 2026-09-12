@@ -71,9 +71,9 @@ The X meme is I/O remapping on MaleCNS (*Drosophila*, not house fly). Connectome
 
 **Research program (FlyForge share):** architecture prior + control table. **P0** is a verified Hermes recovery controller (GRU to beat, direct-input mandatory), scored in joules per verified success. The student is an AODL **port**, not a new kind. Distill / grow / 10K–27B search are later.
 
-**Evolution Lab (latest share):** experiments are the population. Engine: `apps/evolution-lab`. Tinker and 100 cloud agents are backends, not P0 compute.
+**Evolution Lab (latest share):** experiments are the population. Engine: `apps/evolution-lab`. **Gym** is `hermes_recovery` (Gymnasium `reset`/`step`); do not fork FlyGym or OpenEvolve as this engine. Tinker and 100 cloud agents are backends, not P0 compute.
 
-- [[literature/lit-20260912-chatgpt-evolution-lab-share]] · [[permanent/perm-20260912-experiments-are-the-population]]
+- [[literature/lit-20260912-chatgpt-evolution-lab-share]] · [[literature/lit-20260912-consume-gym-do-not-fork-engine]] · [[permanent/perm-20260912-experiments-are-the-population]] · [[permanent/perm-20260912-gym-is-the-task-engine-is-ours]]
 
 - [[literature/lit-20260912-flyforge-research-roadmap]] · [[literature/lit-20260912-chatgpt-flyforge-share]] · [[literature/lit-20260912-flm-and-fly-hf-language-reservoirs]] · [[literature/lit-20260912-costi-connectome-reservoir]]
 - [[literature/lit-20260912-digital-sphinx]] · [[literature/lit-20260912-flygm-graph-policy]] · [[literature/lit-20260912-connectome-to-function]] · [[literature/lit-20260912-aodl-fly-specialist-port-sketch]]
@@ -84,7 +84,7 @@ The X meme is I/O remapping on MaleCNS (*Drosophila*, not house fly). Connectome
 - [[permanent/perm-20260912-physical-computation-is-one-stack]] · [[permanent/perm-20260912-connectome-is-wiring-not-a-trainable-llm]] · [[permanent/perm-20260912-emulation-inverts-biological-efficiency]]
 - [[permanent/perm-20260912-mushroom-body-is-the-only-plastic-specialist]] · [[permanent/perm-20260912-fly-snn-is-sensorimotor-worker-not-svlm]] · [[permanent/perm-20260912-optimize-fly-via-mb-pinout-substrate]]
 - [[permanent/perm-20260912-connectome-is-a-lab-instrument]] · [[permanent/perm-20260912-distill-motifs-not-upload-the-graph]] · [[permanent/perm-20260912-useful-twin-predicts-the-next-experiment]]
-- waves: `inbox/cursor/inbox-cursor-fly-connectome-wave-20260912.md` · `inbox/cursor/inbox-cursor-fly-apps-swarm-20260912.md` · `inbox/cursor/inbox-cursor-connectome-compiler-lab-20260912.md` · `inbox/cursor/inbox-cursor-flyforge-roadmap-20260912.md` · `inbox/cursor/inbox-cursor-evolution-lab-20260912.md`
+- waves: `inbox/cursor/inbox-cursor-fly-connectome-wave-20260912.md` · `inbox/cursor/inbox-cursor-fly-apps-swarm-20260912.md` · `inbox/cursor/inbox-cursor-connectome-compiler-lab-20260912.md` · `inbox/cursor/inbox-cursor-flyforge-roadmap-20260912.md` · `inbox/cursor/inbox-cursor-evolution-lab-20260912.md` · `inbox/cursor/inbox-cursor-gym-not-fork-20260912.md`
 
 ## SoL-Pi / harness efficiency (2026-09-11)
 - [[literature/lit-20260911-sol-pi-harness-efficiency]]

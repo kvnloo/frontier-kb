@@ -148,6 +148,10 @@ Viral apps (DOOMFLY, Flyhard, Tello, Stonkfly, fly-wirehead): useful as **pinout
 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | recovery events, Kanban, gateway; HOTL proposed at #88589 | fly student weights |
 | [kvnloo/humanity-vault](https://github.com/kvnloo/humanity-vault) | teaching surface for the cluster | claims of truth |
 | [kvnloo/fly-wirehead](https://github.com/kvnloo/fly-wirehead) | MaleCNS LIF playback, photoreceptor pinout, PAM11 20 mV, KC→MBON plasticity **assay** | learning result, Pareto claim |
+| Gymnasium `reset`/`step` (in `apps/evolution-lab`) | P0 env `hermes_recovery` | FlyGym 2.x / OpenEvolve as the engine |
+| [NeLy-EPFL/flygym](https://github.com/NeLy-EPFL/flygym) | Later visuo-motor env (consume 2.x) | P0; do not fork `flygym-gymnasium` to go faster |
+| [algorithmicsuperintelligence/openevolve](https://github.com/algorithmicsuperintelligence/openevolve) | Later LLM mutation backend | Gym, control table, ΔHV |
+| [huggingface/OpenEnv](https://github.com/huggingface/OpenEnv) | Later isolated Hermes sandbox | In-process P0 |
 | [kvnloo/verified-oss-loop](https://github.com/kvnloo/verified-oss-loop) | claim leases / evidence receipts when a Pareto point is asserted | schema |
 | [kvnloo/blueprint](https://github.com/kvnloo/blueprint) / evolve / solarpunk | C(RAID) product loop; digital-twin **cores** | this fly graph (solarpunk twin ≠ MaleCNS upload) |
 
@@ -196,3 +200,5 @@ Qwen remains the language/tool worker ([[permanent/perm-20260912-fly-snn-is-sens
 - [[permanent/perm-20260912-anatomy-is-init-not-a-faithful-brain]]
 - [[inbox/cursor/inbox-cursor-flyforge-roadmap-20260912]]
 - [[harnesses/hermes]]
+- [[literature/lit-20260912-consume-gym-do-not-fork-engine]]
+- [[permanent/perm-20260912-gym-is-the-task-engine-is-ours]]

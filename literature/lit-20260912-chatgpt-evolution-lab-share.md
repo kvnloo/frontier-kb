@@ -42,7 +42,9 @@ Precedents named: AlphaEvolve, Sakana AI Scientist-v2, OpenEvolve, PBT, MAP-Elit
 
 - [[literature/lit-20260912-flyforge-research-roadmap]]
 - [[literature/lit-20260912-chatgpt-flyforge-share]]
+- [[literature/lit-20260912-consume-gym-do-not-fork-engine]]
 - [[permanent/perm-20260912-experiments-are-the-population]]
+- [[permanent/perm-20260912-gym-is-the-task-engine-is-ours]]
 - [[permanent/perm-20260912-direct-input-control-is-mandatory]]
 - [[permanent/perm-20260912-joules-per-verified-success]]
 - [[inbox/cursor/inbox-cursor-evolution-lab-20260912]]
