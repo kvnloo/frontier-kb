@@ -19,7 +19,7 @@ A gym is `reset` / `step` plus a verifier. An experiment engine is genomes, sele
 
 ## Why it matters for our harnesses
 
-P0 env id is `hermes_recovery`. Fly-wirehead is not a gym. Tinker is a training backend behind the same env. OpenCode/OpenRouter may later mutate genomes; they do not own scoring. `make_env` refuses `flygym` / `openevolve` so we cannot accidentally replace Hermes recovery with walking or with LLM-rewritten scripts.
+P0 env id is `hermes_recovery` in [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab). Fly-wirehead is not a gym. Tinker is a training backend behind the same env. OpenCode/OpenRouter may later mutate genomes; they do not own scoring. `make_env` refuses `flygym` / `openevolve` so we cannot accidentally replace Hermes recovery with walking or with LLM-rewritten scripts.
 
 ## Related
 

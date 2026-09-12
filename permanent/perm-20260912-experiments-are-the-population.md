@@ -19,7 +19,7 @@ Do not optimize “a fly” or “a Qwen.” Evolve **experiment genomes**. An i
 
 ## Why it matters for our harnesses
 
-This is the factory loop that can actually use many Cursor agents without turning into 100 copies of the same prompt. `apps/evolution-lab` is the local P0 implementation: Hermes recovery, ridge readouts, JSONL archive, honest dashboard. `tinker_sft` and `fly_sim` must **fail closed** until they are real. Same rule as AODL fail-closed codecs.
+This is the factory loop that can actually use many Cursor agents without turning into 100 copies of the same prompt. [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) is the local P0 implementation: Hermes recovery, ridge readouts, JSONL archive, honest dashboard. `tinker_sft` and `fly_sim` must **fail closed** until they are real. Same rule as AODL fail-closed codecs.
 
 ## Related
 

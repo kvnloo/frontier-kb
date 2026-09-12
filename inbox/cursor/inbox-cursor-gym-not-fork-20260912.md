@@ -18,7 +18,7 @@ confidence: high
 
 Operator asked how to speed up by forking the ideal OSS repo: fork the gym, improve the engine.
 
-Implemented `evolution_lab.gym`: `hermes_recovery` duck-types Gymnasium. `make_env("flygym"|"openevolve"|"openenv")` fails closed. CLI: `python -m evolution_lab gym-smoke`. L1 ridge archive unchanged.
+Implemented `evolution_lab.gym` in [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab): `hermes_recovery` duck-types Gymnasium. `make_env("flygym"|"openevolve"|"openenv")` fails closed. CLI: `python -m evolution_lab gym-smoke`. L1 ridge archive unchanged.
 
 ## Next action
 

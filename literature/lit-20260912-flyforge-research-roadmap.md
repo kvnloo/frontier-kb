@@ -20,7 +20,7 @@ The critical path is **lock a verified Hermes recovery contract, then run a cont
 
 ## Evidence
 
-This note compiles the ChatGPT share ([[literature/lit-20260912-chatgpt-flyforge-share]]), the 10-agent genuine-apps loop ([[literature/lit-20260912-connectome-genuine-apps]]), and the AODL network ([kvnloo/aodl `docs/network.md`](https://github.com/kvnloo/aodl/blob/main/docs/network.md)). The **runner** is `apps/evolution-lab` ([[literature/lit-20260912-chatgpt-evolution-lab-share]]). No Tinker or MaleCNS SGD has been run.
+This note compiles the ChatGPT share ([[literature/lit-20260912-chatgpt-flyforge-share]]), the 10-agent genuine-apps loop ([[literature/lit-20260912-connectome-genuine-apps]]), and the AODL network ([kvnloo/aodl `docs/network.md`](https://github.com/kvnloo/aodl/blob/main/docs/network.md)). The **runner** is [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) ([[literature/lit-20260912-chatgpt-evolution-lab-share]]). No Tinker or MaleCNS SGD has been run.
 
 ### What the idea is (and is not)
 
@@ -148,7 +148,7 @@ Viral apps (DOOMFLY, Flyhard, Tello, Stonkfly, fly-wirehead): useful as **pinout
 | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | recovery events, Kanban, gateway; HOTL proposed at #88589 | fly student weights |
 | [kvnloo/humanity-vault](https://github.com/kvnloo/humanity-vault) | teaching surface for the cluster | claims of truth |
 | [kvnloo/fly-wirehead](https://github.com/kvnloo/fly-wirehead) | MaleCNS LIF playback, photoreceptor pinout, PAM11 20 mV, KC→MBON plasticity **assay** | learning result, Pareto claim |
-| Gymnasium `reset`/`step` (in `apps/evolution-lab`) | P0 env `hermes_recovery` | FlyGym 2.x / OpenEvolve as the engine |
+| [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) | experiment genomes, `hermes_recovery` gym, ΔHV / MAP-Elites | FlyGym / OpenEvolve as the engine; vault claims |
 | [NeLy-EPFL/flygym](https://github.com/NeLy-EPFL/flygym) | Later visuo-motor env (consume 2.x) | P0; do not fork `flygym-gymnasium` to go faster |
 | [algorithmicsuperintelligence/openevolve](https://github.com/algorithmicsuperintelligence/openevolve) | Later LLM mutation backend | Gym, control table, ΔHV |
 | [huggingface/OpenEnv](https://github.com/huggingface/OpenEnv) | Later isolated Hermes sandbox | In-process P0 |

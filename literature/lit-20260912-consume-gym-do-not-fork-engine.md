@@ -30,7 +30,7 @@ The operator ask was: speed up by forking the ideal OSS repo; “just fork the g
 | [OpenEnv](https://github.com/huggingface/OpenEnv) | Docker/HTTP Gymnasium-style agent envs | Right *shape* for a later real Hermes sandbox; overkill for in-process P0 |
 | [Gymnasium](https://github.com/Farama-Foundation/Gymnasium) | `reset` / `step` / Discrete / Box | **Consume the contract.** Do not vendor Farama into frontier-kb |
 
-`apps/evolution-lab` now owns `hermes_recovery` (`evolution_lab.gym.HermesRecoveryEnv`). `make_env("flygym")` and `make_env("openevolve")` fail closed so a future agent cannot “swap in the famous repo” and think P0 is done.
+`hermes_recovery` lives in [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) (`evolution_lab.gym.HermesRecoveryEnv`). `make_env("flygym")` and `make_env("openevolve")` fail closed so a future agent cannot “swap in the famous repo” and think P0 is done.
 
 Engine split that actually saves time:
 

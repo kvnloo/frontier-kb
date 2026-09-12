@@ -106,7 +106,7 @@ Starmap/learning graph is a time-axis **projection** of memory, not orchestratio
 
 Research program (not implemented in this vault): typed operational events → bounded recovery action → external verifier. Qwen3.8-27B remains the language worker and escalation model. A GRU/motif/reservoir student is an AODL **executor** port. Keel L0 still forbids the default router from doing project work; the specialist must not see secret-bearing payloads.
 
-Local runner: `apps/evolution-lab` (JSONL archive, ΔHV, learned-only front). Tinker is a declared backend that currently refuses.
+Local runner: [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) (JSONL archive, ΔHV, learned-only front). Tinker is a declared backend that currently refuses.
 
 - [[literature/lit-20260912-flyforge-research-roadmap]]
 - [[permanent/perm-20260912-p0-is-verified-hermes-recovery]]

@@ -18,7 +18,7 @@ confidence: high
 
 Operator sent a second ChatGPT share and asked to read the **latest** messages and build the experiment engine. Latest user turn: cloud-agent scale + gamified Pareto loop + evolutionary algorithm + Tinker SFT.
 
-Implemented in `apps/evolution-lab` (not fly-wirehead). Control table runs on a delayed-cue Hermes recovery task so last-step direct-input is a real skeptic, not a 100% clone of the teacher.
+Implemented in [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) (not fly-wirehead, not this vault). Control table runs on a delayed-cue Hermes recovery task so last-step direct-input is a real skeptic, not a 100% clone of the teacher.
 
 L1 (this workspace): teacher 1.00, mlp/reservoir/rewire 1.00, gru ~0.92, **direct-input ~0.79**. Joules remain `null` / `joules_unknown: true`. Tinker backend refuses.
 
@@ -28,7 +28,7 @@ L1 (this workspace): teacher 1.00, mlp/reservoir/rewire 1.00, gru ~0.92, **direc
 2. Later: wire Tinker as a real backend; Cursor Cloud Agent launch is orchestrator work, not this package faking 100 VMs.
 3. Copy `examples/valid/fly-specialist-port.json` to aodl when that repo is in the workspace.
 4. Do not grow fly-wirehead into this engine.
-5. Do not submodule FlyGym or OpenEvolve; P0 gym is `hermes_recovery`.
+5. Do not submodule FlyGym or OpenEvolve; P0 gym is `hermes_recovery` in [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab).
 
 ## Links
 

@@ -13,5 +13,5 @@ apps/humanity-vault/node_modules/
 apps/humanity-vault/.next/
 apps/humanity-vault/.turbo/
 apps/humanity-vault/out/
+
 apps/evolution-lab/runs/
-apps/evolution-lab/**/__pycache__/
