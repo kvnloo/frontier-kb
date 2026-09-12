@@ -9,6 +9,10 @@ Cross-harness intelligence knowledge base for Kevin's OSS / agent factory.
 
 An **Obsidian-compatible** git vault (Zettelkasten + atlas MOCs) with a machine-readable schema so frontier / autoresearch loops can append structured notes without schema drift.
 
+This is **cutting-edge research memory only**: harnesses, papers, labs, evals, tokenomics, SOTA. It is not personal agentic memory.
+
+**Personal agentic memory stays private in Hermes** (`~/.hermes/memories`). Do not copy chats, USER.md, MEMORY.md, operator preferences, or private session recall into this vault or its Postgres store. Dash may later *display* this research plane as one UI surface; it is not a write path for personal memory.
+
 Covers:
 
 - Coding harnesses: OMP, Hermes, Pi, Codex, Claude Code, Cursor, Grok, Crush, OpenCode, Firstmate, o8, Prime Intelligence, Devin, fx, peers. Canonical ids in [kvnloo/aodl `harnesses/catalog.json`](https://github.com/kvnloo/aodl/blob/main/harnesses/catalog.json). Firstmate is a distro.
