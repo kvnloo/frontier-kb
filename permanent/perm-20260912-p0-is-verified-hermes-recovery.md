@@ -19,7 +19,7 @@ First experiment: **typed operational events → bounded recovery action → ext
 
 ## Why it matters for our harnesses
 
-Hermes already has Kanban, runs, leases, and a secret/vault split. The controller must consume **sanitized** fields and escalate; it must not see `bws` payloads or vault fill. Keel L0 already forbids the default router from executing project work — the fly/GRU student is the same shape: verifiable output type, not a prose orchestrator ([[permanent/perm-20260910-specialist-subagent-handoff]]). PER-944 stays a WebGPU viewer.
+Hermes already has Kanban, runs, leases, and a secret/vault split. The controller must consume **sanitized** fields and escalate; it must not see `bws` payloads or vault fill. Keel L0 already forbids the default router from executing project work — the fly/GRU student is the same shape: verifiable output type, not a prose orchestrator ([[permanent/perm-20260910-specialist-subagent-handoff]]). PER-944 stays a WebGPU viewer. Claimable P0 is [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2); Linear [PER-1524](https://linear.app/0ism/issue/PER-1524) stays Backlog.
 
 ## Related
 

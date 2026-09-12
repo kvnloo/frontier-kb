@@ -183,7 +183,7 @@ Qwen remains the language/tool worker ([[permanent/perm-20260912-fly-snn-is-sens
 
 - Fact: FLM’s direct-input wins on language NLL; Costi’s topology+weights help chaotic forecasting; FlyGM trains a graph policy with rewire/MLP controls; Sphinx shows walking is not fidelity; fly-hf’s readout dominates params.
 - Interpretation: P0 is a **harness** experiment (Hermes + AODL ports + verifier), not a neuroscience upload and not a 27B midpoint hunt. The 10-agent motif consensus is the likely P1 winner; the control table is how we would notice if we were wrong.
-- HOLD: the 95%/50% product target is unregistered. Hosted joules unknown. Mutation n/a. CoS does **not** mint PER-1524/1525/1526 to Todo — they stay Backlog viewers. PER-944 stays a viewer. Claimable work is [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2).
+- HOLD: hosted joules unknown. Mutation n/a. The 95%/50%/0 extra-violation target is registered on evolution-lab (`PRODUCT_TARGET` / `roadmap.yml`), not a measured Pareto point. CoS does **not** mint PER-1524/1525/1526 to Todo — they stay Backlog viewers. PER-944 stays a viewer. Claimable work is [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2).
 
 ## Links
 

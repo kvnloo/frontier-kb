@@ -26,6 +26,7 @@ Implemented `evolution_lab.gym` in [kvnloo/evolution-lab](https://github.com/kvn
 2. If a visuo-motor task is locked, `pip install flygym` and wrap 2.x (not flygym-gymnasium) as a second env name.
 3. OpenEvolve/OpenRouter belong as a mutation backend after P0 logs exist.
 4. Operator GitHub fork of FlyGym is only if we must patch the body model.
+5. VOL claimable P0 is [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2). Linear [PER-1524](https://linear.app/0ism/issue/PER-1524) stays Backlog.
 
 ## Links
 

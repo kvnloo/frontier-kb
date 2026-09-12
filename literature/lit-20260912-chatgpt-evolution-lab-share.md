@@ -35,7 +35,7 @@ Precedents named: AlphaEvolve, Sakana AI Scientist-v2, OpenEvolve, PBT, MAP-Elit
 ## Fact vs interpretation
 
 - Fact: this is a program for an engine. No 100-agent Tinker run was executed in the share. Qwen3.8-27B is listed as a Tinker-exposed model in their docs, not as a result we measured.
-- Interpretation: P0 of [[literature/lit-20260912-flyforge-research-roadmap]] is the first **species** in this engine (Hermes recovery control table), not a competing product. Direct-input remains a mandatory skeptic. Tinker/cloud fan-out stay declared backends until wired; refusing to fake SFT is part of the contract.
+- Interpretation: P0 of [[literature/lit-20260912-flyforge-research-roadmap]] is the first **species** in this engine (Hermes recovery control table), not a competing product. Direct-input remains a mandatory skeptic. Tinker/cloud fan-out stay declared backends until wired; refusing to fake SFT is part of the contract. The engine is [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) under [Verified OSS Loop](https://github.com/kvnloo/verified-oss-loop). Claimable P0 is [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2). Linear [PER-1524](https://linear.app/0ism/issue/PER-1524) stays Backlog.
 - HOLD: joules of hosted Qwen remain unknown. MAP-Elites behavior descriptors (family × scale × learning mode) are a first cut, not the only niche axes.
 
 ## Links

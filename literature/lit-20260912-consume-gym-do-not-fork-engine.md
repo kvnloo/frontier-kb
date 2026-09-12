@@ -34,9 +34,11 @@ The operator ask was: speed up by forking the ideal OSS repo; “just fork the g
 
 Engine split that actually saves time:
 
-1. **Gym** = observation, action, expert/verifier (this package; later FlyGym as a second registered name).
+1. **Gym** = observation, action, expert/verifier (`hermes_recovery` in [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab); later FlyGym as a second registered name).
 2. **Engine** = genomes, ridge students, Pareto, MAP-Elites, promotion (keep).
 3. **Mutation backend** = OpenEvolve or Cursor/OpenRouter later, mutating genomes or code, scored by *this* gym.
+
+VOL claimable P0 is [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2). Linear [PER-1524](https://linear.app/0ism/issue/PER-1524) stays Backlog.
 
 ## Fact vs interpretation
 

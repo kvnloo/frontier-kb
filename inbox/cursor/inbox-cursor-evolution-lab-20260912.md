@@ -24,7 +24,7 @@ L1 (this workspace): teacher 1.00, mlp/reservoir/rewire 1.00, gru ~0.92, **direc
 
 ## Next action
 
-1. CoS: still no MaleCNS-worker HITL. Optional: “Evolution Lab P0 is the runner for PER-944-adjacent work.”
+1. CoS: still no MaleCNS-worker HITL. Optional: “Evolution Lab P0 is the runner for PER-944-adjacent work.” PER-944 stays Backlog viewer. Claimable P0 is [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2); Linear [PER-1524](https://linear.app/0ism/issue/PER-1524) stays Backlog. VOL onboard: [evolution-lab#9](https://github.com/kvnloo/evolution-lab/pull/9).
 2. Later: wire Tinker as a real backend; Cursor Cloud Agent launch is orchestrator work, not this package faking 100 VMs.
 3. Copy `examples/valid/fly-specialist-port.json` to aodl when that repo is in the workspace.
 4. Do not grow fly-wirehead into this engine.

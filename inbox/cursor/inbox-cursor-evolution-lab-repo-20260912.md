@@ -16,7 +16,7 @@ confidence: high
 
 Operator: gh is not read-only; make a new repo and move the code. Do not fork FlyGym.
 
-Created [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) (`isFork: false`). Engine PR: https://github.com/kvnloo/evolution-lab/pull/1
+Created [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) (`isFork: false`). Engine PR: https://github.com/kvnloo/evolution-lab/pull/1 (merged). VOL/P0 lock: https://github.com/kvnloo/evolution-lab/pull/9. Claimable P0: [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2). Linear [PER-1524](https://linear.app/0ism/issue/PER-1524) stays Backlog.
 
 Removed `apps/evolution-lab` package from this vault (pointer README only). Add the repo to the Cloud Agent environment and Cursor GitHub App so `cursor[bot]` can push.
 
