@@ -38,6 +38,8 @@ Four public teaching/protocol surfaces, distilled into vault policy. None of thi
 - [[permanent/perm-20260912-mushroom-body-is-the-only-plastic-specialist]]
 - [[literature/lit-20260912-mb-few-shot-learners]]
 - [[permanent/perm-20260912-distill-motifs-not-upload-the-graph]]
+- [[permanent/perm-20260912-anatomy-is-init-not-a-faithful-brain]]
+- [[literature/lit-20260912-flyforge-research-roadmap]]
 
 ## Literature
 

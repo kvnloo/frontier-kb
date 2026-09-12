@@ -25,3 +25,4 @@ Target \(I(S;V_A\mid O,P)\approx 0\). Practical goal is computational indistingu
 - Sparse spike codes exist because signaling is expensive (Attwell–Laughlin). Dense GPU codes exist because memory bandwidth is the scarce resource on silicon. [[literature/lit-20260912-biology-vs-silicon-energy]] · [[permanent/perm-20260912-physical-computation-is-one-stack]]
 
 - AODL Kardashev changes budgets (tokens, attention, joules, spawn), not kinds. [[inbox/cursor/inbox-cursor-aodl-thesis-intent-20260912]]
+- Fly specialist scoring uses the same \(\Gamma_t\): [[permanent/perm-20260912-joules-per-verified-success]] · [[permanent/perm-20260912-fly-specialist-is-an-aodl-port]]

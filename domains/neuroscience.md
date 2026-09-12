@@ -39,3 +39,6 @@ Map of content for [[atlas/home]]. Learning-system notes live in [[domains/learn
 - A useful twin predicts the next split-GAL4, not a walking video. Shiu/Sapkal/Özdil/Pugliese pass; Eon “upload” does not. [[literature/lit-20260912-connectome-genuine-apps]] · [[literature/lit-20260912-circuit-discovery-shiu-sapkal-ozdil]] · [[permanent/perm-20260912-connectome-is-a-lab-instrument]] · [[permanent/perm-20260912-useful-twin-predicts-the-next-experiment]]
 - Genes compile into wiring; NeuronBridge is the linker. [[inbox/cursor/inbox-cursor-connectome-compiler-lab-20260912]]
 - Optic lobe is a ~800-pixel multi-task front-end. [[literature/lit-20260912-optic-lobe-visual-front-end]]
+- Digital Sphinx: a worm connectome + trained decoder can walk a fly body. Behavior ≠ fidelity. [[literature/lit-20260912-digital-sphinx]]
+- After the graph is reorganized, name it fly-inspired. [[permanent/perm-20260912-anatomy-is-init-not-a-faithful-brain]]
+- FlyForge P0 is a harness controller, not an upload. [[literature/lit-20260912-flyforge-research-roadmap]]

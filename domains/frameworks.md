@@ -4,7 +4,7 @@ title: frameworks
 type: moc
 status: active
 created: 2026-09-09
-updated: 2026-09-10
+updated: 2026-09-12
 tags: [moc, domain]
 ---
 
@@ -64,5 +64,6 @@ Agent orchestration is a typed dynamic graph \(O_t\), not a static DAG or a name
 - [[permanent/perm-20260817-no-aodl-repo]]
 - [[permanent/perm-20260910-craid-is-named-hybrid]]
 - Sources: [[literature/lit-20260817-aodl-voice-transcript]] · [[literature/lit-20260817-hotl-01-issue-88589]] · [[literature/lit-20260817-hotl-02-spec]] · [[literature/lit-20260910-craid-blueprint]]
+- Fly recovery student = existing kinds as a **port**, not HOTL 0.3. [[permanent/perm-20260912-fly-specialist-is-an-aodl-port]] · [[literature/lit-20260912-aodl-fly-specialist-port-sketch]] · [[permanent/perm-20260912-p0-is-verified-hermes-recovery]]
 
 Market/auction routing lives under [[domains/tokenomics]] as policy \(\Pi_t\), not as a separate topology.

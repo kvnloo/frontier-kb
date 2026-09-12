@@ -27,3 +27,5 @@ Keep the existing bind: Qwen3.8-27B as OMP/Hermes/Pi worker, thinking on, `qwen3
 - [[permanent/perm-20260910-specialist-subagent-handoff]]
 - [[literature/lit-20260912-qwen38-27b-vs-fly-snn]]
 - [[permanent/perm-20260912-connectome-is-wiring-not-a-trainable-llm]]
+- [[permanent/perm-20260912-p0-is-verified-hermes-recovery]]
+- [[permanent/perm-20260912-fly-specialist-is-an-aodl-port]]

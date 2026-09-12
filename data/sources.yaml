@@ -119,6 +119,19 @@ learning:
   shy_pubmed: https://pubmed.ncbi.nlm.nih.gov/15121491/
   synaptic_pruning: https://en.wikipedia.org/wiki/Synaptic_pruning
   arxiv_qbio_nc: https://arxiv.org/list/q-bio.NC/recent
+fly_connectome:
+  chatgpt_flyforge_share: https://chatgpt.com/share/6aa4e9ce-e88c-83ea-bf45-0e9496a1ad6f
+  flm_flies_are_all_you_need: https://artificialscientific.com/papers/flies-are-all-you-need
+  fly_hf: https://huggingface.co/ngxson/fly-hf
+  costi_reservoir: https://doi.org/10.3390/biomimetics10050341
+  digital_sphinx: https://doi.org/10.64898/2026.03.20.713233
+  digital_sphinx_code: https://github.com/Brunton-Lab/DigitalSphinx2026
+  flygm: https://arxiv.org/abs/2602.17997
+  connectome_to_function: https://arxiv.org/abs/2609.06093
+  aodl: https://github.com/kvnloo/aodl
+  aodl_network: https://github.com/kvnloo/aodl/blob/main/docs/network.md
+  fly_wirehead: https://github.com/kvnloo/fly-wirehead
+  per_944: https://linear.app/0ism/issue/PER-944
 # Resolved 2026-09-10 (PER-1296 OMP research); keep keys for audit
 resolved_urls:
   prime_intelligence: https://www.primeintellect.ai/blog/prime-agent

@@ -30,6 +30,18 @@ SWE-2 is in-harness RL on Kimi K3, not a plugin. Qwen3.8-27B is a worker. Nemotr
 
 Qwen3.8-27B remains the language/tool worker. A MaleCNS SNN is a sensorimotor specialist, not a second SVLM. Optimize mushroom-body + pinout + substrate; do not score the fly on SWE-bench.
 
+FlyForge program: P0 is Hermes recovery under joules/success. FLM’s direct-input control slightly beats the fly residual on language NLL. fly-hf’s 50.6M readout dominates its 52.8M trained params.
+
+- [[literature/lit-20260912-flyforge-research-roadmap]]
+- [[literature/lit-20260912-chatgpt-flyforge-share]]
+- [[literature/lit-20260912-flm-and-fly-hf-language-reservoirs]]
+- [[literature/lit-20260912-flygm-graph-policy]]
+- [[literature/lit-20260912-costi-connectome-reservoir]]
+- [[literature/lit-20260912-connectome-to-function]]
+- [[permanent/perm-20260912-p0-is-verified-hermes-recovery]]
+- [[permanent/perm-20260912-direct-input-control-is-mandatory]]
+- [[permanent/perm-20260912-joules-per-verified-success]]
+- [[permanent/perm-20260912-anatomy-is-init-not-a-faithful-brain]]
 - [[literature/lit-20260912-fly-connectome-task-meme]]
 - [[literature/lit-20260912-qwen38-27b-vs-fly-snn]]
 - [[permanent/perm-20260912-connectome-is-wiring-not-a-trainable-llm]]
