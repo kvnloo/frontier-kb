@@ -4,7 +4,7 @@ title: cs
 type: moc
 status: active
 created: 2026-09-09
-updated: 2026-09-10
+updated: 2026-09-12
 tags: [moc, domain]
 ---
 
@@ -45,3 +45,9 @@ Orchestration as a typed dynamic graph and IR (not a pretty DSL). Audit Petri ne
 - [[permanent/perm-20260817-orchestration-typed-dynamic-graph]]
 - [[permanent/perm-20260817-aodl-ir-first]]
 - [[literature/lit-20260817-hotl-02-spec]]
+
+## Sparse graphs vs dense mats
+
+Connectome SNN = CSR + LIF + labels. Transformer = dense matmul + tokens. Freeze-backbone / train-adapter is the shared CS move (mushroom body, LoRA, evolver-around-frozen-worker). [[permanent/perm-20260912-mushroom-body-is-the-only-plastic-specialist]] · [[permanent/perm-20260912-optimize-fly-via-mb-pinout-substrate]]
+
+A fly residual without a parameter-matched direct-input adapter is not an architecture result (FLM). Topology controls must **refit**. [[permanent/perm-20260912-direct-input-control-is-mandatory]] · [[literature/lit-20260912-flm-and-fly-hf-language-reservoirs]]

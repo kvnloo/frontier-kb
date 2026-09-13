@@ -4,7 +4,7 @@ title: Hermes Agent
 type: harness
 status: active
 created: 2026-09-09
-updated: 2026-09-11
+updated: 2026-09-12
 urls:
   - https://github.com/NousResearch/hermes-agent
   - https://hermes-agent.nousresearch.com/
@@ -101,6 +101,17 @@ Hermes has execution primitives (Kanban, runs, leases, review, goal/judge) but n
 - [[permanent/perm-20260817-no-aodl-repo]]
 
 Starmap/learning graph is a time-axis **projection** of memory, not orchestration edge semantics.
+
+## FlyForge P0 (recovery specialist, not a planner swap)
+
+Research program (not implemented in this vault): typed operational events → bounded recovery action → external verifier. Qwen3.8-27B remains the language worker and escalation model. A GRU/motif/reservoir student is an AODL **executor** port. Keel L0 still forbids the default router from doing project work; the specialist must not see secret-bearing payloads.
+
+Local runner: [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) (JSONL archive, ΔHV, learned-only front). Tinker is a declared backend that currently refuses.
+
+- [[literature/lit-20260912-flyforge-research-roadmap]]
+- [[permanent/perm-20260912-p0-is-verified-hermes-recovery]]
+- [[permanent/perm-20260912-fly-specialist-is-an-aodl-port]]
+- Linear [PER-944](https://linear.app/0ism/issue/PER-944) stays a WebGPU viewer, not this controller.
 
 ## Keel
 

@@ -58,9 +58,33 @@ Cursor-node inbox only. CoS promotes to literature/permanent. Teaching surface: 
 - [[inbox/cursor/inbox-cursor-aodl-papers-20260911]] · [[inbox/cursor/inbox-cursor-aodl-formalism-20260911]] · [[inbox/cursor/inbox-cursor-aodl-lab-protocols-20260911]]
 - [[inbox/cursor/inbox-cursor-aodl-search-method-20260911]] · [[inbox/cursor/inbox-cursor-aodl-competitors-100-20260911]] · [[inbox/cursor/inbox-cursor-aodl-deep-wave2-20260912]]
 - Dash capture: [kvnloo/dash#38](https://github.com/kvnloo/dash/pull/38) · Linear [PER-1461](https://linear.app/0ism/issue/PER-1461)
+- Fly specialist as a **port** (not a new kind): [[permanent/perm-20260912-fly-specialist-is-an-aodl-port]] · [[literature/lit-20260912-aodl-fly-specialist-port-sketch]]
 
 ## First OMP wave (from frontier 2026-09-09)
 See `inbox/omp-wave-2026-09-09.md`
+
+## Fly connectome / physical computation (2026-09-12)
+
+The X meme is I/O remapping on MaleCNS (*Drosophila*, not house fly). Connectome = compiled prior. Mushroom body = LoRA. Emulation inverts nanowatt biology. Qwen3.8-27B stays the SVLM worker.
+
+**Genuine apps (10-agent loop):** lab compiler (NeuronBridge → split-GAL4), optogenetic prior (Shiu/Sapkal/Pugliese), motif distillation (EMD, loom, FlyHash). Not an upload, not a virtual patient.
+
+**Research program (FlyForge share):** architecture prior + control table. **P0** is a verified Hermes recovery controller (GRU to beat, direct-input mandatory), scored in joules per verified success. The student is an AODL **port**, not a new kind. Distill / grow / 10K–27B search are later.
+
+**Evolution Lab (latest share):** experiments are the population. Engine: [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) (original repo, not `apps/evolution-lab`; [VOL](https://github.com/kvnloo/verified-oss-loop) onboard; [`ROADMAP.md`](https://github.com/kvnloo/evolution-lab/blob/main/ROADMAP.md) maintainer-owned). **Gym** is `hermes_recovery`. Do not fork FlyGym or OpenEvolve. Claimable P0 is [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2); P1–P6 [#3](https://github.com/kvnloo/evolution-lab/issues/3)–[#8](https://github.com/kvnloo/evolution-lab/issues/8) are `needs-discussion`. Linear PER-1524/1525/1526 stay **Backlog**, not Todo. Tinker and 100 cloud agents are backends, not P0 compute. VOL leases live on evolution-lab GitHub, not fly-wirehead (pinout demo only).
+
+- [[literature/lit-20260912-chatgpt-evolution-lab-share]] · [[literature/lit-20260912-evolution-lab-vol-onboard]] · [[literature/lit-20260912-consume-gym-do-not-fork-engine]] · [[permanent/perm-20260912-experiments-are-the-population]] · [[permanent/perm-20260912-gym-is-the-task-engine-is-ours]]
+
+- [[literature/lit-20260912-flyforge-research-roadmap]] · [[literature/lit-20260912-chatgpt-flyforge-share]] · [[literature/lit-20260912-flm-and-fly-hf-language-reservoirs]] · [[literature/lit-20260912-costi-connectome-reservoir]]
+- [[literature/lit-20260912-digital-sphinx]] · [[literature/lit-20260912-flygm-graph-policy]] · [[literature/lit-20260912-connectome-to-function]] · [[literature/lit-20260912-aodl-fly-specialist-port-sketch]]
+- [[literature/lit-20260912-fly-connectome-task-meme]] · [[literature/lit-20260912-shiu-huang-malecns-physiology]] · [[literature/lit-20260912-biology-vs-silicon-energy]] · [[literature/lit-20260912-qwen38-27b-vs-fly-snn]]
+- [[literature/lit-20260912-connectome-genuine-apps]] · [[literature/lit-20260912-circuit-discovery-shiu-sapkal-ozdil]] · [[literature/lit-20260912-neuromorphic-and-robot-motifs]] · [[literature/lit-20260912-mb-few-shot-learners]] · [[literature/lit-20260912-optic-lobe-visual-front-end]]
+- [[permanent/perm-20260912-p0-is-verified-hermes-recovery]] · [[permanent/perm-20260912-direct-input-control-is-mandatory]] · [[permanent/perm-20260912-joules-per-verified-success]]
+- [[permanent/perm-20260912-fly-specialist-is-an-aodl-port]] · [[permanent/perm-20260912-anatomy-is-init-not-a-faithful-brain]]
+- [[permanent/perm-20260912-physical-computation-is-one-stack]] · [[permanent/perm-20260912-connectome-is-wiring-not-a-trainable-llm]] · [[permanent/perm-20260912-emulation-inverts-biological-efficiency]]
+- [[permanent/perm-20260912-mushroom-body-is-the-only-plastic-specialist]] · [[permanent/perm-20260912-fly-snn-is-sensorimotor-worker-not-svlm]] · [[permanent/perm-20260912-optimize-fly-via-mb-pinout-substrate]]
+- [[permanent/perm-20260912-connectome-is-a-lab-instrument]] · [[permanent/perm-20260912-distill-motifs-not-upload-the-graph]] · [[permanent/perm-20260912-useful-twin-predicts-the-next-experiment]]
+- waves: `inbox/cursor/inbox-cursor-fly-connectome-wave-20260912.md` · `inbox/cursor/inbox-cursor-fly-apps-swarm-20260912.md` · `inbox/cursor/inbox-cursor-connectome-compiler-lab-20260912.md` · `inbox/cursor/inbox-cursor-flyforge-roadmap-20260912.md` · `inbox/cursor/inbox-cursor-evolution-lab-20260912.md` · `inbox/cursor/inbox-cursor-gym-not-fork-20260912.md` · `inbox/cursor/inbox-cursor-evolution-lab-repo-20260912.md` · `inbox/cursor/inbox-cursor-vol-onboard-20260912.md`
 
 ## SoL-Pi / harness efficiency (2026-09-11)
 - [[literature/lit-20260911-sol-pi-harness-efficiency]]
