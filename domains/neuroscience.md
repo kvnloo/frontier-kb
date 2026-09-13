@@ -4,7 +4,7 @@ title: neuroscience
 type: moc
 status: active
 created: 2026-09-09
-updated: 2026-09-12
+updated: 2026-09-13
 tags: [moc, domain]
 ---
 
@@ -42,3 +42,4 @@ Map of content for [[atlas/home]]. Learning-system notes live in [[domains/learn
 - Digital Sphinx: a worm connectome + trained decoder can walk a fly body. Behavior ≠ fidelity. [[literature/lit-20260912-digital-sphinx]]
 - After the graph is reorganized, name it fly-inspired. [[permanent/perm-20260912-anatomy-is-init-not-a-faithful-brain]]
 - FlyForge P0 is a harness controller, not an upload. [[literature/lit-20260912-flyforge-research-roadmap]]
+- TMNF-C is a later TrackMania gym whose mushroom-body learner uses real PN→KC / KC→MBON counts and DAN RPE, but PN drive is engineered car state, not the compound eye. [[literature/lit-20260913-tmnf-c-malecns-trackmania]] · [[permanent/perm-20260913-tmnf-c-is-a-later-gym-not-p0]]

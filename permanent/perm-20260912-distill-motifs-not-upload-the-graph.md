@@ -4,7 +4,7 @@ title: "Distill fly motifs; do not upload the graph"
 type: permanent
 status: active
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-13
 harnesses: [cursor, omp]
 domains: [ai-ml, physics, neuroscience]
 confidence: high
@@ -23,6 +23,7 @@ Same move as [[permanent/perm-20260910-small-models-are-workers-or-specialists]]
 
 ## Related
 
+- [[literature/lit-20260913-tmnf-c-malecns-trackmania]]
 - [[literature/lit-20260912-neuromorphic-and-robot-motifs]]
 - [[literature/lit-20260912-mb-few-shot-learners]]
 - [[literature/lit-20260912-optic-lobe-visual-front-end]]
