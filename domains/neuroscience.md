@@ -43,3 +43,4 @@ Map of content for [[atlas/home]]. Learning-system notes live in [[domains/learn
 - After the graph is reorganized, name it fly-inspired. [[permanent/perm-20260912-anatomy-is-init-not-a-faithful-brain]]
 - FlyForge P0 is a harness controller, not an upload. [[literature/lit-20260912-flyforge-research-roadmap]]
 - TMNF-C is a later TrackMania gym whose mushroom-body learner uses real PN→KC / KC→MBON counts and DAN RPE, but PN drive is engineered car state, not the compound eye. [[literature/lit-20260913-tmnf-c-malecns-trackmania]] · [[permanent/perm-20260913-tmnf-c-is-a-later-gym-not-p0]]
+- A SHERWOOD memecoin clip that stamps FlyWire’s 139,255 / 54.5M on an agent-council desk is a meme skin, not a DEX-trading connectome. [[literature/lit-20260913-sherwood-fly-dex-meme]]

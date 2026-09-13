@@ -35,6 +35,7 @@ FlyForge program: P0 is Hermes recovery under joules/success. FLM’s direct-inp
 - [[literature/lit-20260912-chatgpt-evolution-lab-share]]
 - [[literature/lit-20260912-evolution-lab-vol-onboard]]
 - [[literature/lit-20260913-tmnf-c-malecns-trackmania]]
+- [[literature/lit-20260913-sherwood-fly-dex-meme]]
 - [[permanent/perm-20260912-experiments-are-the-population]]
 - [[permanent/perm-20260913-tmnf-c-is-a-later-gym-not-p0]]
 
