@@ -83,6 +83,8 @@ Vault fill is the OpenInstinct port. Sources compose and refuse to overwrite boo
 
 Stop applying tool secrets into untrusted children. Identity kind + vision freeze. Documents via Skyflow/VGS wrap, not `hermes vault add`. Plaid (#12324) for bank, not Playwright.
 
+RSI: no evolver loop on the agent scaffold — memory/skill writes have no quality feedback, evals are disconnected. Plan: [[notes/harness-evolver-hermes-plan]] · generalized loop: [[permanent/perm-20260914-harness-evolver]].
+
 ## Sources
 
 - https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/secrets/index.md
