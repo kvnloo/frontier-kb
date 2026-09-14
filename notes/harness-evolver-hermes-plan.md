@@ -76,6 +76,17 @@ Cap spend per generation. Cheap/free models run validity + activation replays; t
 
 Offline loop; never touches the hot path. Credit gate, evaluator, sealed battery, credentials, and billing are outside the evolvable surface **by declaration** (`adapter.py` enforces it — the proposer cannot emit diffs outside the surface). Human merge gate on every deployment. One-command rollback, versioned surface.
 
+## SOTA augmentation (2026-09-14, 8 free models, 4/8 responded)
+
+Ran 8 OpenRouter free models in parallel, one SOTA angle each, $0 spent. Responded: dots-studio/dots-3-note-preview (adapter design), nvidia/nemotron-3-ultra-550b (safety/rollback), cohere/north-mini-code (self-play — output truncated, unusable), nvidia/nemotron-3.5-lightning (tool-shape — leaked thinking trace only, no deliverable). Failed: poolside/laguna-s-2.1 (429), google/gemma-4-31b-it (429), inclusionai/ling-3.0-flash-vl (empty content), nex-agi/nex-n2.5-pro (empty content).
+
+Concrete changes to the build from the two usable outputs:
+
+1. **`adapter.py` enforces a signed evolvability manifest** (Rego/OPA + Sigstore): the Phase 0 "declared, versioned surface" becomes machine-checked — proposer diffs outside the manifest fail the build before reaching the gates. Precedent: OPA admission controllers, NixOS content-addressed closures.
+2. **`rollout.py` ships signed patch bundles** (diff + SBOM + gate evidence) and adds **shadow mode + numeric canary gates** between the credit gate and the human merge gate: the new scaffold runs alongside production on real traffic, writing to a shadow store; promote only on p99 latency delta < 5%, error-rate delta < 0.1pp, task-success non-inferiority (Kayenta pattern; Anthropic runs constitution canaries on 5% of traffic). Rollback stays one command, now automatic on gate breach.
+3. **Phase 0 builds the trace schema first**: `archive.py`'s `(task, trace, failure_class)` schema is defined with OpenTelemetry semantics and versioned *before* `proposer.py` exists — it is the cross-harness lingua franca the pathology archive depends on. Sealed-battery access goes through a scoring API (harness version + task ID in, pass/fail + cost out) so the evolver can never observe sealed tasks.
+4. **Piranha rule for the champion archive**: after canary graduation, automatically remove the stale scaffold paths the winner replaced — prune dead code, not just dead niches.
+
 ## Related
 
 - [[permanent/perm-20260914-harness-evolver]] — the generalized, harness-agnostic version (adapter interface, results table, per-harness applicability)

@@ -83,6 +83,17 @@ Cap spend per generation. Track **$/credited patch** — it must *fall* as the p
 
 SFT a small orchestrator (weights don't transfer, harnesses do); inference-time weight RSI on agentic loops (no verifiable per-step reward yet); debate-as-amplifier (bounded by the strongest reasoner); Reflexion alone (plateaus, no cross-task generalization); **agent-written evals** (each generation lowers the bar — the sealed battery stays human-curated, always); swarms without a fitness signal (N× cost, sub-linear gain); naive volume (deliberate-practice literature: volume with coarse feedback plateaus).
 
+## SOTA augmentation (2026-09-14, 8 free models, 4/8 responded)
+
+Ran 8 OpenRouter free models in parallel, one SOTA angle each, $0 spent. Responded: dots-studio/dots-3-note-preview (adapter design), nvidia/nemotron-3-ultra-550b (safety/rollback), cohere/north-mini-code (self-play — output truncated, unusable), nvidia/nemotron-3.5-lightning (tool-shape — leaked thinking trace only, no deliverable). Failed: poolside/laguna-s-2.1 (429), google/gemma-4-31b-it (429), inclusionai/ling-3.0-flash-vl (empty content), nex-agi/nex-n2.5-pro (empty content).
+
+What changed in this note from the two usable outputs:
+
+1. **The evolvable surface becomes a machine-checked, signed manifest.** "Forbidden by declaration" is a policy; the safety sweep points at enforcement: a Rego/OPA policy + Sigstore-signed manifest enumerating every mutable file, function signature, and config key — anything outside it is a hard build failure (precedent: OPA admission controllers, NixOS content-addressed flake closures). The adapter interface gains `scaffold.manifest` (signed, versioned); proposer diffs are checked against it *before* any gate runs.
+2. **Patch bundles + two-plane rollout.** The offline control plane emits a *signed patch bundle* (diff + SBOM + gate evidence); the hot plane only ever loads signed bundles — no dynamic code loading. Between the credit gate and the human merge gate, add **shadow mode**: the new scaffold runs alongside production on real traffic, writing to a shadow store, with Kayenta-style numeric canary gates (p99 latency delta < 5%, error-rate delta < 0.1pp, non-inferiority on task success) before any traffic shift; automatic one-command rollback on breach (precedent: Meta's Tupperware canary pipeline, Anthropic's Constitutional AI canary on 5% of traffic).
+3. **Canonical trace schema on OpenTelemetry semantics, first.** The adapter-design sweep independently converged on the 5-slot interface (corroboration) and adds a build-order correction: define and version the `TraceStream` JSON schema with OpenTelemetry semantics *before* the evolver core — it is the lingua franca for pathology-keyed diagnosis across harnesses. The sealed battery is best served through a **scoring API** (harness version + task ID in, binary pass/fail + cost out) so the evolver can never observe sealed tasks.
+4. **Prune the scaffold like Uber prunes flags.** Piranha-style automated removal of stale scaffold paths after canary graduation — extend the champion archive's pruning rule from dead niches to dead code paths.
+
 ## Related
 
 - [[notes/harness-evolver-hermes-plan]] — the concrete Hermes build plan
