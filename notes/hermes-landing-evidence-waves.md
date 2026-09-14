@@ -46,6 +46,26 @@ Verdict table and the six verdicts are defined in the permanent note.
 
 `~/workspace/hermes/hermes-agent` is a shallow clone, so `git merge-base --is-ancestor` is unreliable — that is why the verifier uses merged-to-main PRs + content-on-main checks instead of ancestry. Any future full-clone setup could re-add the ancestry rung; it is strictly stronger when history is complete.
 
+## Hardening lessons from wave 2 (2026-09-14)
+
+1. **Never take the lowest-numbered cross-ref.** GitHub's `cross-referenced`
+   detection is noisy: canonical #44428's timeline listed ancient PR #204
+   (merged 2026-03-05, body never mentions #44428). The original verifier picked
+   the first merged candidate and misattributed 12 of 44 LANDED pairs (PRs #1,
+   #3, #4, #14, #53, #204, #330, #784...). Fixed: candidates are now **ranked**
+   — body/title containing `#<canonical>` first, then proximity to the
+   canonical's `closed_at` — and every alternate is surfaced in
+   `evidence_note` so the wrong-face pass can overrule. A salvage PR whose body
+   cites only salvaged issues (never the canonical) is found by close-date
+   proximity, not by reference.
+2. **Wave-1 self-correction.** Under the new bar, canonical **#32528** (QQ-bot
+   C2C approval buttons) fails the landing check: closed `completed` by a
+   contributor, zero merged PRs to main, its 3 fix PRs closed unmerged, and
+   3 fresh open fix PRs (#36774, #32752, #43957 — #36774 updated 2026-09-13)
+   still trying. Wave 1 had closed #62043, #64840, #89787 citing it as landed.
+   The verifier earns its keep against *executed* waves too, not just future
+   ones.
+
 ## The wave format (for maintainers' one-click review)
 
 Proven by waves #111084 / #111126 / #111128 / #111133 / #111153 (2026-09-14):
