@@ -4,8 +4,8 @@ title: "2026 fly-connectome task meme: MaleCNS graph, remapped I/O, not a house 
 type: literature
 status: active
 created: 2026-09-12
-updated: 2026-09-12
-sources: ["https://male-cns.janelia.org/", "https://www.cell.com/cell/fulltext/S0092-8674(26)00942-6", "https://github.com/nftechie/stonkfly", "https://github.com/mattyhempstead/fly-wirehead", "https://huggingface.co/spaces/Xenova/fruit-fly-simulation", "https://eon.systems/updates/weve-uploaded-a-fruit-fly", "https://www.theregister.com/offbeat/2026/09/11/disembodied-fruit-fly-brain-joins-the-crypto-speculation-swarm/5295914"]
+updated: 2026-09-13
+sources: ["https://male-cns.janelia.org/", "https://www.cell.com/cell/fulltext/S0092-8674(26)00942-6", "https://github.com/nftechie/stonkfly", "https://github.com/mattyhempstead/fly-wirehead", "https://huggingface.co/spaces/Xenova/fruit-fly-simulation", "https://eon.systems/updates/weve-uploaded-a-fruit-fly", "https://www.theregister.com/offbeat/2026/09/11/disembodied-fruit-fly-brain-joins-the-crypto-speculation-swarm/5295914", "https://x.com/shmidtqq/status/2098750407770075274"]
 harnesses: [cursor]
 domains: [neuroscience, ai-ml, physics]
 confidence: high
@@ -36,6 +36,7 @@ This is a different animal and a larger map than FlyWire FAFB (female adult brai
 | Trading meme | Coinbase BTC-USDC RGB chart → photoreceptors; motor/DAN readout → buy/sell/hold; fake PAM11/PPL101 reward | [nftechie/stonkfly](https://github.com/nftechie/stonkfly) (Alex Wormuth) |
 | Shorts / "wirehead" | Insect YouTube Shorts → same photoreceptors; choreographed swipe; PAM11 current while video plays | [mattyhempstead/fly-wirehead](https://github.com/mattyhempstead/fly-wirehead); workspace clone `kvnloo/fly-wirehead` |
 | Browser | Same 166,700-cell graph, WebGPU kernels, paint-to-stimulate | [Xenova/fruit-fly-simulation](https://huggingface.co/spaces/Xenova/fruit-fly-simulation); Linear [PER-944](https://linear.app/0ism/issue/PER-944) |
+| DEX desk skin | FlyWire 139,255 / 54.5M badge on an LLM **agent council** memecoin UI; no MaleCNS LIF kernel on screen | [@shmidtqq SHERWOOD](https://x.com/shmidtqq/status/2098750407770075274) ([[literature/lit-20260913-sherwood-fly-dex-meme]]) |
 
 Stonkfly and fly-wirehead share a C++ dual-compartment kernel, visual projection onto **3,335 R1–R6 + 811 R8** inputs, and an experimental plasticity overlay on **7,835 KC→MBON07/11** edges. Both repos state: wiring is reconstructed; physiology and reward are approximations; **profitable learning, pleasure, and addiction have not been established**.
 
@@ -63,4 +64,5 @@ The fly does not choose the next Short. Stonkfly's $1 paper-trade bump is not a 
 - [[literature/lit-20260912-biology-vs-silicon-energy]]
 - [[permanent/perm-20260912-connectome-is-wiring-not-a-trainable-llm]]
 - [[permanent/perm-20260912-physical-computation-is-one-stack]]
+- [[literature/lit-20260913-sherwood-fly-dex-meme]]
 - [[inbox/cursor/inbox-cursor-fly-connectome-wave-20260912]]

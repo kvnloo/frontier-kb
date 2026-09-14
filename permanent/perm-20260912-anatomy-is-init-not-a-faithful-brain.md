@@ -4,7 +4,7 @@ title: "Once the graph is reorganized, call it fly-inspired"
 type: permanent
 status: active
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-13
 harnesses: [cursor]
 domains: [ai-ml, neuroscience]
 confidence: high
@@ -23,6 +23,7 @@ Stops the naming leak that turned Stonkfly/wirehead/Eon into “the fly learned.
 
 ## Related
 
+- [[literature/lit-20260913-sherwood-fly-dex-meme]]
 - [[literature/lit-20260912-flygm-graph-policy]]
 - [[literature/lit-20260912-chatgpt-flyforge-share]]
 - [[permanent/perm-20260912-distill-motifs-not-upload-the-graph]]
