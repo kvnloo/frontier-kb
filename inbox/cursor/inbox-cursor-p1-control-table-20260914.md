@@ -20,7 +20,7 @@ Operator asked to keep evolving the fly into something useful for this stack. Ch
 - X: API credits depleted this run. SHERWOOD fly-DEX clip remains a FlyWire overlay, not a gym.
 - Useful object: cheap Hermes recovery actions `{retry, restart_sandbox, escalate, noop, page_human}`. Not trading. Not MaleCNS SGD. Not Qwen.
 
-Engine work is two commits on `cursor/p1-control-table-9425` in evolution-lab (`7ed11ee`, `20555e7`). L1 table: `local_plasticity` confirm **1.00** / val **0.979** / **640** params. Kill criterion does not fire. Patch backup: `inbox/cursor/evolution-lab-p1-control-table-9425.patch`.
+Engine work is two commits on `cursor/p1-control-table-9425` in evolution-lab (`7ed11ee`, `20555e7`). L1 table: `local_plasticity` confirm **1.00** / val **0.979** / **640** params. Kill criterion does not fire. Closed-loop of the last-step student is ~0.56 vs teacher 1.00 (P3/DAgger). Patch backup: `inbox/cursor/evolution-lab-p1-control-table-9425.patch`.
 
 **Blocker:** this Cloud Agent environment can read `kvnloo/evolution-lab` but cannot push it. Cursor GitHub App installation covers `frontier-kb` and `fly-wirehead` only. Add `kvnloo/evolution-lab` to the environment and the GitHub App, then `git push -u origin cursor/p1-control-table-9425` and open a draft PR to `nightly`.
 
