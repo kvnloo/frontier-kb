@@ -39,11 +39,13 @@ Kill: GRU val 0.896 and direct-input val 0.625 do not both dominate reservoir va
 
 Teacher proxy-cost is ~0, so `cost_vs_teacher` is not energy. `cost_vs_mlp ≈ 0.31` for the mushroom-body student.
 
+Closed-loop (student trained on last-step labels, then rolled out in `hermes_recovery` for 24 seeds): mean reward **~0.56** with first-frame padding, **~0.37** with zero-pad. Teacher closed-loop stays **1.00**. That gap is P3/DAgger (train on states the student visits), not a P1 last-step failure.
+
 ## Fact vs interpretation
 
 **Fact:** last-step locked-split accuracies above; Tinker/FlyGym still fail closed; X credits for this run were depleted (SHERWOOD clip already treated as a FlyWire badge, not a trader).
 
-**Interpretation:** this is Track A (shared numerical features), not visuo-motor TMNF, not a DEX, not a Qwen replacement. Closed-loop student states remain P3/DAgger. The engine commits live on `cursor/p1-control-table-9425` locally; this environment cannot push `kvnloo/evolution-lab` (Cursor GitHub App is not installed there; see inbox).
+**Interpretation:** this is Track A (shared numerical features), not visuo-motor TMNF, not a DEX, not a Qwen replacement. Closed-loop student states remain P3/DAgger (measured ~0.56 mean reward vs teacher 1.00). The engine commits live on `cursor/p1-control-table-9425` locally; this environment cannot push `kvnloo/evolution-lab` (Cursor GitHub App is not installed there; see inbox).
 
 ## Links
 
