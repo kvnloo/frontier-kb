@@ -1,0 +1,2273 @@
+{
+  "date": "2026-09-15",
+  "repo": "anomalyco/opencode",
+  "default_branch": "dev",
+  "stars": 207585,
+  "open_issues_search": 4307,
+  "open_issues_repo_field": 5784,
+  "labeled_open_bugs": 41,
+  "help_wanted_open": 0,
+  "good_first_issue_open": 0,
+  "help_wanted_all_time": 63,
+  "good_first_all_time": 34,
+  "needs_compliance_open": 6,
+  "latest_release": "v1.18.31",
+  "contributing_gates": [
+    "issue-first",
+    "no AI walls of text",
+    "UI/core features need design review before PR",
+    "small focused PRs",
+    "conventional titles",
+    "templates mandatory (bug/feature/question)",
+    "blank issues auto-close in 2h",
+    "providers via anomalyco/models.dev first"
+  ],
+  "packages": [
+    "opencode",
+    "app",
+    "desktop",
+    "plugin",
+    "tui",
+    "sdk",
+    "server",
+    "llm",
+    "core",
+    "slack",
+    "acp-related protocol",
+    "docs"
+  ],
+  "triage_confidence_pct": "~high on labeled-bug lane (41/41); ~3-5% of all open issues (sampled ~150 unique via GraphQL/search batches)",
+  "note": "help-wanted and good-first-issue labels exist historically but have 0 open issues as of 2026-09-15; contribution lane is unassigned labeled bugs + quiet zero-comment tool/provider leaves. Many unassigned bugs are soft-claimed in comments or have open PRs.",
+  "graphql-batches.json": {
+    "data": {
+      "hw": {
+        "issueCount": 0,
+        "nodes": []
+      },
+      "gfi": {
+        "issueCount": 0,
+        "nodes": []
+      },
+      "bugs": {
+        "issueCount": 20,
+        "nodes": [
+          {
+            "number": 47514,
+            "title": "desktop: refocus prompt input when switching tabs with Cmd+number",
+            "url": "https://github.com/anomalyco/opencode/issues/47514",
+            "createdAt": "2026-09-05T16:05:45Z",
+            "updatedAt": "2026-09-06T01:04:19Z",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 45099,
+            "title": "core: session shell output bypasses tool limits and strands sessions",
+            "url": "https://github.com/anomalyco/opencode/issues/45099",
+            "createdAt": "2026-08-26T00:06:23Z",
+            "updatedAt": "2026-08-26T10:53:24Z",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 41454,
+            "title": "tui: attached image path is omitted from model context",
+            "url": "https://github.com/anomalyco/opencode/issues/41454",
+            "createdAt": "2026-08-09T22:14:44Z",
+            "updatedAt": "2026-08-09T22:22:05Z",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 39902,
+            "title": "Runtime MCP mutations can return before tool registry reconciliation",
+            "url": "https://github.com/anomalyco/opencode/issues/39902",
+            "createdAt": "2026-07-31T15:26:39Z",
+            "updatedAt": "2026-08-01T07:14:02Z",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                }
+              ]
+            }
+          },
+          {
+            "number": 39736,
+            "title": "tui: undo fails for admitted message after interrupt",
+            "url": "https://github.com/anomalyco/opencode/issues/39736",
+            "createdAt": "2026-07-30T18:49:55Z",
+            "updatedAt": "2026-08-25T06:02:27Z",
+            "comments": {
+              "totalCount": 4
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                }
+              ]
+            }
+          },
+          {
+            "number": 38620,
+            "title": "V2: errored-message replay can 400 with Anthropic thinking + tool use",
+            "url": "https://github.com/anomalyco/opencode/issues/38620",
+            "createdAt": "2026-07-24T05:17:14Z",
+            "updatedAt": "2026-08-03T09:42:37Z",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                }
+              ]
+            }
+          },
+          {
+            "number": 37650,
+            "title": "tools: optional search metadata breaks pending permission listing",
+            "url": "https://github.com/anomalyco/opencode/issues/37650",
+            "createdAt": "2026-07-18T17:19:19Z",
+            "updatedAt": "2026-09-03T02:11:14Z",
+            "comments": {
+              "totalCount": 6
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                }
+              ]
+            }
+          },
+          {
+            "number": 37372,
+            "title": "v2: empty reasoning-only response is recorded as successful completion",
+            "url": "https://github.com/anomalyco/opencode/issues/37372",
+            "createdAt": "2026-07-16T20:20:40Z",
+            "updatedAt": "2026-07-16T21:02:26Z",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 37321,
+            "title": "v2 tests: process and project-copy tests flake in CI",
+            "url": "https://github.com/anomalyco/opencode/issues/37321",
+            "createdAt": "2026-07-16T15:07:44Z",
+            "updatedAt": "2026-09-09T17:58:22Z",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                }
+              ]
+            }
+          },
+          {
+            "number": 36940,
+            "title": "tui: background hint appears when child work is already backgrounded",
+            "url": "https://github.com/anomalyco/opencode/issues/36940",
+            "createdAt": "2026-07-14T21:05:19Z",
+            "updatedAt": "2026-08-12T12:31:14Z",
+            "comments": {
+              "totalCount": 3
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "tui"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 36766,
+            "title": "fix(llm): handle truncated OpenAI tool arguments",
+            "url": "https://github.com/anomalyco/opencode/issues/36766",
+            "createdAt": "2026-07-13T21:08:34Z",
+            "updatedAt": "2026-08-29T06:27:38Z",
+            "comments": {
+              "totalCount": 5
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 36761,
+            "title": "fix(core): expose valid subagent IDs to the model",
+            "url": "https://github.com/anomalyco/opencode/issues/36761",
+            "createdAt": "2026-07-13T21:00:30Z",
+            "updatedAt": "2026-09-12T21:02:27Z",
+            "comments": {
+              "totalCount": 7
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 36677,
+            "title": "core: long-lived V2 server enters persistent allocation loop",
+            "url": "https://github.com/anomalyco/opencode/issues/36677",
+            "createdAt": "2026-07-13T13:57:59Z",
+            "updatedAt": "2026-07-25T15:40:03Z",
+            "comments": {
+              "totalCount": 3
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "perf"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 36585,
+            "title": "tui: pending forms become unanswerable after managed service restart",
+            "url": "https://github.com/anomalyco/opencode/issues/36585",
+            "createdAt": "2026-07-13T01:18:09Z",
+            "updatedAt": "2026-08-23T08:00:47Z",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 36347,
+            "title": "V2: preserve permission and question waits across server restart",
+            "url": "https://github.com/anomalyco/opencode/issues/36347",
+            "createdAt": "2026-07-11T02:29:37Z",
+            "updatedAt": "2026-08-10T10:23:47Z",
+            "comments": {
+              "totalCount": 4
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 36311,
+            "title": "2.0: standalone SSE disconnect can wedge Bun server at 100% CPU",
+            "url": "https://github.com/anomalyco/opencode/issues/36311",
+            "createdAt": "2026-07-10T19:58:08Z",
+            "updatedAt": "2026-08-31T12:46:26Z",
+            "comments": {
+              "totalCount": 4
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "perf"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 36117,
+            "title": "fix(server): await catalog readiness for model and provider reads",
+            "url": "https://github.com/anomalyco/opencode/issues/36117",
+            "createdAt": "2026-07-09T17:31:30Z",
+            "updatedAt": "2026-07-10T17:42:58Z",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 35238,
+            "title": "V2 subagent tool does not enforce per-target subagent permissions",
+            "url": "https://github.com/anomalyco/opencode/issues/35238",
+            "createdAt": "2026-07-03T21:13:13Z",
+            "updatedAt": "2026-08-07T15:54:54Z",
+            "comments": {
+              "totalCount": 3
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 34853,
+            "title": "fix(core): serialize V2 prompt settlement around event publication",
+            "url": "https://github.com/anomalyco/opencode/issues/34853",
+            "createdAt": "2026-07-02T04:44:43Z",
+            "updatedAt": "2026-08-23T08:00:44Z",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 34780,
+            "title": "V2: Snowflake Cortex OAuth login not supported",
+            "url": "https://github.com/anomalyco/opencode/issues/34780",
+            "createdAt": "2026-07-01T16:16:31Z",
+            "updatedAt": "2026-08-07T16:50:42Z",
+            "comments": {
+              "totalCount": 4
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "graphql-batches2.json": {
+    "data": {
+      "docs": {
+        "issueCount": 0,
+        "nodes": []
+      },
+      "perf": {
+        "issueCount": 2,
+        "nodes": [
+          {
+            "number": 36677,
+            "title": "core: long-lived V2 server enters persistent allocation loop",
+            "url": "https://github.com/anomalyco/opencode/issues/36677",
+            "comments": {
+              "totalCount": 3
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "perf"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 36311,
+            "title": "2.0: standalone SSE disconnect can wedge Bun server at 100% CPU",
+            "url": "https://github.com/anomalyco/opencode/issues/36311",
+            "comments": {
+              "totalCount": 4
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "perf"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "lsp": {
+        "issueCount": 0,
+        "nodes": []
+      },
+      "provider": {
+        "issueCount": 22,
+        "nodes": [
+          {
+            "number": 40908,
+            "title": "Feature: Dynamic context length detection for OpenAI-compatible providers",
+            "url": "https://github.com/anomalyco/opencode/issues/40908",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 46669,
+            "title": "[FEATURE]: Add GPT 5.6 Terra in opencode go since openAI introduced openAI flex",
+            "url": "https://github.com/anomalyco/opencode/issues/46669",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 45523,
+            "title": "provider error",
+            "url": "https://github.com/anomalyco/opencode/issues/45523",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 36766,
+            "title": "fix(llm): handle truncated OpenAI tool arguments",
+            "url": "https://github.com/anomalyco/opencode/issues/36766",
+            "comments": {
+              "totalCount": 5
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 44307,
+            "title": "websearch tool is never exposed to custom/local providers (hardcoded provider whitelist in ToolRegistry)",
+            "url": "https://github.com/anomalyco/opencode/issues/44307",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 43067,
+            "title": "[FEATURE]:Add QwenCloud International Provider",
+            "url": "https://github.com/anomalyco/opencode/issues/43067",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 38620,
+            "title": "V2: errored-message replay can 400 with Anthropic thinking + tool use",
+            "url": "https://github.com/anomalyco/opencode/issues/38620",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                }
+              ]
+            }
+          },
+          {
+            "number": 38509,
+            "title": "[BUG] All online models stuck in 'Build' mode, only local Ollama models work",
+            "url": "https://github.com/anomalyco/opencode/issues/38509",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 40790,
+            "title": "Production evidence: Anthropic cache bust bug causes $14.82 waste across 3 sessions (22.5% bust rate)",
+            "url": "https://github.com/anomalyco/opencode/issues/40790",
+            "comments": {
+              "totalCount": 3
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 42818,
+            "title": "[Bug] Poe Provider Tool Failure (1.18.18)",
+            "url": "https://github.com/anomalyco/opencode/issues/42818",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 42790,
+            "title": "Configured credentialless providers require an empty API key",
+            "url": "https://github.com/anomalyco/opencode/issues/42790",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 42511,
+            "title": "[Feature] Console Go (OpenCode Go): pass through image content parts on the Anthropic-compatible endpoint (/v1/messages)",
+            "url": "https://github.com/anomalyco/opencode/issues/42511",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 36207,
+            "title": "feat(llm): add native Vertex provider facades",
+            "url": "https://github.com/anomalyco/opencode/issues/36207",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 43089,
+            "title": "[Bug] Console Go gateway rejects OpenAI-compatible client metadata with `extra inputs are not permitted` (strict schema, extra=\"forbid\")",
+            "url": "https://github.com/anomalyco/opencode/issues/43089",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 41120,
+            "title": "Console Go: Anthropic-route tool calls fail with 400 'function name is invalid' for Kimi models (kimi-k3, kimi-k2.7-code)",
+            "url": "https://github.com/anomalyco/opencode/issues/41120",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 43379,
+            "title": "Streaming responses for muse-* models on the Zen gateway never send finish_reason \u2014 strict OpenAI-compatible clients enter a retry loop",
+            "url": "https://github.com/anomalyco/opencode/issues/43379",
+            "comments": {
+              "totalCount": 7
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 44917,
+            "title": "Error from provider (Console): Upstream request failed: Endpoint is unavailable on Ox Alpha Free Unlimited",
+            "url": "https://github.com/anomalyco/opencode/issues/44917",
+            "comments": {
+              "totalCount": 4
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 36117,
+            "title": "fix(server): await catalog readiness for model and provider reads",
+            "url": "https://github.com/anomalyco/opencode/issues/36117",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 46371,
+            "title": "Hidden LLM calls (session title / message summaries) are billed by the provider but absent from session cost",
+            "url": "https://github.com/anomalyco/opencode/issues/46371",
+            "comments": {
+              "totalCount": 3
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 48973,
+            "title": "Getting Error from provider (Console): Upstream request failed: [invalid_request_error] reasoning `encrypted_content` was not issued to this caller",
+            "url": "https://github.com/anomalyco/opencode/issues/48973",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": []
+            }
+          }
+        ]
+      },
+      "acp": {
+        "issueCount": 1,
+        "nodes": [
+          {
+            "number": 35457,
+            "title": "Port ACP support to V2 core and APIs",
+            "url": "https://github.com/anomalyco/opencode/issues/35457",
+            "comments": {
+              "totalCount": 1
+            },
+            "assignees": {
+              "nodes": [
+                {
+                  "login": "nexxeln"
+                }
+              ]
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "acp"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "vouched": {
+        "issueCount": 1,
+        "nodes": [
+          {
+            "number": 37704,
+            "title": "daxothy: neck is too short",
+            "url": "https://github.com/anomalyco/opencode/issues/37704",
+            "comments": {
+              "totalCount": 9
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Vouched"
+                },
+                {
+                  "name": "bald-beard"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "graphql-batches3.json": {
+    "data": {
+      "prs": {
+        "issueCount": 8932,
+        "nodes": [
+          {
+            "number": 49131,
+            "title": "feat(plugin): add experimental WebSocket handshake hook",
+            "url": "https://github.com/anomalyco/opencode/pull/49131",
+            "mergedAt": "2026-09-15T06:41:00Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49128,
+            "title": "refactor(codemode): make the host boundary JSON.stringify plus a short table",
+            "url": "https://github.com/anomalyco/opencode/pull/49128",
+            "mergedAt": "2026-09-15T06:23:21Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49121,
+            "title": "feat(ai): allowlist prompt_cache_key sending per provider",
+            "url": "https://github.com/anomalyco/opencode/pull/49121",
+            "mergedAt": "2026-09-15T06:23:49Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49110,
+            "title": "fix(ai): always send type message on Responses input messages",
+            "url": "https://github.com/anomalyco/opencode/pull/49110",
+            "mergedAt": "2026-09-15T05:24:35Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49107,
+            "title": "test(tui): wait for variant filter focus before typing",
+            "url": "https://github.com/anomalyco/opencode/pull/49107",
+            "mergedAt": "2026-09-15T04:28:01Z",
+            "author": {
+              "login": "kitlangton"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49106,
+            "title": "fix(client): preserve inbox events during snapshot reads",
+            "url": "https://github.com/anomalyco/opencode/pull/49106",
+            "mergedAt": "2026-09-15T04:27:59Z",
+            "author": {
+              "login": "kitlangton"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49104,
+            "title": "refactor(codemode): give built-ins one interpreter context",
+            "url": "https://github.com/anomalyco/opencode/pull/49104",
+            "mergedAt": "2026-09-15T04:07:22Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49101,
+            "title": "test(cli): match renamed command payload key",
+            "url": "https://github.com/anomalyco/opencode/pull/49101",
+            "mergedAt": "2026-09-15T03:16:52Z",
+            "author": {
+              "login": "opencode-agent"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49100,
+            "title": "refactor(codemode): drop the Program prefix and name interpreter parts plainly",
+            "url": "https://github.com/anomalyco/opencode/pull/49100",
+            "mergedAt": "2026-09-15T03:31:54Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49099,
+            "title": "fix(ai): classify content policy errors by provider codes",
+            "url": "https://github.com/anomalyco/opencode/pull/49099",
+            "mergedAt": "2026-09-15T04:08:31Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49081,
+            "title": "fix(app): restore queued attachments to the composer when editing",
+            "url": "https://github.com/anomalyco/opencode/pull/49081",
+            "mergedAt": "2026-09-15T00:52:09Z",
+            "author": {
+              "login": "Hona"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49080,
+            "title": "fix(app): drop 'Plus' prefix from queued attachment label",
+            "url": "https://github.com/anomalyco/opencode/pull/49080",
+            "mergedAt": "2026-09-15T00:51:33Z",
+            "author": {
+              "login": "Hona"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49078,
+            "title": "feat(tui): add effort variant alias",
+            "url": "https://github.com/anomalyco/opencode/pull/49078",
+            "mergedAt": "2026-09-14T23:55:00Z",
+            "author": {
+              "login": "opencode-agent"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49077,
+            "title": "test(app): match renamed command field",
+            "url": "https://github.com/anomalyco/opencode/pull/49077",
+            "mergedAt": "2026-09-15T00:27:51Z",
+            "author": {
+              "login": "opencode-agent"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49076,
+            "title": "feat(codemode): add Uint8Array, drop the Program prefix, and give built-ins one context",
+            "url": "https://github.com/anomalyco/opencode/pull/49076",
+            "mergedAt": "2026-09-15T04:35:49Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49075,
+            "title": "test(ai): update Cloudflare gateway recordings",
+            "url": "https://github.com/anomalyco/opencode/pull/49075",
+            "mergedAt": "2026-09-14T23:42:19Z",
+            "author": {
+              "login": "opencode-agent"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49067,
+            "title": "test(codemode): follow the experimental instruction route rename",
+            "url": "https://github.com/anomalyco/opencode/pull/49067",
+            "mergedAt": "2026-09-14T22:32:13Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49065,
+            "title": "feat(codemode): cross Set, RegExp, and URLSearchParams to the host in a useful form",
+            "url": "https://github.com/anomalyco/opencode/pull/49065",
+            "mergedAt": "2026-09-14T22:32:43Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49058,
+            "title": "test(tui): update mini transport contract expectations",
+            "url": "https://github.com/anomalyco/opencode/pull/49058",
+            "mergedAt": "2026-09-14T21:37:14Z",
+            "author": {
+              "login": "opencode-agent"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49054,
+            "title": "chore: add Alan to team members",
+            "url": "https://github.com/anomalyco/opencode/pull/49054",
+            "mergedAt": "2026-09-14T21:16:46Z",
+            "author": {
+              "login": "opencode-agent"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49051,
+            "title": "test(codemode): drop the slow split and matchAll cap cases",
+            "url": "https://github.com/anomalyco/opencode/pull/49051",
+            "mergedAt": "2026-09-14T21:24:27Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49045,
+            "title": "fix(session-ui): label web search providers dynamically",
+            "url": "https://github.com/anomalyco/opencode/pull/49045",
+            "mergedAt": "2026-09-14T20:59:59Z",
+            "author": {
+              "login": "opencode-agent"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49036,
+            "title": "fix(console): route new Console keys to inference",
+            "url": "https://github.com/anomalyco/opencode/pull/49036",
+            "mergedAt": "2026-09-14T21:32:57Z",
+            "author": {
+              "login": "vaprdev"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "needs:issue"
+                },
+                {
+                  "name": "needs:compliance"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49019,
+            "title": "fix(codemode): bound what one built-in can build with string, array, and promise caps",
+            "url": "https://github.com/anomalyco/opencode/pull/49019",
+            "mergedAt": "2026-09-14T17:54:03Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 49016,
+            "title": "fix(tui): surface remote auth startup errors",
+            "url": "https://github.com/anomalyco/opencode/pull/49016",
+            "mergedAt": "2026-09-14T17:24:09Z",
+            "author": {
+              "login": "opencode-agent"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49015,
+            "title": "test(app): retire legacy layout e2e coverage",
+            "url": "https://github.com/anomalyco/opencode/pull/49015",
+            "mergedAt": "2026-09-14T17:08:40Z",
+            "author": {
+              "login": "opencode-agent"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 49001,
+            "title": "refactor(tui): anchor turn token usage on idle markers",
+            "url": "https://github.com/anomalyco/opencode/pull/49001",
+            "mergedAt": "2026-09-14T16:05:01Z",
+            "author": {
+              "login": "nexxeln"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 48997,
+            "title": "fix(core): match versioned usage event type in stats",
+            "url": "https://github.com/anomalyco/opencode/pull/48997",
+            "mergedAt": "2026-09-14T15:00:15Z",
+            "author": {
+              "login": "nexxeln"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 48995,
+            "title": "test(core): avoid stdin race in check-ignore flake test",
+            "url": "https://github.com/anomalyco/opencode/pull/48995",
+            "mergedAt": "2026-09-14T15:01:20Z",
+            "author": {
+              "login": "nexxeln"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 48952,
+            "title": "fix(tui): preserve form drafts across tabs",
+            "url": "https://github.com/anomalyco/opencode/pull/48952",
+            "mergedAt": "2026-09-14T14:28:35Z",
+            "author": {
+              "login": "OpeOginni"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "needs:issue"
+                },
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 48943,
+            "title": "refactor(core): refactor model resolving logic, fix missing variant logic",
+            "url": "https://github.com/anomalyco/opencode/pull/48943",
+            "mergedAt": "2026-09-14T23:29:35Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 48941,
+            "title": "feat(codemode): expose host classes and functions through extensions",
+            "url": "https://github.com/anomalyco/opencode/pull/48941",
+            "mergedAt": "2026-09-14T17:29:01Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 48940,
+            "title": "fix(tui): allow toggling several MCP servers at once",
+            "url": "https://github.com/anomalyco/opencode/pull/48940",
+            "mergedAt": "2026-09-14T07:28:26Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 48939,
+            "title": "feat(core): carry the reason on MCP needs_auth status",
+            "url": "https://github.com/anomalyco/opencode/pull/48939",
+            "mergedAt": "2026-09-14T07:09:29Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 48937,
+            "title": "feat(core): rework MCP client for SDK v2 and the 2026-07-28 revision",
+            "url": "https://github.com/anomalyco/opencode/pull/48937",
+            "mergedAt": "2026-09-14T06:42:53Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 48932,
+            "title": "fix(session-ui): group file tool diffs",
+            "url": "https://github.com/anomalyco/opencode/pull/48932",
+            "mergedAt": "2026-09-14T07:37:57Z",
+            "author": {
+              "login": "opencode-agent"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "contributor"
+                }
+              ]
+            }
+          },
+          {
+            "number": 48928,
+            "title": "fix(nix): enable Wayland clipboard images",
+            "url": "https://github.com/anomalyco/opencode/pull/48928",
+            "mergedAt": "2026-09-14T06:00:05Z",
+            "author": {
+              "login": "0xhckr"
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "needs:issue"
+                }
+              ]
+            }
+          },
+          {
+            "number": 48927,
+            "title": "fix(app): shorten context usage label",
+            "url": "https://github.com/anomalyco/opencode/pull/48927",
+            "mergedAt": "2026-09-14T05:36:08Z",
+            "author": {
+              "login": "Hona"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 48926,
+            "title": "fix(codemode): strip __proto__ keys at host object boundaries",
+            "url": "https://github.com/anomalyco/opencode/pull/48926",
+            "mergedAt": "2026-09-14T05:49:43Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          },
+          {
+            "number": 48916,
+            "title": "test: align platform and endpoint expectations",
+            "url": "https://github.com/anomalyco/opencode/pull/48916",
+            "mergedAt": "2026-09-14T04:25:35Z",
+            "author": {
+              "login": "rekram1-node"
+            },
+            "labels": {
+              "nodes": []
+            }
+          }
+        ]
+      },
+      "smallbugs": {
+        "issueCount": 5,
+        "nodes": [
+          {
+            "number": 39902,
+            "title": "Runtime MCP mutations can return before tool registry reconciliation",
+            "url": "https://github.com/anomalyco/opencode/issues/39902",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                }
+              ]
+            },
+            "updatedAt": "2026-08-01T07:14:02Z"
+          },
+          {
+            "number": 39736,
+            "title": "tui: undo fails for admitted message after interrupt",
+            "url": "https://github.com/anomalyco/opencode/issues/39736",
+            "comments": {
+              "totalCount": 4
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                }
+              ]
+            },
+            "updatedAt": "2026-08-25T06:02:27Z"
+          },
+          {
+            "number": 38620,
+            "title": "V2: errored-message replay can 400 with Anthropic thinking + tool use",
+            "url": "https://github.com/anomalyco/opencode/issues/38620",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                }
+              ]
+            },
+            "updatedAt": "2026-08-03T09:42:37Z"
+          },
+          {
+            "number": 37650,
+            "title": "tools: optional search metadata breaks pending permission listing",
+            "url": "https://github.com/anomalyco/opencode/issues/37650",
+            "comments": {
+              "totalCount": 6
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                }
+              ]
+            },
+            "updatedAt": "2026-09-03T02:11:14Z"
+          },
+          {
+            "number": 37321,
+            "title": "v2 tests: process and project-copy tests flake in CI",
+            "url": "https://github.com/anomalyco/opencode/issues/37321",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                }
+              ]
+            },
+            "updatedAt": "2026-09-09T17:58:22Z"
+          }
+        ]
+      },
+      "openbugs": {
+        "issueCount": 41
+      },
+      "openall": {
+        "issueCount": 4307
+      },
+      "needscomp": {
+        "issueCount": 6
+      },
+      "discussion": {
+        "issueCount": 4,
+        "nodes": [
+          {
+            "number": 38558,
+            "title": "session.generate: solidify contract and capabilities",
+            "url": "https://github.com/anomalyco/opencode/issues/38558",
+            "comments": {
+              "totalCount": 0
+            }
+          },
+          {
+            "number": 36348,
+            "title": "V2: define restart semantics for foreground and background shells",
+            "url": "https://github.com/anomalyco/opencode/issues/36348",
+            "comments": {
+              "totalCount": 2
+            }
+          },
+          {
+            "number": 35325,
+            "title": "Design extensible Session error details",
+            "url": "https://github.com/anomalyco/opencode/issues/35325",
+            "comments": {
+              "totalCount": 0
+            }
+          },
+          {
+            "number": 34957,
+            "title": "v2: internal tool plugins expose gaps in the public plugin API",
+            "url": "https://github.com/anomalyco/opencode/issues/34957",
+            "comments": {
+              "totalCount": 0
+            }
+          }
+        ]
+      },
+      "windows": {
+        "issueCount": 0,
+        "nodes": []
+      }
+    }
+  },
+  "quiet-unclaimed.json": {
+    "data": {
+      "quietbugs": {
+        "issueCount": 2,
+        "nodes": [
+          {
+            "number": 41454,
+            "title": "tui: attached image path is omitted from model context",
+            "url": "https://github.com/anomalyco/opencode/issues/41454",
+            "comments": {
+              "totalCount": 1
+            },
+            "createdAt": "2026-08-09T22:14:44Z",
+            "updatedAt": "2026-08-09T22:22:05Z",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 39902,
+            "title": "Runtime MCP mutations can return before tool registry reconciliation",
+            "url": "https://github.com/anomalyco/opencode/issues/39902",
+            "comments": {
+              "totalCount": 1
+            },
+            "createdAt": "2026-07-31T15:26:39Z",
+            "updatedAt": "2026-08-01T07:14:02Z",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "quietcore": {
+        "issueCount": 18,
+        "nodes": [
+          {
+            "number": 45147,
+            "title": "feat(core): add cache-safe Code Mode namespace instructions",
+            "url": "https://github.com/anomalyco/opencode/issues/45147",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "enhancement"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 45099,
+            "title": "core: session shell output bypasses tool limits and strands sessions",
+            "url": "https://github.com/anomalyco/opencode/issues/45099",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 38620,
+            "title": "V2: errored-message replay can 400 with Anthropic thinking + tool use",
+            "url": "https://github.com/anomalyco/opencode/issues/38620",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                }
+              ]
+            }
+          },
+          {
+            "number": 38558,
+            "title": "session.generate: solidify contract and capabilities",
+            "url": "https://github.com/anomalyco/opencode/issues/38558",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "discussion"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 37426,
+            "title": "Refresh global, external, and HTTP skill sources without restart",
+            "url": "https://github.com/anomalyco/opencode/issues/37426",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "enhancement"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 37372,
+            "title": "v2: empty reasoning-only response is recorded as successful completion",
+            "url": "https://github.com/anomalyco/opencode/issues/37372",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 36473,
+            "title": "refactor(core): decompose the V2 session projector",
+            "url": "https://github.com/anomalyco/opencode/issues/36473",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 36348,
+            "title": "V2: define restart semantics for foreground and background shells",
+            "url": "https://github.com/anomalyco/opencode/issues/36348",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "discussion"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 35765,
+            "title": "Add typed Copilot billing usage to the V2 runtime",
+            "url": "https://github.com/anomalyco/opencode/issues/35765",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "enhancement"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 35647,
+            "title": "feat(v2): configure tool availability per session",
+            "url": "https://github.com/anomalyco/opencode/issues/35647",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 35364,
+            "title": "V2: revisit tool plugin APIs and execute integration architecture",
+            "url": "https://github.com/anomalyco/opencode/issues/35364",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 35325,
+            "title": "Design extensible Session error details",
+            "url": "https://github.com/anomalyco/opencode/issues/35325",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "discussion"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                },
+                {
+                  "name": "gang-grill"
+                }
+              ]
+            }
+          },
+          {
+            "number": 35054,
+            "title": "V2: remove V1 event surface after cutover (tracking)",
+            "url": "https://github.com/anomalyco/opencode/issues/35054",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 34957,
+            "title": "v2: internal tool plugins expose gaps in the public plugin API",
+            "url": "https://github.com/anomalyco/opencode/issues/34957",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "discussion"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 34922,
+            "title": "chore(core): review V2 table and durable event type names before GA",
+            "url": "https://github.com/anomalyco/opencode/issues/34922",
+            "comments": {
+              "totalCount": 1
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 34853,
+            "title": "fix(core): serialize V2 prompt settlement around event publication",
+            "url": "https://github.com/anomalyco/opencode/issues/34853",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "bug"
+                },
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 34847,
+            "title": "v2: decide command execution and mention semantics",
+            "url": "https://github.com/anomalyco/opencode/issues/34847",
+            "comments": {
+              "totalCount": 2
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          },
+          {
+            "number": 34831,
+            "title": "V2 beta: isolate storage/database from stable OpenCode data",
+            "url": "https://github.com/anomalyco/opencode/issues/34831",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": [
+                {
+                  "name": "core"
+                },
+                {
+                  "name": "2.0"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "quietprov": {
+        "issueCount": 5,
+        "nodes": [
+          {
+            "number": 43067,
+            "title": "[FEATURE]:Add QwenCloud International Provider",
+            "url": "https://github.com/anomalyco/opencode/issues/43067",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": []
+            },
+            "createdAt": "2026-08-17T13:33:22Z"
+          },
+          {
+            "number": 38509,
+            "title": "[BUG] All online models stuck in 'Build' mode, only local Ollama models work",
+            "url": "https://github.com/anomalyco/opencode/issues/38509",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": []
+            },
+            "createdAt": "2026-07-23T13:47:36Z"
+          },
+          {
+            "number": 42790,
+            "title": "Configured credentialless providers require an empty API key",
+            "url": "https://github.com/anomalyco/opencode/issues/42790",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": []
+            },
+            "createdAt": "2026-08-15T16:19:34Z"
+          },
+          {
+            "number": 40908,
+            "title": "Feature: Dynamic context length detection for OpenAI-compatible providers",
+            "url": "https://github.com/anomalyco/opencode/issues/40908",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": []
+            },
+            "createdAt": "2026-08-06T18:48:57Z"
+          },
+          {
+            "number": 36207,
+            "title": "feat(llm): add native Vertex provider facades",
+            "url": "https://github.com/anomalyco/opencode/issues/36207",
+            "comments": {
+              "totalCount": 0
+            },
+            "labels": {
+              "nodes": []
+            },
+            "createdAt": "2026-07-10T03:59:41Z"
+          }
+        ]
+      },
+      "modelprob": {
+        "issueCount": 0,
+        "nodes": []
+      }
+    }
+  },
+  "zero-comment-open.json": {
+    "count": 75,
+    "items": [
+      {
+        "c": "2026-09-15T07:32:05Z",
+        "l": [],
+        "n": 49144,
+        "t": "[Question] Policy on third-party open-source apps using Zen free-tier models"
+      },
+      {
+        "c": "2026-09-14T16:50:28Z",
+        "l": [],
+        "n": 49014,
+        "t": "Go: 5-hour usage limit blocks all models after one model hits its own limit"
+      },
+      {
+        "c": "2026-09-13T15:01:52Z",
+        "l": [],
+        "n": 48823,
+        "t": "Go docs omit DeepSeek V4.1 Flash usage promotion"
+      },
+      {
+        "c": "2026-09-11T07:37:24Z",
+        "l": [],
+        "n": 48460,
+        "t": "[FEATURE]:The Go subscription plan supports WeChat Pay."
+      },
+      {
+        "c": "2026-09-08T11:29:36Z",
+        "l": [],
+        "n": 47949,
+        "t": "RegionError \"This model is not available in your country\" on muse-spark-1.3-contributor from 12 different countries \u2014 gateway region gate misfiring"
+      },
+      {
+        "c": "2026-09-05T00:54:45Z",
+        "l": [],
+        "n": 47421,
+        "t": "Glob returns hidden files with hidden disabled"
+      },
+      {
+        "c": "2026-09-05T00:54:28Z",
+        "l": [],
+        "n": 47419,
+        "t": "Read tool skips a blank line at a pagination boundary"
+      },
+      {
+        "c": "2026-09-05T00:38:24Z",
+        "l": [],
+        "n": 47413,
+        "t": "Legacy agent Markdown loses a separate model variant"
+      },
+      {
+        "c": "2026-09-05T00:37:53Z",
+        "l": [],
+        "n": 47409,
+        "t": "Core HTML conversion loses inline-code boundary backticks"
+      },
+      {
+        "c": "2026-09-05T00:37:38Z",
+        "l": [],
+        "n": 47407,
+        "t": "Core HTML conversion hangs when a code block exceeds the remaining budget"
+      },
+      {
+        "c": "2026-09-04T16:23:06Z",
+        "l": [],
+        "n": 47331,
+        "t": "[FEATURE]: Omen Alpha \u2014 free trial window or separate quota bucket (the Ox Alpha precedent)"
+      },
+      {
+        "c": "2026-09-03T13:46:45Z",
+        "l": [],
+        "n": 47061,
+        "t": "Muse Spark 1.3 intermittent prompt cache miss on Opencode Go paid tier"
+      },
+      {
+        "c": "2026-08-31T01:59:26Z",
+        "l": [],
+        "n": 46320,
+        "t": "[FEATURE]: Add opt-in Codex OAuth cost estimates"
+      },
+      {
+        "c": "2026-08-28T20:36:15Z",
+        "l": [],
+        "n": 46022,
+        "t": "Copilot Chat drops late opaque reasoning from completed text parts"
+      },
+      {
+        "c": "2026-08-27T15:05:53Z",
+        "l": [],
+        "n": 45576,
+        "t": "deepseek-v4-flash-vision-exp succeeds even when \"Enable models hosted in China\" is disabled"
+      },
+      {
+        "c": "2026-08-26T15:18:41Z",
+        "l": [],
+        "n": 45304,
+        "t": "fix(tui): ESC in dialog rejects background question"
+      },
+      {
+        "c": "2026-08-26T15:03:27Z",
+        "l": [],
+        "n": 45302,
+        "t": "Incorrect URL for Github Copilot API"
+      },
+      {
+        "c": "2026-08-26T15:03:11Z",
+        "l": [],
+        "n": 45301,
+        "t": "OpenCode Go - Monthly usage not reset"
+      },
+      {
+        "c": "2026-08-26T14:58:46Z",
+        "l": [],
+        "n": 45293,
+        "t": "grep tool silently returns empty results when the search path does not exist"
+      },
+      {
+        "c": "2026-08-26T14:57:24Z",
+        "l": [],
+        "n": 45291,
+        "t": "MiMo 2.5 Free unavailable"
+      },
+      {
+        "c": "2026-08-25T12:32:22Z",
+        "l": [],
+        "n": 44968,
+        "t": "Unused models are displayed in the statistical list."
+      },
+      {
+        "c": "2026-08-24T00:10:36Z",
+        "l": [],
+        "n": 44561,
+        "t": "fix(core): FileSystem boot realPath probes the server fs for workspace Locations"
+      },
+      {
+        "c": "2026-08-23T23:51:47Z",
+        "l": [],
+        "n": 44555,
+        "t": "fix(core): LocationMutation resolves external paths against the server fs for workspace Locations"
+      },
+      {
+        "c": "2026-08-23T23:51:32Z",
+        "l": [],
+        "n": 44554,
+        "t": "fix(core): Location liveness check stats the server fs for workspace Locations"
+      },
+      {
+        "c": "2026-08-23T23:51:13Z",
+        "l": [],
+        "n": 44552,
+        "t": "fix(core): ripgrep binary resolution ignores workspace placement"
+      },
+      {
+        "c": "2026-08-22T22:33:13Z",
+        "l": [],
+        "n": 44262,
+        "t": "Zen x-preview-f-free returns string \"null\" for nullable string tool arguments"
+      },
+      {
+        "c": "2026-08-22T13:38:13Z",
+        "l": [
+          "Nice To Have"
+        ],
+        "n": 44171,
+        "t": "Sync enabled models across clients"
+      },
+      {
+        "c": "2026-08-21T13:35:18Z",
+        "l": [],
+        "n": 43886,
+        "t": "feat(client): carry schema ID brands through codegen into the frontend"
+      },
+      {
+        "c": "2026-08-21T05:24:35Z",
+        "l": [],
+        "n": 43791,
+        "t": "ai: classify plain AI SDK stream errors"
+      },
+      {
+        "c": "2026-08-19T14:30:02Z",
+        "l": [],
+        "n": 43444,
+        "t": "server: auth and MCP connections fail after idle period"
+      },
+      {
+        "c": "2026-08-17T16:06:33Z",
+        "l": [],
+        "n": 43088,
+        "t": "[FEATURE]: Make V2 App prompt action shortcuts configurable"
+      },
+      {
+        "c": "2026-08-17T15:49:54Z",
+        "l": [],
+        "n": 43085,
+        "t": "Forbidden: {model:big-pickle} - model not available for account"
+      },
+      {
+        "c": "2026-08-17T14:02:24Z",
+        "l": [],
+        "n": 43072,
+        "t": "Desktop: project folders created by the agent during chat never appear in the project list"
+      },
+      {
+        "c": "2026-08-17T14:00:42Z",
+        "l": [],
+        "n": 43071,
+        "t": "Kimi K3, Qwen 3.8 max,  \"Endpoint is unavailable\" 503"
+      },
+      {
+        "c": "2026-08-17T13:37:37Z",
+        "l": [],
+        "n": 43068,
+        "t": "[FEATURE] Per-folder notebook memory (notes_get/notes_commit) for the agent"
+      },
+      {
+        "c": "2026-08-17T13:33:22Z",
+        "l": [],
+        "n": 43067,
+        "t": "[FEATURE]:Add QwenCloud International Provider"
+      },
+      {
+        "c": "2026-08-15T21:42:16Z",
+        "l": [],
+        "n": 42821,
+        "t": "[BUG]: Session header is hidden until title generation"
+      },
+      {
+        "c": "2026-08-15T16:19:34Z",
+        "l": [],
+        "n": 42790,
+        "t": "Configured credentialless providers require an empty API key"
+      },
+      {
+        "c": "2026-08-15T00:41:01Z",
+        "l": [
+          "tui",
+          "2.0",
+          "gang-grill"
+        ],
+        "n": 42670,
+        "t": "tui: prompt and steer selected subagents"
+      },
+      {
+        "c": "2026-08-14T04:44:36Z",
+        "l": [],
+        "n": 42511,
+        "t": "[Feature] Console Go (OpenCode Go): pass through image content parts on the Anthropic-compatible endpoint (/v1/messages)"
+      }
+    ]
+  }
+}
