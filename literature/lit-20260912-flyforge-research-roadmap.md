@@ -4,7 +4,7 @@ title: "FlyForge research roadmap: P0 Hermes recovery before distillation"
 type: literature
 status: active
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-13
 sources: ["https://chatgpt.com/share/6aa4e9ce-e88c-83ea-bf45-0e9496a1ad6f?ogimg=plain", "https://github.com/kvnloo/aodl/blob/main/docs/network.md", "https://artificialscientific.com/papers/flies-are-all-you-need"]
 harnesses: [cursor, hermes, omp, pi]
 domains: [ai-ml, neuroscience, frameworks, physics, cs]
@@ -135,7 +135,7 @@ Independent seeds, locked confirm split, unseen operational failures. Report uns
 | fly-wirehead / Stonkfly / Xenova | I/O remap + PAM current; choreographed swipe | Negative control / interface reference |
 | PER-944 Xenova WebGPU | Linear Backlog | Browser viewer, not the student |
 
-Viral apps (DOOMFLY, Flyhard, Tello, Stonkfly, fly-wirehead): useful as **pinout** references. Not evidence of learned preference, profitable trading, or Qwen-beating efficiency.
+Viral apps (DOOMFLY, Flyhard, Tello, Stonkfly, fly-wirehead, SHERWOOD desk): useful as **pinout** or negative-control references. Not evidence of learned preference, profitable trading, or Qwen-beating efficiency. SHERWOOD’s 139,255 is FlyWire FAFB, not MaleCNS ([[literature/lit-20260913-sherwood-fly-dex-meme]]).
 
 ### Repo join (AODL network + this work)
 

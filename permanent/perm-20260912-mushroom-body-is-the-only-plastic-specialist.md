@@ -4,7 +4,7 @@ title: "The mushroom body is the fly's LoRA; the rest of the graph stays frozen"
 type: permanent
 status: active
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-13
 harnesses: [cursor, omp]
 domains: [neuroscience, ai-ml, learning-acceleration]
 confidence: high
@@ -23,6 +23,7 @@ If we "optimize the fly," we calibrate **that** specialist (eligibility traces, 
 
 ## Related
 
+- [[literature/lit-20260913-tmnf-c-malecns-trackmania]]
 - [[literature/lit-20260912-shiu-huang-malecns-physiology]]
 - [[permanent/perm-20260910-evolver-lifts-frozen-policy]]
 - [[permanent/perm-20260911-kb-is-a-brain-prune-and-potentiate]]

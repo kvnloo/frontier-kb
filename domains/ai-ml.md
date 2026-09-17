@@ -4,7 +4,7 @@ title: ai-ml
 type: moc
 status: active
 created: 2026-09-09
-updated: 2026-09-12
+updated: 2026-09-13
 tags: [moc, domain]
 ---
 
@@ -30,11 +30,14 @@ SWE-2 is in-harness RL on Kimi K3, not a plugin. Qwen3.8-27B is a worker. Nemotr
 
 Qwen3.8-27B remains the language/tool worker. A MaleCNS SNN is a sensorimotor specialist, not a second SVLM. Optimize mushroom-body + pinout + substrate; do not score the fly on SWE-bench.
 
-FlyForge program: P0 is Hermes recovery under joules/success. FLM’s direct-input control slightly beats the fly residual on language NLL. fly-hf’s 50.6M readout dominates its 52.8M trained params. Evolution Lab ([kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab)) is the runner: genomes, ΔHV, MAP-Elites, honest dashboard. VOL: [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2); Linear [PER-1524](https://linear.app/0ism/issue/PER-1524) stays Backlog.
+FlyForge program: P0 is Hermes recovery under joules/success. FLM’s direct-input control slightly beats the fly residual on language NLL. fly-hf’s 50.6M readout dominates its 52.8M trained params. Evolution Lab ([kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab)) is the runner: genomes, ΔHV, MAP-Elites, honest dashboard. VOL P0 [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2) is closed; Linear [PER-1524](https://linear.app/0ism/issue/PER-1524) is Done. TMNF-C is later ([evolution-lab#14](https://github.com/kvnloo/evolution-lab/issues/14)).
 
 - [[literature/lit-20260912-chatgpt-evolution-lab-share]]
 - [[literature/lit-20260912-evolution-lab-vol-onboard]]
+- [[literature/lit-20260913-tmnf-c-malecns-trackmania]]
+- [[literature/lit-20260913-sherwood-fly-dex-meme]]
 - [[permanent/perm-20260912-experiments-are-the-population]]
+- [[permanent/perm-20260913-tmnf-c-is-a-later-gym-not-p0]]
 
 - [[literature/lit-20260912-flyforge-research-roadmap]]
 - [[literature/lit-20260912-chatgpt-flyforge-share]]

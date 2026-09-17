@@ -4,7 +4,7 @@ title: Frontier KB home
 type: moc
 status: active
 created: 2026-09-09
-updated: 2026-09-12
+updated: 2026-09-13
 tags: [moc, atlas]
 ---
 
@@ -65,13 +65,13 @@ See `inbox/omp-wave-2026-09-09.md`
 
 ## Fly connectome / physical computation (2026-09-12)
 
-The X meme is I/O remapping on MaleCNS (*Drosophila*, not house fly). Connectome = compiled prior. Mushroom body = LoRA. Emulation inverts nanowatt biology. Qwen3.8-27B stays the SVLM worker.
+The X meme is I/O remapping on MaleCNS (*Drosophila*, not house fly). Connectome = compiled prior. Mushroom body = LoRA. Emulation inverts nanowatt biology. Qwen3.8-27B stays the SVLM worker. The [SHERWOOD fly-DEX clip](https://x.com/shmidtqq/status/2098750407770075274) is a FlyWire badge on an agent-council desk, not a trader ([[literature/lit-20260913-sherwood-fly-dex-meme]]).
 
 **Genuine apps (10-agent loop):** lab compiler (NeuronBridge → split-GAL4), optogenetic prior (Shiu/Sapkal/Pugliese), motif distillation (EMD, loom, FlyHash). Not an upload, not a virtual patient.
 
 **Research program (FlyForge share):** architecture prior + control table. **P0** is a verified Hermes recovery controller (GRU to beat, direct-input mandatory), scored in joules per verified success. The student is an AODL **port**, not a new kind. Distill / grow / 10K–27B search are later.
 
-**Evolution Lab (latest share):** experiments are the population. Engine: [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) (original repo, not `apps/evolution-lab`; [VOL](https://github.com/kvnloo/verified-oss-loop) onboard; [`ROADMAP.md`](https://github.com/kvnloo/evolution-lab/blob/main/ROADMAP.md) maintainer-owned). **Gym** is `hermes_recovery`. Do not fork FlyGym or OpenEvolve. Claimable P0 is [evolution-lab#2](https://github.com/kvnloo/evolution-lab/issues/2); P1–P6 [#3](https://github.com/kvnloo/evolution-lab/issues/3)–[#8](https://github.com/kvnloo/evolution-lab/issues/8) are `needs-discussion`. Linear PER-1524/1525/1526 stay **Backlog**, not Todo. Tinker and 100 cloud agents are backends, not P0 compute. VOL leases live on evolution-lab GitHub, not fly-wirehead (pinout demo only).
+**Evolution Lab (latest share):** experiments are the population. Engine: [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) (original repo, not `apps/evolution-lab`; [VOL](https://github.com/kvnloo/verified-oss-loop) onboard; [`ROADMAP.md`](https://github.com/kvnloo/evolution-lab/blob/main/ROADMAP.md) maintainer-owned). **Gym** is `hermes_recovery`. Do not fork FlyGym, OpenEvolve, or [TMNF-C](https://github.com/kvnloo/TMNF-C). P0 lock merged ([evolution-lab#9](https://github.com/kvnloo/evolution-lab/pull/9), [#2](https://github.com/kvnloo/evolution-lab/issues/2) closed). P1 [#3](https://github.com/kvnloo/evolution-lab/issues/3) is `needs-discussion`. Linear PER-1524 is **Done**; PER-1525/1526 stay **Backlog**, not Todo. [TMNF-C](https://github.com/kvnloo/TMNF-C) is a later TrackMania + MaleCNS MB gym ([[literature/lit-20260913-tmnf-c-malecns-trackmania]]), not P0.
 
 - [[literature/lit-20260912-chatgpt-evolution-lab-share]] · [[literature/lit-20260912-evolution-lab-vol-onboard]] · [[literature/lit-20260912-consume-gym-do-not-fork-engine]] · [[permanent/perm-20260912-experiments-are-the-population]] · [[permanent/perm-20260912-gym-is-the-task-engine-is-ours]]
 
@@ -84,7 +84,9 @@ The X meme is I/O remapping on MaleCNS (*Drosophila*, not house fly). Connectome
 - [[permanent/perm-20260912-physical-computation-is-one-stack]] · [[permanent/perm-20260912-connectome-is-wiring-not-a-trainable-llm]] · [[permanent/perm-20260912-emulation-inverts-biological-efficiency]]
 - [[permanent/perm-20260912-mushroom-body-is-the-only-plastic-specialist]] · [[permanent/perm-20260912-fly-snn-is-sensorimotor-worker-not-svlm]] · [[permanent/perm-20260912-optimize-fly-via-mb-pinout-substrate]]
 - [[permanent/perm-20260912-connectome-is-a-lab-instrument]] · [[permanent/perm-20260912-distill-motifs-not-upload-the-graph]] · [[permanent/perm-20260912-useful-twin-predicts-the-next-experiment]]
-- waves: `inbox/cursor/inbox-cursor-fly-connectome-wave-20260912.md` · `inbox/cursor/inbox-cursor-fly-apps-swarm-20260912.md` · `inbox/cursor/inbox-cursor-connectome-compiler-lab-20260912.md` · `inbox/cursor/inbox-cursor-flyforge-roadmap-20260912.md` · `inbox/cursor/inbox-cursor-evolution-lab-20260912.md` · `inbox/cursor/inbox-cursor-gym-not-fork-20260912.md` · `inbox/cursor/inbox-cursor-evolution-lab-repo-20260912.md` · `inbox/cursor/inbox-cursor-vol-onboard-20260912.md`
+- waves: `inbox/cursor/inbox-cursor-fly-connectome-wave-20260912.md` · `inbox/cursor/inbox-cursor-fly-apps-swarm-20260912.md` · `inbox/cursor/inbox-cursor-connectome-compiler-lab-20260912.md` · `inbox/cursor/inbox-cursor-flyforge-roadmap-20260912.md` · `inbox/cursor/inbox-cursor-evolution-lab-20260912.md` · `inbox/cursor/inbox-cursor-gym-not-fork-20260912.md` · `inbox/cursor/inbox-cursor-evolution-lab-repo-20260912.md` · `inbox/cursor/inbox-cursor-vol-onboard-20260912.md` · `inbox/cursor/inbox-cursor-tmnf-c-20260913.md` · `inbox/cursor/inbox-cursor-sherwood-fly-20260913.md`
+
+- [[literature/lit-20260913-tmnf-c-malecns-trackmania]] · [[permanent/perm-20260913-tmnf-c-is-a-later-gym-not-p0]] · [[literature/lit-20260913-sherwood-fly-dex-meme]]
 
 ## SoL-Pi / harness efficiency (2026-09-11)
 - [[literature/lit-20260911-sol-pi-harness-efficiency]]
