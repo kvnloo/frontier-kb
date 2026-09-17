@@ -45,7 +45,7 @@ Closed-loop (student trained on last-step labels, then rolled out in `hermes_rec
 
 **Fact:** last-step locked-split accuracies above; Tinker/FlyGym still fail closed; X credits for this run were depleted (SHERWOOD clip already treated as a FlyWire badge, not a trader).
 
-**Interpretation:** this is Track A (shared numerical features), not visuo-motor TMNF, not a DEX, not a Qwen replacement. Closed-loop student states remain P3/DAgger (measured ~0.56 mean reward vs teacher 1.00). The engine commits live on `cursor/p1-control-table-9425` locally; this environment cannot push `kvnloo/evolution-lab` (Cursor GitHub App is not installed there; see inbox).
+**Interpretation:** this is Track A (shared numerical features), not visuo-motor TMNF, not a DEX, not a Qwen replacement. Closed-loop student states remain P3/DAgger (measured ~0.56 mean reward vs teacher 1.00). Engine branch `cursor/p1-control-table-9425` is on GitHub (`20555e7`+); open draft PR → `nightly`.
 
 ## Links
 
