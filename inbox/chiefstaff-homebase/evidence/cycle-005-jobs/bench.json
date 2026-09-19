@@ -1,0 +1,116 @@
+{
+  "scenario": "synthetic AABB naive pair overlap; not Homebase physics",
+  "N": 4000,
+  "held_N": 4500,
+  "seed": 20260914,
+  "threads": 2,
+  "repeats": 5,
+  "warmup": 1,
+  "counts": {
+    "aos_serial": 7580,
+    "soa_serial": 7580,
+    "soa_2thread_private": 7580,
+    "soa_2thread_locked": 7580
+  },
+  "counts_agree": true,
+  "held_counts": {
+    "soa_serial": 1868,
+    "soa_2thread_private": 1868,
+    "aos_serial": 1868
+  },
+  "held_agree": true,
+  "results": {
+    "aos_serial": {
+      "median_s": 0.5165201079798862,
+      "min_s": 0.5112830359721556,
+      "max_s": 0.5745556700276211,
+      "samples_s": [
+        0.5165201079798862,
+        0.5153788219904527,
+        0.5745556700276211,
+        0.5112830359721556,
+        0.5592872829874977
+      ],
+      "overlap_count": 7580
+    },
+    "soa_serial": {
+      "median_s": 0.37055189593229443,
+      "min_s": 0.366015687934123,
+      "max_s": 0.38045208796393126,
+      "samples_s": [
+        0.38045208796393126,
+        0.3691509189084172,
+        0.37055189593229443,
+        0.366015687934123,
+        0.3733423750381917
+      ],
+      "overlap_count": 7580
+    },
+    "soa_2thread_private": {
+      "median_s": 0.3769912370480597,
+      "min_s": 0.37143720290623605,
+      "max_s": 0.38317837996874005,
+      "samples_s": [
+        0.3783041520509869,
+        0.37143720290623605,
+        0.3769912370480597,
+        0.38317837996874005,
+        0.3749796529300511
+      ],
+      "overlap_count": 7580
+    },
+    "soa_2thread_locked": {
+      "median_s": 0.37971671094419435,
+      "min_s": 0.3769804899347946,
+      "max_s": 0.3824529319535941,
+      "samples_s": [
+        0.3769804899347946,
+        0.3824529319535941
+      ],
+      "overlap_count": 7580
+    }
+  },
+  "held_results": {
+    "soa_serial": {
+      "median_s": 0.4937853320152499,
+      "min_s": 0.47408898093272,
+      "max_s": 0.5134816830977798,
+      "samples_s": [
+        0.5134816830977798,
+        0.47408898093272
+      ],
+      "overlap_count": 1868
+    },
+    "soa_2thread_private": {
+      "median_s": 0.4628330710111186,
+      "min_s": 0.46005458501167595,
+      "max_s": 0.46561155701056123,
+      "samples_s": [
+        0.46561155701056123,
+        0.46005458501167595
+      ],
+      "overlap_count": 1868
+    },
+    "aos_serial": {
+      "median_s": 0.6423014260362834,
+      "min_s": 0.6423014260362834,
+      "max_s": 0.6423014260362834,
+      "samples_s": [
+        0.6423014260362834
+      ],
+      "overlap_count": 1868
+    }
+  },
+  "host": {
+    "loadavg": [
+      1.83447265625,
+      3.78515625,
+      4.59375
+    ],
+    "rss_mb_start": 16.84375,
+    "nproc_limit_threads": 2,
+    "python": "3.11.14 (main, Nov 20 2025, 15:58:12) [GCC 15.2.1 20251112]"
+  },
+  "rss_mb_end": 19.65625,
+  "note": "CPython GIL: CPU-bound loops may not scale; 2-thread private reduction vs lock-per-hit is the discriminator, not a kernel claim."
+}

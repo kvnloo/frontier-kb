@@ -1,0 +1,10 @@
+{
+  "inbox/chiefstaff-homebase/cycle-20260914-003-first-principles-complexity.md": {
+    "archive": "inbox/chiefstaff-homebase/evidence/cycle-003-verification/original-note.txt",
+    "sha256": "bf0c74ac0f1203e873484f50c093391ef86db6ee7614f4afec137b04cf494970"
+  },
+  "inbox/chiefstaff-homebase/decision.tsv": {
+    "archive": "inbox/chiefstaff-homebase/evidence/cycle-003-verification/original-decision.tsv",
+    "sha256": "60e7efe264c31095f177c28c0e8e3908b80f36074499cbc19be925389aaf815e"
+  }
+}

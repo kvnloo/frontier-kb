@@ -1,0 +1,26 @@
+{
+  "original_note_missing_keys": [
+    "created",
+    "id",
+    "status",
+    "title",
+    "type",
+    "updated"
+  ],
+  "corrected_note_missing_keys": [],
+  "raw_archives_hash_verified": true,
+  "ledger_cycles": [
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "only_cycle_3_row_changed": true,
+  "source_test_changes_since_parent_postpatch_snapshot": [],
+  "schema_exit": 0,
+  "schema_output": "ok: validated notes under literature, permanent, harnesses, domains, atlas, inbox, templates\n",
+  "diff_check_exit": 0,
+  "diff_check_output": "",
+  "database_ingested": false,
+  "research_experiment_evidenced_as_executed": false
+}
