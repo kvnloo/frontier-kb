@@ -52,7 +52,7 @@ python scripts/kb_store.py export --dest /tmp/kb-export
 python scripts/concurrent_smoke.py
 ```
 
-DSN default: `postgresql://frontier:frontier@127.0.0.1:55432/frontier_kb` (`DATABASE_URL` or `FRONTIER_KB_DSN`). Agents CAS `notes.version` (`UPDATE … WHERE version = $n`) and append-only `events`. Markdown ingest is serialized with an advisory lock. Schema lives in `store/schema.sql` (fallback `scripts/schema.sql`). Embeddings are `vector(8)` placeholders until an embed model is chosen. Do not bind-mount the schema file into initdb — a missing file becomes a directory.
+Local development may use a loopback Postgres DSN via `DATABASE_URL` or `FRONTIER_KB_DSN`; credentials and non-loopback addresses stay in local configuration. Agents CAS `notes.version` (`UPDATE … WHERE version = $n`) and append-only `events`. Markdown ingest is serialized with an advisory lock. Schema lives in `store/schema.sql` (fallback `scripts/schema.sql`). Embeddings are `vector(8)` placeholders until an embed model is chosen. Do not bind-mount the schema file into initdb — a missing file becomes a directory.
 
 ## Humanity's vault (brain loop)
 
@@ -75,27 +75,25 @@ See [[literature/lit-20260910-agent-memory-postgres]], [[literature/lit-20260910
 
 ## Hosting (100 agents)
 
-Production is **host 0** (groot, Tailscale `100.113.138.100`, SSH `0`), always-on:
+The public repository documents the **deployment shape**, not private network coordinates.
 
-```
-ssh 0 'cd ~/workspace/frontier-kb && bash scripts/install-host-0.sh'
-```
+A designated always-on host can run the Postgres/pgvector store and expose it to trusted harnesses over a private network. Keep hostnames, tailnet addresses, DSNs, passwords, and machine-specific paths in local configuration or a secret manager; never commit them to this public research vault.
 
-That starts `pgvector/pg16` on `127.0.0.1:55442` and `100.113.138.100:55442` (55432 on groot is dim0-postgres), ingests the vault, enables a user systemd unit, and drops `FRONTIER_KB_DSN` into Hermes env plus a `skills/frontier-kb` symlink for Hermes / OMP / Firstmate.
+```sh
+# on the designated host
+bash scripts/install-host-0.sh
 
-Remote harnesses (mbp, PAIR-routed workers):
-
-```
-export FRONTIER_KB_DSN=postgresql://frontier:<pw>@100.113.138.100:55442/frontier_kb
-export KB_WRITER=<harness>-<host>
+# on an authorized client
+export FRONTIER_KB_DSN='postgresql://USER:PASSWORD@PRIVATE_HOST:PORT/frontier_kb'
+export KB_WRITER='<harness>-<host>'
 python scripts/kb_store.py search --q "SWE-2"
 ```
 
-Password: `~/.config/frontier-kb/env` on 0 (mode 0600). Copy the tailnet DSN to mbp the same way. Never commit it.
+The deployment script defaults to loopback binding. A private-network bind address must be supplied explicitly through local environment configuration.
 
 NVIDIA PAIR routes inference only. hermes-mesh-keel SQLite is signed envelopes. Neither is the note ledger.
 
-Neon/Supabase remain a fallback if 0 is down. Skip Cognee Cloud / Mem0 / Letta / Zep as the note ledger.
+Hosted Postgres services remain fallback options. Memory products such as Mem0, Letta, or Zep are different layers and are not treated as the canonical note ledger.
 
 ## Autoresearch & Distributed Writers
 

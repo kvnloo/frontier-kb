@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-# Install frontier-kb store on host 0 (groot). Idempotent. No secrets in git.
+# Install frontier-kb store on a designated private host. Idempotent. No secrets in git.
 set -euo pipefail
 
 REPO_CANDIDATES=(
   "${FRONTIER_KB_ROOT:-}"
   "$HOME/workspace/frontier-kb"
   "/workspace/frontier-kb"
-  "/home/kvn/workspace/frontier-kb"
 )
 ROOT=""
 for c in "${REPO_CANDIDATES[@]}"; do
@@ -39,8 +38,8 @@ POSTGRES_USER=frontier
 POSTGRES_PASSWORD=$PASS
 POSTGRES_DB=frontier_kb
 KB_PORT=55442
+FRONTIER_KB_BIND_HOST=127.0.0.1
 FRONTIER_KB_DSN=postgresql://frontier:${PASS}@127.0.0.1:55442/frontier_kb
-FRONTIER_KB_DSN_TAILNET=postgresql://frontier:${PASS}@100.113.138.100:55442/frontier_kb
 KB_WRITER=host-0
 EOF
   chmod 600 "$ENVF"
@@ -77,7 +76,7 @@ UNIT_SRC="$ROOT/deploy/frontier-kb.service"
 UNIT_DST="$HOME/.config/systemd/user/frontier-kb.service"
 if [[ -f "$UNIT_SRC" ]]; then
   mkdir -p "$(dirname "$UNIT_DST")"
-  sed "s|/home/kvn/workspace/frontier-kb|$ROOT|g" "$UNIT_SRC" >"$UNIT_DST"
+  sed "s|%FRONTIER_KB_ROOT%|$ROOT|g" "$UNIT_SRC" >"$UNIT_DST"
   if command -v systemctl >/dev/null; then
     systemctl --user daemon-reload || true
     systemctl --user enable --now frontier-kb.service || true
@@ -119,4 +118,4 @@ fi
 
 "$PY" "$ROOT/scripts/test_sqlite_busy.py" || true
 echo "host-0 store ready. local DSN in $ENVF"
-echo "tailnet DSN host=100.113.138.100 port=${KB_PORT:-55442} db=frontier_kb user=frontier"
+echo "private bind host=${FRONTIER_KB_BIND_HOST:-127.0.0.1} port=${KB_PORT:-55442}; keep non-loopback DSNs in local config only"
