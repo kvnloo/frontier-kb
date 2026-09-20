@@ -1,7 +1,8 @@
-# Overlay: also bind the Tailscale address so mbp/omp/hermes/firstmate can reach 0.
-# 55432 is taken on groot by dim0-postgres; production uses KB_PORT=55442.
+# Overlay for a designated private deployment host.
+# Defaults to loopback. Set FRONTIER_KB_BIND_HOST in local/private configuration
+# to expose the store on a trusted network address.
 # docker compose -f docker-compose.yml -f docker-compose.host-0.yml up -d kb
 services:
   kb:
     ports:
-      - "100.113.138.100:${KB_PORT:-55442}:5432"
+      - "${FRONTIER_KB_BIND_HOST:-127.0.0.1}:${KB_PORT:-55442}:5432"
