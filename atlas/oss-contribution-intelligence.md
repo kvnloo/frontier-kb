@@ -100,6 +100,8 @@ Source signals: fx contribution/PGSO rules, Prime Agent pre-release evals, our o
 
 Evidence belongs to a specific source commit, candidate commit, configuration, toolchain, and benchmark identity. Results from an older candidate do not prove the current head.
 
+**Built artifact identity is part of the treatment.** A source mutation is not sufficient evidence that a candidate changed the runtime. Before benchmarking, record control and candidate artifact hashes and fail closed if an experiment that is supposed to change runtime behavior produces a byte-identical artifact. The first fx autoresearch canary caught exactly this: a mutation targeted a helper path bypassed by native startup, both ReleaseSafe builds succeeded, but control and candidate binaries were identical.
+
 ### Security and privacy are part of correctness
 
 Source signals: fx, Codex, Prime Agent, Cline, Goose.
