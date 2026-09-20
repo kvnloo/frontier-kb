@@ -1,14 +1,14 @@
 [Unit]
-Description=frontier-kb Postgres (pgvector) on host 0
+Description=frontier-kb Postgres (pgvector) on designated private host
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-WorkingDirectory=/home/kvn/workspace/frontier-kb
-EnvironmentFile=-/home/kvn/.config/frontier-kb/env
-Environment=KB_BIND=127.0.0.1
+WorkingDirectory=%FRONTIER_KB_ROOT%
+EnvironmentFile=-%h/.config/frontier-kb/env
+Environment=FRONTIER_KB_BIND_HOST=127.0.0.1
 ExecStart=/usr/bin/docker compose -f docker-compose.yml -f docker-compose.host-0.yml up -d kb
 ExecStop=/usr/bin/docker compose -f docker-compose.yml -f docker-compose.host-0.yml stop kb
 TimeoutStartSec=120
