@@ -96,6 +96,21 @@ candidate proposer
 
 The proposer should not be allowed to modify the evaluator used to judge itself.
 
+### First canary result
+
+A real canary was run in `kvnloo/fx` against upstream product base `61a2357939bc3ec9d58fde78d2db6118e9800ed5`.
+
+Run 1 intentionally tried to inject a 5 ms startup regression, but the built control and candidate had the same SHA-256. The initial mutation targeted `runBeforeInteractiveWithDeps`, while native `src/main.zig` calls the public `runBeforeInteractive` entry point directly. Both ReleaseSafe builds succeeded, so source/build success alone would have produced a false experiment.
+
+The controller was hardened to:
+
+- target the actual production startup path
+- require candidate binary SHA to differ from control before evaluation
+- fail closed on byte-identical artifacts
+- use the quick startup gate for the canary before expensive qualification
+
+This is useful cross-harness evidence: optimization loops need **artifact identity validation** between mutation and measurement.
+
 ### Best first autoresearch target
 
 Runtime optimization should start with deterministic local metrics rather than live-model quality:
