@@ -1,3 +1,18 @@
+---
+id: lit-20260919-sol-pi-recursive-efficient-improvement
+title: "SoL-Pi recursive efficient improvement"
+type: literature
+status: active
+created: 2026-09-19
+updated: 2026-09-21
+sources:
+  - "arXiv:2609.20519"
+harnesses: []
+domains: [ai-ml, frameworks]
+confidence: medium
+tags: [literature, sol-pi]
+---
+
 # lit-20260919-sol-pi-recursive-efficient-improvement.md
 
 Link: arXiv:2609.20519 (SoL-Pi)
