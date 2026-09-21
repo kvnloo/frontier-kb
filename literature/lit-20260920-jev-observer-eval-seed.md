@@ -187,6 +187,7 @@ As independent evidence grows, the training/selection signal should move away fr
 
 ## Links
 
+- [frontier-kb #20: Agent OS evidence map](https://github.com/kvnloo/frontier-kb/issues/20)
 - [Southbridge: Jev — Watching the Agents](https://www.southbridge.ai/blog/jev-watching-the-agents)
 - [Published observer questions](https://www.southbridge.ai/data/jev-study/observer-questions.txt)
 - [z0intelligence #11](https://github.com/kvnloo/z0intelligence/issues/11)
