@@ -4,7 +4,7 @@ title: pi
 type: harness
 status: active
 created: 2026-09-09
-updated: 2026-09-11
+updated: 2026-09-21
 urls:
   - https://github.com/earendil-works/pi
   - https://pi.dev/
@@ -29,6 +29,8 @@ tags: [harness, sol-pi]
 Mario Zechner / Earendil `pi` (`@earendil-works/pi-coding-agent`). SoL-Pi's only first-party host.
 
 ## Snapshot
+
+**As of 2026-09-21:** v0.86.0/1 cost-gated cache warming (`off|streaming|idle`, $0.05 gate, 90% lifetime) + Meta Muse provider.
 
 Four tools, extension modules, no opinions. SoL-Pi (`pi install git:github.com/NVlabs/SoL-Pi`) is the NVIDIA efficiency layer: Action Fusion, ObservationPack, Evidence-Preserving Reducer, Online Context Compact. Tested pin **0.84.2**. Mechanisms default off.
 

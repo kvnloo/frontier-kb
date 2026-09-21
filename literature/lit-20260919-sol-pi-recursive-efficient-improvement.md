@@ -1,4 +1,18 @@
-# lit-20260919-sol-pi-recursive-efficient-improvement.md
+---
+id: lit-20260919-sol-pi-recursive-efficient-improvement
+title: "SoL-Pi recursive efficient improvement — literature reconciliation"
+type: literature
+status: draft
+created: 2026-09-19
+updated: 2026-09-21
+sources: ["https://arxiv.org/abs/2609.20519", "https://github.com/NVlabs/SoL-Pi"]
+harnesses: [pi, omp]
+domains: [frameworks, tool-use, tokenomics, ai-ml]
+confidence: medium
+tags: [literature, sol-pi, nvidia, autoresearch]
+---
+
+# SoL-Pi recursive efficient improvement (lit reconciliation)
 
 Link: arXiv:2609.20519 (SoL-Pi)
 Author: SoL-Pi / NVlabs

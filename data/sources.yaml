@@ -4,20 +4,24 @@ harnesses:
   omp:
     github: https://github.com/can1357/oh-my-pi
     docs: https://omp.sh/
+    release_v18_2_7: https://github.com/can1357/oh-my-pi/releases/tag/v18.2.7
   hermes:
     github: https://github.com/NousResearch/hermes-agent
   grok:
     github: https://github.com/xai-org/grok-build
     docs: https://docs.x.ai/build/overview
     memory: https://x.ai/news/grok-build-memory
+    voice_transcribe_2: https://x.ai/news/grok-voice-transcribe-2
   codex:
     github: https://github.com/openai/codex
   claude:
     github: https://github.com/anthropics/claude-code
     docs: https://code.claude.com/docs/en/overview
+    auto_mode_classifier_billing: https://code.claude.com/docs/en/auto-mode-classifier-billing
   pi:
     github: https://github.com/earendil-works/pi
     docs: https://pi.dev
+    release_v0_86: https://github.com/earendil-works/pi/releases/tag/v0.86.0
   sol_pi:
     github: https://github.com/NVlabs/SoL-Pi
     blog: https://nvlabs.github.io/SoL-Pi/
@@ -120,6 +124,24 @@ labs:
   gemini_3_8_live: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/
   anthropic_ti_sep_2026: https://www.anthropic.com/threat-intelligence-report-september-2026
   anthropic_kill_chain_evals: https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities
+
+  # appended 2026-09-21 kb-autoresearch
+  anthropic_accenture_embedded_eval: https://www.anthropic.com/news/accenture-embedded-evaluation
+  xai_voice_transcribe_2: https://x.ai/news/grok-voice-transcribe-2
+  xai_stt_docs: https://docs.x.ai/developers/model-capabilities/audio/speech-to-text
+  claude_auto_mode_classifier_billing: https://code.claude.com/docs/en/auto-mode-classifier-billing
+  claude_memory_agents_md: https://code.claude.com/docs/en/memory.md
+  omp_v18_2_6: https://github.com/can1357/oh-my-pi/releases/tag/v18.2.6
+  omp_v18_2_7: https://github.com/can1357/oh-my-pi/releases/tag/v18.2.7
+  pi_v0_86: https://github.com/earendil-works/pi/releases/tag/v0.86.0
+  codex_rust_v0_155_1: https://github.com/openai/codex/releases/tag/rust-v0.155.1
+  arxiv_2609_21187_next_turn: https://arxiv.org/abs/2609.21187
+  arxiv_2609_22043_mdl: https://arxiv.org/abs/2609.22043
+  arxiv_2609_21533_mace: https://arxiv.org/abs/2609.21533
+  arxiv_2609_21940_autoviewmem: https://arxiv.org/abs/2609.21940
+  arxiv_2609_22068_codemidas: https://arxiv.org/abs/2609.22068
+  arxiv_2609_21967_voicechat: https://arxiv.org/abs/2609.21967
+  arxiv_2609_21284_auth_quiescence: https://arxiv.org/abs/2609.21284
 learning:
   huberman_lab: https://www.hubermanlab.com/
   huberman_focus: https://www.hubermanlab.com/topics/focus-and-study

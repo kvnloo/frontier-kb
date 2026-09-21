@@ -4,7 +4,7 @@ title: firstmate
 type: harness
 status: active
 created: 2026-09-09
-updated: 2026-09-10
+updated: 2026-09-21
 urls:
   - https://github.com/kunchenguid/firstmate
   - https://github.com/kvnloo/firstmate
@@ -25,6 +25,7 @@ tags: [harness, distro]
 # firstmate
 
 Snapshot: Talk to one agent, ship with a crew; an agent distro, not a CLI.
+**As of 2026-09-21:** AFK/away posture (`state/.afk-contract`) words-as-mandate + wedge-defer + idempotent inbox JSON.
 Strengths: Explicit crew orchestration with disposable worktrees; zero-token event-driven supervision; restart-proof; opt-in Relay.
 Gaps: Thin distro over harness primitives (no engine of its own); Relay strictly limited; depends on supported harness as primary runtime.
 Sources: https://github.com/kunchenguid/firstmate
