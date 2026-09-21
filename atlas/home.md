@@ -4,7 +4,7 @@ title: Frontier KB home
 type: moc
 status: active
 created: 2026-09-09
-updated: 2026-09-13
+updated: 2026-09-21
 tags: [moc, atlas]
 ---
 
@@ -87,6 +87,12 @@ The X meme is I/O remapping on MaleCNS (*Drosophila*, not house fly). Connectome
 - waves: `inbox/cursor/inbox-cursor-fly-connectome-wave-20260912.md` · `inbox/cursor/inbox-cursor-fly-apps-swarm-20260912.md` · `inbox/cursor/inbox-cursor-connectome-compiler-lab-20260912.md` · `inbox/cursor/inbox-cursor-flyforge-roadmap-20260912.md` · `inbox/cursor/inbox-cursor-evolution-lab-20260912.md` · `inbox/cursor/inbox-cursor-gym-not-fork-20260912.md` · `inbox/cursor/inbox-cursor-evolution-lab-repo-20260912.md` · `inbox/cursor/inbox-cursor-vol-onboard-20260912.md` · `inbox/cursor/inbox-cursor-tmnf-c-20260913.md` · `inbox/cursor/inbox-cursor-sherwood-fly-20260913.md`
 
 - [[literature/lit-20260913-tmnf-c-malecns-trackmania]] · [[permanent/perm-20260913-tmnf-c-is-a-later-gym-not-p0]] · [[literature/lit-20260913-sherwood-fly-dex-meme]]
+
+## Small tool-calling / orchestration models (2026-09-21)
+Evidence cluster organised by mechanism, with the 3080 Ti reproduction marked as ours. Not runtime state: promotion and serving live in z0intelligence, placement in Kerdoios.
+- [[literature/lit-20260921-small-tool-calling-models]]
+- Covers: Nemotron-Orchestrator-8B (non-commercial), Qwen3.5-9B / 4B, Hammer2.1-3b / 7b (non-commercial), functiongemma-270m-it (gated), Agent0 (training methodology, no checkpoint)
+- Falsifiable hypotheses H1–H7 exported to Evolution Lab
 
 ## SoL-Pi / harness efficiency (2026-09-11)
 - [[literature/lit-20260911-sol-pi-harness-efficiency]]
