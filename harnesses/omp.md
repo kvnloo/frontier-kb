@@ -4,7 +4,7 @@ title: OMP (oh-my-pi)
 type: harness
 status: active
 created: 2026-09-09
-updated: 2026-09-11
+updated: 2026-09-21
 urls:
   - https://github.com/can1357/oh-my-pi
   - https://omp.sh/
@@ -36,6 +36,8 @@ confidence: high
 tags: [harness]
 ---
 # OMP
+
+**As of 2026-09-21:** v18.2.6 cache-head anchors last stable system (~45k head save on recall); v18.2.7 find + judge_batch/jevify (JudgmentHandle/`wait()` removed). Hold OMP-1..7.
 
 Snapshot: Most capable agent surface shipped; fork of Pi. ~80k Rust core lines.
 Strengths: LSP/DAP wired in; real debugger; time-traveling stream rules; subagent fan-out.
