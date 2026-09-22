@@ -7,7 +7,6 @@ __pycache__/
 *.pyc
 .env
 *.env
-__omp_shell(".env.example")
 deploy/*.env
 apps/humanity-vault/node_modules/
 apps/humanity-vault/.next/

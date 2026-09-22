@@ -35,6 +35,22 @@ def main() -> int:
             missing = REQUIRED - set(meta)
             if missing:
                 errors.append(f"{path.relative_to(ROOT)}: missing {sorted(missing)}")
+    # The store schema exists TWICE on purpose: `scripts/kb_store.py` declares
+    # `SCHEMA_CANDIDATES = (store/schema.sql, scripts/schema.sql)`, so the second
+    # copy is a code-referenced fallback, not accidental duplication. They are
+    # byte-identical today. Two copies of one schema can drift, and the fallback
+    # is precisely the path nobody exercises -- so the drift would surface only
+    # when the primary is missing, which is the worst moment to find it.
+    primary = ROOT / "store" / "schema.sql"
+    fallback = ROOT / "scripts" / "schema.sql"
+    if primary.is_file() and fallback.is_file():
+        if primary.read_bytes() != fallback.read_bytes():
+            errors.append(
+                "store/schema.sql and scripts/schema.sql have DRIFTED. The second "
+                "is kb_store.py's declared fallback; they must stay identical or "
+                "the fallback path silently loads a different schema."
+            )
+
     if errors:
         print("schema errors:")
         print("\n".join(errors))
