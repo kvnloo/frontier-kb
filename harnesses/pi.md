@@ -4,7 +4,7 @@ title: pi
 type: harness
 status: active
 created: 2026-09-09
-updated: 2026-09-11
+updated: 2026-09-24
 urls:
   - https://github.com/earendil-works/pi
   - https://pi.dev/
@@ -47,3 +47,12 @@ Pi is the research substrate, not the daily IDE. OMP already forked it and added
 - [[literature/lit-20260911-sol-pi-harness-efficiency]]
 - [[permanent/perm-20260911-sol-pi-is-pi-public-extension-not-core-patch]]
 - [[harnesses/omp]]
+
+
+## Cadence 2026-09-24
+
+### FACT
+- Consumer pin still **v0.87.1** (no newer tag). Commits: immutable **Chord** delta tracker canonical; Pico5 durable docs/suite; durable conformance research (#9977); Jev classifier via OpenRouter/CF Workers AI.
+
+### INTERPRETATION
+- Arch/DX deepen only — wait next consumer tag before pin talk. Chord/Pico5 = research substrate. Sleep HOLD.

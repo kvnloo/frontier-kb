@@ -4,8 +4,10 @@ harnesses:
   omp:
     github: https://github.com/can1357/oh-my-pi
     docs: https://omp.sh/
+    release_v18_3_0: https://github.com/can1357/oh-my-pi/releases/tag/v18.3.0
   hermes:
     github: https://github.com/NousResearch/hermes-agent
+    release_v2026_9_24: https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24
   grok:
     github: https://github.com/xai-org/grok-build
     docs: https://docs.x.ai/build/overview
@@ -15,6 +17,7 @@ harnesses:
   claude:
     github: https://github.com/anthropics/claude-code
     docs: https://code.claude.com/docs/en/overview
+    release_v2_1_281: https://github.com/anthropics/claude-code/releases/tag/v2.1.281
   pi:
     github: https://github.com/earendil-works/pi
     docs: https://pi.dev
@@ -58,6 +61,7 @@ harnesses:
   prime_intelligence:
     docs: https://www.primeintellect.ai/blog/prime-agent
     github: https://github.com/PrimeIntellect-ai/prime-agent
+    release_v0_9_6: https://github.com/PrimeIntellect-ai/prime-agent/releases/tag/v0.9.6
   pi_product:
     docs: https://pi.dev/
   grok_build_cli:
@@ -66,6 +70,7 @@ harnesses:
     docs: https://openai.com/index/harness-engineering/
   mcp:
     blog_2026_07_28: https://blog.modelcontextprotocol.io/posts/2026-07-28/
+    skills_over_mcp: https://modelcontextprotocol.io/extensions/skills/overview
   devin:
     product: https://devin.ai/
     fusion: https://cognition.com/blog/local-fusion
@@ -87,10 +92,23 @@ harnesses:
   specforge:
     github: https://github.com/sgl-project/SpecForge
     paper: https://arxiv.org/abs/2603.18567
+  cursor:
+    changelog: https://cursor.com/changelog
+    rollouts_security_review_changelog: https://cursor.com/changelog/rollouts-and-security-reviewer
+    rollouts_security_review_blog: https://cursor.com/blog/rollouts-and-security-reviewer
 protocols:
   agentskills: https://agentskills.io/
   acp_tool_call_name: https://agentclientprotocol.com/announcements/tool-call-name-stabilized
 labs:
+  jaz_harness_as_language_2609_26891: https://arxiv.org/abs/2609.26891
+  skillgym_2609_27717: https://arxiv.org/abs/2609.27717
+  statecomp_2609_27298: https://arxiv.org/abs/2609.27298
+  twincheck_2609_26911: https://arxiv.org/abs/2609.26911
+  aewm_2609_28416: https://arxiv.org/abs/2609.28416
+  swe_flux_2609_28449: https://arxiv.org/abs/2609.28449
+  anthropic_art_enzyme: https://www.anthropic.com/news/claude-discovers-novel-enzyme-system
+  growing_harness_2609_26760: https://arxiv.org/abs/2609.26760
+  cliffcompaction_2609_26779: https://arxiv.org/abs/2609.26779
   arxiv_cs_ai: https://arxiv.org/list/cs.AI/recent
   arxiv_cs_lg: https://arxiv.org/list/cs.LG/recent
   arxiv_cs_cl: https://arxiv.org/list/cs.CL/recent
@@ -165,4 +183,12 @@ resolved_urls:
   grok_coding_harness_surface: https://cobusgreyling.medium.com/grok-build-cli-b1c069393483
   preferred_codex_tracking: https://openai.com/index/harness-engineering/
   which_pi_product: https://pi.dev/
+research:
+  jaz_2609_26891: https://arxiv.org/abs/2609.26891
+  skillgym_2609_27717: https://arxiv.org/abs/2609.27717
+  statecomp_2609_27298: https://arxiv.org/abs/2609.27298
+  twincheck_2609_26911: https://arxiv.org/abs/2609.26911
+  aewm_2609_28416: https://arxiv.org/abs/2609.28416
+  swe_flux_2609_28449: https://arxiv.org/abs/2609.28449
+  anthropic_art_enzyme: https://www.anthropic.com/news/claude-discovers-novel-enzyme-system
 missing_urls_needed: []
