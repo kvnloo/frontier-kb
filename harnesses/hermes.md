@@ -4,7 +4,7 @@ title: Hermes Agent
 type: harness
 status: active
 created: 2026-09-09
-updated: 2026-09-12
+updated: 2026-09-24
 urls:
   - https://github.com/NousResearch/hermes-agent
   - https://hermes-agent.nousresearch.com/
@@ -118,3 +118,14 @@ Local runner: [kvnloo/evolution-lab](https://github.com/kvnloo/evolution-lab) (J
 ## Keel
 
 - [[literature/lit-20260910-keel-level0-evidence-surface]]
+
+
+## Cadence 2026-09-24
+
+### FACT
+- Pin **v2026.9.24 / v0.21.5** (2026-09-24T10:09:38Z): Desktop plugin SDK — `SandboxedFrame` (#120927), `broadcast_plugin_event` (#120918); Connectors; temporary `gateway.standalone` (#119680); Windows state.db holders (#121423); compression watermark (#121489); `/review` secret-scope (#117550). Curated release notes deferred to **v0.22.0**.
+- URL: https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24
+
+### INTERPRETATION / hold
+- Safe consumer/Docker pin bump; **not** a curated feature brief. **keel L0 hold** until v0.22.0 MUST PRESERVE. Do **not** design fleets on `gateway.standalone`. Kevin sleep HOLD — no pin stamps until go.
+- Inbox: [[inbox/frontier/harness-release-cluster-2026-09-24]]

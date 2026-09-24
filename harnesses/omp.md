@@ -4,7 +4,7 @@ title: OMP (oh-my-pi)
 type: harness
 status: active
 created: 2026-09-09
-updated: 2026-09-11
+updated: 2026-09-24
 urls:
   - https://github.com/can1357/oh-my-pi
   - https://omp.sh/
@@ -106,3 +106,14 @@ Restore-in-tool-args is the Hermes `--apply` equivalent for `GITHUB_TOKEN`. Docu
 - [[literature/lit-20260910-trustworthy-secret-brokers]]
 - [[literature/lit-20260910-agent-http-inject-brokers]]
 - [[permanent/perm-20260910-identity-fields-are-not-documents]]
+
+
+## Cadence 2026-09-24
+
+### FACT
+- **v18.3.0** (2026-09-24T02:21:31Z): hub deprecated → `wait` + `proc://` + `agent://` (kill via `proc://<id>/kill`); ephemeral turns `ctx.runEphemeralTurn()`; Apple Foundation Models on-device; Anthropic `compact-2026-09-04` + cross-cred thinking redaction; User Profiles; `/annotate`; insert-before/after edits.
+- URL: https://github.com/can1357/oh-my-pi/releases/tag/v18.3.0
+
+### INTERPRETATION / hold
+- Material capability + breaking DX past 18.2.x. **Hold OMP-1..7** (Daybreak). CoS may open *new* tickets for Apple FM / hub migration — not an auto-reopen. Sleep HOLD on pin stamps.
+- Inbox: [[inbox/frontier/harness-release-cluster-2026-09-24]] · [[inbox/frontier/kb-autoresearch-2026-09-24]]
