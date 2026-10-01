@@ -35,6 +35,7 @@ At 125 / 500 / 1000 / 2000 / 4000 / 8000 Hz input rates:
 4. MangoHud — observer effect and display-latency measurement feasibility
 5. Linux evdev/HID — kernel-event -> userspace-read age
 6. GLFW — unbuffered Win32 raw input as a control case
+7. Wine/Proton — Linux input to Windows game API bridge
 
 ## Shared output
 
