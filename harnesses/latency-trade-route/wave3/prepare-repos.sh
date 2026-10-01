@@ -21,5 +21,7 @@ clone https://github.com/hyprwm/aquamarine.git aquamarine
 clone https://github.com/flightlessmango/MangoHud.git MangoHud
 clone https://github.com/torvalds/linux.git linux
 clone https://github.com/glfw/glfw.git glfw
+clone https://github.com/ValveSoftware/wine.git wine-valve
+clone https://github.com/ValveSoftware/Proton.git Proton
 
 echo "prepared under $root"
