@@ -102,14 +102,15 @@ def main():
                 expected = "left" if orientation < 0 else "right"
                 start_x = -8.0
                 duration = 0.35
-                frames = max(1, round(duration / win.monitorFramePeriod))
+                frame_period = win.monitorFramePeriod or (1.0 / 60.0)
+                frames = max(1, round(duration / frame_period))
 
                 kb.clearEvents()
                 win.callOnFlip(kb.clock.reset)
 
                 flip_onset = None
                 for frame in range(frames):
-                    elapsed = frame * win.monitorFramePeriod
+                    elapsed = frame * frame_period
                     gabor.ori = orientation
                     gabor.pos = (start_x + speed * elapsed, 0.0)
                     gabor.draw()
