@@ -64,3 +64,9 @@ No math-derived runtime patch or performance improvement has been qualified or s
 3. Attempt cheapest counterexample/feasibility experiment.
 4. Compare unchanged baseline, simple control and challenger on complete user journey.
 5. Publish frozen receipts via existing Evolution Lab → Tokenomics → z0evals; upstream PR only after maintainer-aligned independent review.
+
+## First observed UX leverage (existing measurements, not this wave's benchmark)
+
+Kerdoios's [local-cognition placement profile](https://github.com/kvnloo/kerdoios/blob/main/docs/local-cognition-placement.md) reports **360 tokens/s on llama.cpp vs 10.5 tokens/s on Ollama** for the same FunctionGemma weights/runtime context on its profiled GPU (~34x backend effect). It also reports cold-load costs of **46–306 ms** and short decisions of **124–1275 ms** for five measured models. Reusing a resident small model can therefore matter to an interactive turn; **the existing runtime selection / reuse path is a higher-confidence UX target than immediately implementing #125 metric k-median**. These figures are source-reported prior measurements, not rebenchmarked here and not generalized to a whole agent task. The #110 theorem's metric/adversary preconditions still require proof of fit.
+
+**Next discriminating experiment:** use existing serving receipts to measure the frequency and E2E p95 contribution of `reuse/load/evict`, preserving equal verified outcomes and no extra policy violations. Compare current planner with a simple no-thrash control; pursue #110 only if true metric-server applicability and additional benefits survive. Do not add another placement engine.
