@@ -1,0 +1,11 @@
+family,target,verdict,ux_outcome,first_gate
+107,PyTorch,RESEARCH_HOLD,training throughput at fixed accuracy,executable kernel and device crossover
+130,PyTorch,RESEARCH_HOLD,FFT throughput at fixed numerical tolerance,finite floating-point crossover
+110,Kerdoios,FIT_GATE,latency per verified completion,prove valid movement metric
+125,Kerdoios,DEMOTE,cost per verified completion,prove facility metric and preserve constraints
+121,ctx,DEMOTE,time to correct cited context,profile edit-distance hot path
+120,Graph OSS,FIT_GATE,time to exact unweighted matching,confirm workload then algorithm
+174,PyPSA and network,FIT_GATE,time to valid network optimization,prove thin-tree relevance
+116,Symbolic software,FIT_GATE,time to correct identity verdict,define formula DSL and oracle
+139,Scientific sampling,RESEARCH_HOLD,time to target error,verify Hessian and full computation
+124,Agent factory,NOT_APPLICABLE,verified task throughput,needs three homogeneous unit-job workers
