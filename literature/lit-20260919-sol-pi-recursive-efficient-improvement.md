@@ -1,3 +1,18 @@
+---
+id: lit-20260919-sol-pi-recursive-efficient-improvement
+title: "SoL-Pi: recursive efficient improvement and verified harness evolution"
+type: literature
+status: active
+created: 2026-09-19
+updated: 2026-09-19
+sources:
+  - "https://arxiv.org/abs/2609.20519"
+harnesses: [hermes, omp]
+domains: [ai-ml, frameworks]
+confidence: medium
+tags: [literature, sol-pi, harness-evolution, verified-evaluation]
+---
+
 # lit-20260919-sol-pi-recursive-efficient-improvement.md
 
 Link: arXiv:2609.20519 (SoL-Pi)
