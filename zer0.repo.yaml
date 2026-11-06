@@ -1,0 +1,52 @@
+version: 1
+repo: kvnloo/frontier-kb
+id: frontier-kb
+component: frontier-kb
+kind: component
+summary: Public research knowledge base and concurrent research-memory plane for papers, harnesses, hypotheses, structured notes, graph relations, and autoresearch evidence; explicitly separate from private personal memory.
+
+architecture:
+  subsystems:
+    - id: review-vault
+      name: Human-review research vault
+      kind: knowledge
+      summary: Obsidian-compatible literature, permanent notes, harness notes, domains, and atlas maps with schema-constrained Markdown.
+      paths: [literature/, permanent/, harnesses/, domains/, atlas/, templates/, inbox/]
+    - id: concurrent-store
+      name: Concurrent Postgres store
+      kind: storage
+      summary: Provides CAS note updates, append-only events, pgvector-backed operational access, and serialized Markdown projection for many concurrent agents.
+      paths: [store/, scripts/kb_store.py, docker-compose.yml, requirements-store.txt]
+      depends_on: [review-vault]
+    - id: synapse-loop
+      name: Synapse and usage loop
+      kind: learning
+      summary: Treats links and usage as graph activity for decay, strengthening, and prune proposals without deleting source notes.
+      paths: [scripts/synapse_loop.py, graphql/, apps/humanity-vault/]
+      depends_on: [concurrent-store]
+    - id: distributed-ingest
+      name: Distributed research ingest
+      kind: orchestration
+      summary: Coordinates node-scoped inbox writes, schema validation, autoresearch polling, and PR-based promotion into the public research plane.
+      paths: [inbox/, data/sources.yaml, scripts/, .github/]
+      depends_on: [review-vault]
+    - id: harness-research-map
+      name: Harness and frontier research map
+      kind: evidence
+      summary: Maintains cross-harness, paper, lab, eval, tokenomics, and SOTA research evidence for Evolution Lab and architecture work.
+      paths: [harnesses/, literature/, permanent/, atlas/]
+      depends_on: [review-vault]
+
+  provides_interfaces: []
+  consumes_interfaces: []
+  produces_representations: []
+  consumes_representations: []
+
+  boundaries:
+    owns: [public research evidence, research note schema, concurrent research store, research graph and autoresearch ingest]
+    not_here: [private personal memory, agent session authority, z0intelligence working state, canonical architecture authority, experiment promotion authority]
+
+  evidence:
+    docs: [README.md, atlas/, domains/, permanent/]
+    tests: [scripts/]
+    schemas: [templates/, graphql/, store/schema.sql]
